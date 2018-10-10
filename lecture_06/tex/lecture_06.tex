@@ -67,6 +67,7 @@
 \frame{
 	\frametitle{Аннотация}
 	\parbox{\textwidth}{
+		Объемные и массовые силы. Поверхностные силы. Тензор напряжения Коши. Разложение напряжения на составляющие. Главные напряжения и оси тензора напряжения. 
 	}
 }
 
@@ -579,6 +580,64 @@
 	\end{exampleblock}
 	
 }
+\frame{
+	\frametitle{Инварианты тензора напряжений}
+	
+	\begin{exampleblock}{Первый инвариант}
+		\parbox{\textwidth}{
+			
+			\[
+			I_1 = \operatorname{tr} \sigma = \sigma_{11}+\sigma_{22}+\sigma_{33}=\sigma_{1}+\sigma_{2}+\sigma_{3},
+			\]
+			
+			
+		}
+	\end{exampleblock}
+
+	\begin{exampleblock}{Второй инвариант}
+		\parbox{\textwidth}{
+			\[
+			I_2 = 
+			\left|
+			\begin{array}{cc}
+			\sigma_{11} & \sigma_{12} \\
+			\sigma_{21} & \sigma_{22}
+			\end{array}
+			\right|+
+			\left|
+			\begin{array}{cc}
+			\sigma_{11} & \sigma_{13} \\
+			\sigma_{31} & \sigma_{33}
+			\end{array}
+			\right|+
+			\left|
+			\begin{array}{cc}
+			\sigma_{22} & \sigma_{23} \\
+			\sigma_{32} & \sigma_{33}
+			\end{array}
+			\right| = \sigma_1\sigma_2+\sigma_2\sigma_3+\sigma_1\sigma_3,
+			\]
+			
+		}
+	\end{exampleblock}
+	\begin{exampleblock}{Третий инвариант}
+		\parbox{\textwidth}{
+			\[
+			I_3 = \operatorname{det} \sigma =
+			\left|
+			\begin{array}{ccc}
+				\sigma_{11} & \sigma_{12} & \sigma_{13} \\
+				\sigma_{21} & \sigma_{22} & \sigma_{23} \\
+				\sigma_{31} & \sigma_{32} & \sigma_{33} 
+			\end{array}
+			\right|=
+			\sigma_1\sigma_2\sigma_3.
+			\]
+		}
+	\end{exampleblock}
+	
+}
+
 
 \frame{
 	\frametitle{ Нормальное, тангенциальное и полное напряжение в главных осях  }
@@ -614,7 +673,7 @@
 			\begin{exampleblock}{Полное напряжение}
 			\parbox{\textwidth}{
 				\[
-				\vec{\sigma}_n^2 = 	(n_l \sigma_l \vec{g}_l) \cdot (\bar{n}_k \sigma_k \vec{g}_k)= (n_k\sigma_k)^2.
+				\vec{\sigma}_n^2 = 	(n_l \sigma_l \vec{g}_l) \cdot (n_k \sigma_k \vec{g}_k)= (n_k\sigma_k)^2.
 				\]
 			}
 			\end{exampleblock}
