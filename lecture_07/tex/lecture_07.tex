@@ -37,20 +37,32 @@
 \newcommand{\argxi}{(\xi^1,\xi^2,\xi^3)}
 \newcommand{\argx}{(x^1,x^2,x^3)}
 
+\newcommand{\argxiv}{(\vec{\xi})}
+\newcommand{\argxv}{(\vec{x})}
+
+
 \newcommand{\argxbarn}{(\bar{x}^1,\bar{x}^2,\ldots, \bar{x}^n)}
 \newcommand{\argxn}{(x^1, x^2,\ldots, x^n)}
 
 \newcommand{\argtxi}{(t, \xi^1,\xi^2,\xi^3)}
 \newcommand{\argtoxi}{(t_0, \xi^1,\xi^2,\xi^3)}
 
+\newcommand{\argtxiv}{(t, \vec{\xi})}
+\newcommand{\argtoxiv}{(t_0, \vec{\xi})}
+
+
 \newcommand{\argtx}{(t, x^1,x^2,x^3)}
 \newcommand{\argtox}{(t_0, x^1,x^2,x^3)}
+
+\newcommand{\argtxv}{(t, \vec{x})}
+\newcommand{\argtoxv}{(t_0, \vec{x})}
+
 
 \newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
 \newcommand{\pdk}[2]{\frac{\partial^2 #1}{\partial {#2}^2}}
 
 
-\title[]{Законы сохранения механики сплошной среды}
+\title[]{Законы сохранения в механике сплошной среды}
 
 \author[]{ {\em Верещагин Антон Сергеевич}
 \\
@@ -68,7 +80,7 @@
 \frame{
 	\frametitle{Аннотация}
 	\parbox{\textwidth}{
-
+	Траектрория движения сплошной среды. Формула Эйлера. Законы сохранения параметров сплошной среды в интегральной и дифференциальной форме. 
 	}
 }
 
@@ -99,7 +111,7 @@
 
 		\begin{exampleblock}{Траектории движения}
 			\parbox{\textwidth}{
-				Пусть траектории движения жидких частиц задаются функцией
+				Траектории движения жидких частиц задаются функцией
 				\[
 					\vec{x} = \vec{x} \argtxi,
 				\]
@@ -118,7 +130,7 @@
 			\parbox{\textwidth}{
 				Поле скоростей частиц сплошной среды в эйлеровой систем координат задаётся функцией $\vec{v}\argtx$. В лагранжевой системе координат скорость определяется соотношением
 				\[
-				\vec{v}\argtxi = \pd{\vec{x} \argtxi}{t}.
+				\vec{v}\argtxiv = \pd{\vec{x} \argtxiv}{t}.
 				\]
 			}
 		\end{exampleblock}
@@ -127,9 +139,9 @@
 
 		\begin{exampleblock}{Задача определения траекторий движения по заданному полю скоростей}
 		\parbox{\textwidth}{
-			По заданному полю скоростей $\vec{v}\argtx$ требуется найти траектории движения частиц $x^i = x^i\argtxi$ с лагранжевыми координатами $\argxi$:
+			По заданному полю скоростей $\vec{v}\argtxv$ требуется найти траектории движения частиц $x^i = x^i\argtxiv$ с лагранжевыми координатами $\argxiv$:
 			\[
-			\pd{x^i}{t} = v^i\argtx,\quad
+			\pd{x^i}{t} = v^i\argtxv,\quad
 			x^i |_{t=0} = \xi^i\quad
 			(i=1,2,3).
 			\]	
@@ -159,12 +171,55 @@
 }
 
 \frame{
+	\frametitle{ Геометрический смысл определителя }
+	
+	
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{../img/omega_def_bi.pdf}		
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\begin{exampleblock}{Сопутствующий базис}
+				\parbox{\textwidth}{
+					\[
+					\vec{b}_i = \pd{\vec{r}}{\xi^i} = \pd{x^j}{\xi^i}\vec{e}_j.
+					\]
+				}
+				\begin{exampleblock}{Элементарный объем}
+					\parbox{\textwidth}{ 
+						\[
+						\Delta\argtxiv =
+						\left|\displaystyle
+						\begin{array}{ccc}
+						\displaystyle\pd{x^1}{\xi^1} & \displaystyle\pd{x^2}{\xi^1} & \displaystyle\pd{x^3}{\xi^1} \\
+						\displaystyle\pd{x^1}{\xi^2} & \displaystyle\pd{x^2}{\xi^2} & \displaystyle\pd{x^3}{\xi^2} \\	\displaystyle\pd{x^1}{\xi^3} & \displaystyle\pd{x^2}{\xi^3} & \displaystyle\pd{x^3}{\xi^3}				
+						\end{array}
+						\right|=
+						\]
+						\[
+						= \vec{b}_1 \cdot (\vec{b}_2 \times \vec{b}_3).
+						\]
+						
+					}
+				\end{exampleblock}
+			\end{exampleblock}
+		\end{column}
+	\end{columns}
+	
+	
+	
+	
+	
+}
+
+\frame{
 	\frametitle{ Дифференцирование определителя матрицы Якоби }
 	\parbox{\textwidth}{
 	
-		Обозначим $\Delta(t) = \operatorname{det Y(t)}$, тогда из определения определителя, как суммы произведений его элементов и правила дифференцирования произведения, имеем
+		Обозначим $\Delta\argtxiv = \operatorname{det} Y\argtxiv$, тогда из определения определителя, как суммы произведений его элементов и правила дифференцирования произведения, имеем
 		\[
-		\Delta'(t) = \frac{d}{dt} 
+		\Delta'(t) = \pd{}{t} 
 		\left|
 		\begin{array}{ccc}
 		y_{11} & y_{12} & y_{13} \\
@@ -214,7 +269,7 @@
 		a_{12}(y_{21}, y_{22}, y_{23})+
 		a_{13}(y_{31}, y_{32}, y_{33}).
 		\]
-		Отсюда, вычитая из первой строки с производными линейную комбинацию остальных строк, имеем
+		Отсюда, вычитая из первой строки с производными линейную комбинацию остальных строк, получаем
 		\[
 		\left|
 		\begin{array}{ccc}
@@ -268,7 +323,7 @@
 %	=	\pd{v^i}{x^i}\Delta(t) = \Delta(t) \operatorname{div} \vec{v} 
 	\]
 	
-	\begin{exampleblock}{Правило дифференцирования определителя матрицы Якоби}
+	\begin{exampleblock}{Правило дифференцирования определителя матрицы Якоби или формула Эйлера}
 		\parbox{\textwidth}{
 			\[
 			\pd{}{t}\left| \pd{x^i}{\xi^j} \right| = \left| \pd{x^i}{\xi^j} \right|
@@ -283,6 +338,72 @@
 }
 
 \frame{
+	\frametitle{ Закон дифференцирования интеграла, зависящего от времени }
+	\begin{exampleblock}{Упрощения}
+		\parbox{\textwidth}{
+		\[
+		\frac{d}{dt}\int\limits_{\omega_t} F\argtxv  d\vec{x}=
+		\frac{d}{dt}\int\limits_{\omega_0} F\argtxiv \Delta\argtxiv d\vec{\xi}=
+		\int\limits_{\omega_0} \pd{}{t}(F\argtxiv \Delta\argtxiv) d\vec{\xi}=
+		\]
+		\[
+		=
+		\int\limits_{\omega_0} \left( \pd{F\argtxiv }{t}\Delta\argtxiv + F\argtxiv\pd{\Delta\argtxiv}{t} \right) d\vec{\xi} =
+		\]
+		\[
+		=
+		\int\limits_{\omega_0} \left( \pd{F\argtxiv }{t} + F\argtxiv \operatorname{div}_{\xi}\vec{v}\argtxiv \right)\Delta\argtxiv  d\vec{\xi} =
+		\]
+		\[
+		=
+		\int\limits_{\omega_t} \left( \pd{F\argtxv }{t} + \pd{F\argtxv}{x^i} v^i\argtxv + F\argtxv \operatorname{div}_{x}\vec{v}\argtxv \right)  d\vec{x}.
+		\]
+		}
+	\end{exampleblock}
+	
+}
+
+\frame{
+	\frametitle{Закон дифференцирования интеграла, зависящего от времени }
+%		\begin{exampleblock}{Упрощения}
+%		\parbox{\textwidth}{
+%			\[
+%			=
+%			\int\limits_{\omega_t} \left( \pd{F\argtxv }{t} + \pd{F\argtxv}{x^i} v^i\argtxv + F\argtxv \operatorname{div}_{x}\vec{v}\argtxv \right)  d\vec{x}.
+%			\]
+%
+%		}
+%	\end{exampleblock}
+	\begin{exampleblock}{Окончательный вид}
+		\parbox{\textwidth}{
+			\[
+			\frac{d}{dt}\int\limits_{\omega_t} F\argtxv  d\vec{x}=
+			\int\limits_{\omega_t} \left( \frac{dF\argtxv }{dt}  + F\argtxv \operatorname{div}_{x}\vec{v}\argtxv \right)  d\vec{x},
+			\]
+			где $d/dt$ -- оператор полного дифференцирования в правой части равенства задаётся формулой
+			\[
+				\frac{d}{dt}=\pd{}{t} + (\vec{v}\cdot\nabla).
+			\]
+			
+			
+		}
+	\end{exampleblock}
+
+	\begin{exampleblock}{Упрощения}
+		\parbox{\textwidth}{
+			Легко показать, что для $F=F\argtxv$, $\vec{v}=\vec{v}\argtxv$
+			\[
+			\frac{dF}{dt}  + F \operatorname{div}\vec{v} = \pd{F}{t} + \operatorname{div} (F\vec{v}).
+			\]
+			
+			
+		}
+	\end{exampleblock}
+}
+
+
+
+\frame{
 	\frametitle{ Закон сохранения массы сплошной среды }
 	\begin{columns}
 		\begin{column}{0.45\textwidth}
@@ -290,58 +411,105 @@
 			\includegraphics[width=\textwidth]{../img/omega_def.pdf}	
 		\end{column}
 		\begin{column}{0.55\textwidth}
-		\begin{exampleblock}{Интегральный вид ЗСМ}
-			\parbox{\textwidth}{
-			\[
-			\frac{d}{dt}\int\limits_{\omega_t}\rho\argtx d\vec{x} = 0,				
-			\]
-			где $\rho\argtx$ -- плотность жидкой частицы в точке $\vec{r}$ в момент времени $t$.
-			}
-		\end{exampleblock}		
+			\begin{exampleblock}{Интегральный вид ЗСМ}
+				\parbox{\textwidth}{
+					\[
+					\frac{d}{dt}\int\limits_{\omega_t}\rho\argtxv d\vec{x} = 0,				
+					\]
+					где $\rho\argtxv$ -- плотность жидкой частицы в точке $\vec{r}$ в момент времени $t$.
+				}
+			\end{exampleblock}		
 		\end{column}
 	\end{columns}
 	
 	
-	\begin{exampleblock}{Упрощения}
+	\begin{exampleblock}{Дифференциальная форма}
+	\parbox{\textwidth}{
+		В силу произвольности $\omega_t$ и формулы дифференцирования 
+		\[
+		\pd{\rho}{t} + \operatorname{div} (\rho \vec{v}) = 0.			
+		\]
+	}
+\end{exampleblock}
+}
+
+
+
+
+
+\frame{
+	\frametitle{ Закон сохранения импульса сплошной среды }
+	
+	\begin{exampleblock}{Интегральная форма}
 		\parbox{\textwidth}{
 		\[
-		\frac{d}{dt}\int\limits_{\omega_t}\rho\argtx d\vec{x} = 
-		\frac{d}{dt}\int\limits_{\omega_0}\rho\argtxi \Delta(t) d\vec{\xi}=
+		\frac{d}{dt}\int\limits_{\omega_t}\rho \vec{v} \, d\vec{x} = -\int\limits_{s_t}	\vec{\sigma}_n dS + \int\limits_{\omega_t}\rho \vec{f} \, d\vec{x},
 		\]
-		\[
-		=\int\limits_{\omega_0}\pd{}{t}\left(\rho\argtxi \Delta(t)\right) d\vec{\xi}=
-		\]	
+		где $\rho\argtxv$, $\vec{v}\argtxv$ -- плотность и скорость материальной точки сплошной среды; $\vec{\sigma}_n\argtxv$ -- напряжение, возникающее на поверхности объема $\omega_t$, обозначенной $s_t$, на площадке с внешней единичной нормалью $\vec{n}$; $\vec{f}\argtxv$ -- массовая сила, действующая на сплошную среду.
+		}
+	\end{exampleblock}
+
+	\begin{exampleblock}{Дифференциальная форма}
+		\parbox{\textwidth}{
+			\[
+			\pd{\rho\vec{v}}{t} + \operatorname{div} (\rho\vec{v}\otimes\vec{v} + \sigma) = \rho\vec{f}.			
+			\]
 		}
 	\end{exampleblock}
 }
 
 \frame{
-	\frametitle{ Закон сохранения массы сплошной среды }
-	\begin{exampleblock}{Упрощения}
+	\frametitle{ Закон сохранения момента импульса сплошной среды }
+	
+	\begin{exampleblock}{Интегральная форма}
 		\parbox{\textwidth}{
-		\[
-		=
-		\int\limits_{\omega_0}\left(\pd{\rho\argtxi}{t} \Delta(t) + \rho\argtxi\pd{\Delta(t)}{t} \right)d\vec{\xi}=
-		\]
-		\[
-		=
-		\int\limits_{\omega_0}\left(\pd{\rho\argtxi}{t}+ \rho\argtxi  \operatorname{div}_{\vec{x}} \vec{v} \right) \Delta(t) d\vec{\xi}=
-		\]
-		\[
-		=\int\limits_{\omega_t}\left(\pd{\rho\argtx}{t}+ \rho\argtx  \operatorname{div}_{\vec{x}} \vec{v} \right) d\vec{x}.
-		\]
+			\[
+			\frac{d}{dt}\int\limits_{\omega_t}\rho \vec{v}\times\vec{x} \, d\vec{x} = -\int\limits_{s_t}	\vec{\sigma}_n \times\vec{x} \, dS + \int\limits_{\omega_t}\rho \vec{f} \times\vec{x} \, d\vec{x},
+			\]
+			где $\rho\argtxv$, $\vec{v}\argtxv$ -- плотность и скорость материальной точки сплошной среды; $\vec{\sigma}_n\argtxv$ -- напряжение, возникающее на поверхности объема $\omega_t$, обозначенной $s_t$, на площадке с внешней единичной нормалью $\vec{n}$; $\vec{f}\argtxv$ -- массовая сила, действующая на сплошную среду.
 		}
 	\end{exampleblock}
 	
-	\begin{exampleblock}{ЗСМ в дифференциальной форме}
+	\begin{exampleblock}{Следствие}
 		\parbox{\textwidth}{
-			В силу произвольности $\omega_t$
+			Симметричность тензора напряжений
 			\[
-				\pd{\rho}{t}+ \rho \operatorname{div} \vec{v} = 0.			
+				\sigma^* = \sigma.
 			\]
 		}
 	\end{exampleblock}
+}
+
+
+\frame{
+	\frametitle{ Закон сохранения энергии сплошной среды }
 	
+	\begin{exampleblock}{Интегральная форма}
+		\parbox{\textwidth}{
+			\[
+			\frac{d}{dt}\int\limits_{\omega_t}\rho \left(\varepsilon + \frac{\vec{v}^2}{2}\right) \, d\vec{x} = -\int\limits_{s_t} (\vec{\sigma}_n\cdot\vec{v})\,dS -\int\limits_{s_t} (\vec{q}\cdot\vec{n}) \, dS + \int\limits_{\omega_t}\rho \vec{f} \cdot \vec{v} \, d\vec{x},
+			\]
+			где $\varepsilon\argtxv$ -- внутренняя энергия единицы массы частицы сплошной среды; $\vec{q}\argtxv$ -- закон перетока тепла в сплошной среде.
+		}
+	\end{exampleblock}
+	
+	\begin{exampleblock}{Дифференциальная форма}
+		\parbox{\textwidth}{
+			
+			\alert{Добавить диф. форму.}
+%			\[
+%			\pd{\rho\vec{v}}{t} + \operatorname{div} (\rho\vec{v}\otimes\vec{v} + \sigma) = \rho\vec{f}.			
+%			\]
+		}
+	\end{exampleblock}
+}
+
+\frame{
+	\frametitle{ Литература }
+	\begin{itemize}[partopsep=1pt,label=\textbullet]
+	\item {\em Годунов~С.~К.} Обыкновенные дифференциальные уравнения с постоянными коэффициентами: Учебное пособие. Новосибирск: Изд-во Новосиб. ун-та, 1994. -- Т.1.: Краевые задачи.
+	\item {\em Овсянников~Л.~В.} Лекции по основам газовой динамики.  Москва-Ижевск:Институт компьютерных исследований, 2003.		
+	\end{itemize}
 }
 
 
