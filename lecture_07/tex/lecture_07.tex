@@ -443,7 +443,7 @@
 	\begin{exampleblock}{Интегральная форма}
 		\parbox{\textwidth}{
 		\[
-		\frac{d}{dt}\int\limits_{\omega_t}\rho \vec{v} \, d\vec{x} = -\int\limits_{s_t}	\vec{\sigma}_n dS + \int\limits_{\omega_t}\rho \vec{f} \, d\vec{x},
+		\frac{d}{dt}\int\limits_{\omega_t}\rho \vec{v} \, d\vec{x} = \int\limits_{s_t}	\vec{\sigma}_n dS + \int\limits_{\omega_t}\rho \vec{f} \, d\vec{x},
 		\]
 		где $\rho\argtxv$, $\vec{v}\argtxv$ -- плотность и скорость материальной точки сплошной среды; $\vec{\sigma}_n\argtxv$ -- напряжение, возникающее на поверхности объема $\omega_t$, обозначенной $s_t$, на площадке с внешней единичной нормалью $\vec{n}$; $\vec{f}\argtxv$ -- массовая сила, действующая на сплошную среду.
 		}
@@ -451,9 +451,18 @@
 
 	\begin{exampleblock}{Дифференциальная форма}
 		\parbox{\textwidth}{
-			\[
-			\pd{\rho\vec{v}}{t} + \operatorname{div} (\rho\vec{v}\otimes\vec{v} + \sigma) = \rho\vec{f}.			
-			\]
+			\begin{tabular}{p{0.5\textwidth}|p{0.5\textwidth}}
+			\em	Консервативная & \em	 Неконсервативаня \\
+			\hline
+				&   \\
+			$
+			\displaystyle\pd{\rho\vec{v}}{t} + \operatorname{div} (\rho\vec{v}\otimes\vec{v} - \sigma) = \rho\vec{f} 	
+			$
+			& 
+			$
+			\rho\displaystyle\frac{d\vec{v}}{dt} - \operatorname{div} \sigma = \rho\vec{f} 	
+			$
+			\end{tabular}
 		}
 	\end{exampleblock}
 }
@@ -464,17 +473,136 @@
 	\begin{exampleblock}{Интегральная форма}
 		\parbox{\textwidth}{
 			\[
-			\frac{d}{dt}\int\limits_{\omega_t}\rho \vec{v}\times\vec{x} \, d\vec{x} = -\int\limits_{s_t}	\vec{\sigma}_n \times\vec{x} \, dS + \int\limits_{\omega_t}\rho \vec{f} \times\vec{x} \, d\vec{x},
+			\frac{d}{dt}\int\limits_{\omega_t} \left(\rho \vec{v}\times\vec{x} +\rho \vec{k} \right) \, d\vec{x} = \int\limits_{s_t}	\vec{\sigma}_n \times\vec{x} \, dS+ \int\limits_{\omega_t}\rho \vec{f} \times\vec{x} \, d\vec{x}+
 			\]
-			где $\rho\argtxv$, $\vec{v}\argtxv$ -- плотность и скорость материальной точки сплошной среды; $\vec{\sigma}_n\argtxv$ -- напряжение, возникающее на поверхности объема $\omega_t$, обозначенной $s_t$, на площадке с внешней единичной нормалью $\vec{n}$; $\vec{f}\argtxv$ -- массовая сила, действующая на сплошную среду.
+			\[	+
+				\int\limits_{\omega_t}\rho \vec{h}  \, d\vec{x} +
+				\int\limits_{\omega_t} \vec{M}_n dS,
+			\]
+			где $\rho\argtxv$, $\vec{v}\argtxv$ -- плотность и скорость материальной точки сплошной среды; $\vec{\sigma}_n\argtxv$ -- напряжение, возникающее на поверхности объема $\omega_t$, обозначенной $s_t$, на площадке с внешней единичной нормалью $\vec{n}$; $\vec{f}\argtxv$ -- массовая сила, действующая на сплошную среду; $\vec{k}$ -- плотность собственного момента количества движения; $\vec{h}$, $\vec{M}_n$ -- плотность массовых и поверхностных пар.
+		}
+	\end{exampleblock}
+
+	\begin{exampleblock}{Предположения}
+		\parbox{\textwidth}{
+			\[
+				\vec{k} = \vec{h} = \vec{0} ,\quad \vec{M}_n = \vec{0}.
+			\]
+			
 		}
 	\end{exampleblock}
 	
-	\begin{exampleblock}{Следствие}
+
+}
+
+
+
+\frame{
+	\frametitle{ Следствия закона сохранения момента импульса }
+
+	\begin{exampleblock}{Дифференциальная форма}
 		\parbox{\textwidth}{
-			Симметричность тензора напряжений
+		\[
+		\frac{d}{dt} \left(\rho\vec{v}\times\vec{x}\right) + 	
+		(\rho\vec{v}\operatorname{div} \vec{v}) \times\vec{x}  - 
+		\operatorname{div} \left(\sigma\times \vec{x}\right) =
+		\rho\vec{f}\times \vec{x}.
+		\]
+		}
+	\end{exampleblock}
+
+
+	\begin{exampleblock}{Упрощения}
+		\parbox{\textwidth}{
 			\[
-				\sigma^* = \sigma.
+				\frac{d}{dt} \left(\rho\vec{v}\times\vec{x}\right)	= 
+				\frac{d}{dt} (\rho\vec{v}) \times \vec{x} + 
+				\rho\vec{v} \times\frac{d\vec{x}}{dt} =
+				\frac{d (\rho\vec{v})}{dt} \times \vec{x}.
+			\]
+			\[
+				\operatorname{div} \left(\sigma\times \vec{x}\right) = 
+				\pd{}{x_i} (\vec{\sigma}_i \times \vec{x}) = 
+				\pd{\vec{\sigma}_i}{x_i}\times \vec{x}+\vec{\sigma}_i \times \pd{\vec{x}}{x_i}=
+				\operatorname{div} \sigma \times\vec{x}+
+				\vec{\sigma}_i \times \vec{e}_i.
+			\]
+		}
+	\end{exampleblock}
+
+	\begin{exampleblock}{Упрощение закона сохранения момента импульса}
+		\parbox{\textwidth}{
+			Умножая векторно закон сохранения импульса на $\vec{x}$ и вычитая из дифференциальной формы с учётом проделанных операций, имеем
+			\[
+			\vec{\sigma}_1  \times \vec{e}_1 + \vec{\sigma}_2  \times \vec{e}_2 + \vec{\sigma}_3 \times \vec{e}_3 = \vec{0}.
+			\]
+			
+		}
+	\end{exampleblock}
+
+
+%	\begin{exampleblock}{Следствие}
+%	\parbox{\textwidth}{
+%		Симметричность тензора напряжений
+%		\[
+%		\sigma^* = \sigma.
+%		\]
+%	}
+%\end{exampleblock}	
+}
+
+
+
+\frame{
+	\frametitle{ Следствия закона сохранения момента импульса  }
+	
+	
+	\begin{columns}
+		\begin{column}{0.75\textwidth}\
+			\parbox{\textwidth}{
+			
+			Упростим равенство		
+			\[
+			\vec{\sigma}_1  \times \vec{e}_1 + \vec{\sigma}_2 \times  \vec{e}_2 + \vec{\sigma}_3 \times \vec{e}_3 = \vec{0}.
+			\]
+			
+			\[+
+				\begin{array}{ccc}
+					\sigma_{1j}\vec{e}_j \times \vec{e}_1 & = & -\sigma_{12}\vec{e}_3+\sigma_{13}\vec{e}_2\\
+					\sigma_{2j}\vec{e}_j \times \vec{e}_2 & = & \sigma_{21}\vec{e}_3 - \sigma_{23} \vec{e}_1\\
+					\sigma_{3j}\vec{e}_j \times \vec{e}_3 & = & -\sigma_{31}\vec{e}_2 + \sigma_{32} \vec{e}_1\\
+					\hline
+					\vec{\sigma}_i\times\vec{e}_i & = & 
+					(\sigma_{32}-\sigma_{23})\vec{e}_1 + \\
+					& & +
+					(\sigma_{13}-\sigma_{31})\vec{e}_2 +\\
+					& & +
+					(\sigma_{21}-\sigma_{12})\vec{e}_3.
+				\end{array}
+			\]
+							
+			}
+		\end{column}
+		\begin{column}{0.25\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{../img/orth.pdf}
+			
+			\begin{eqnarray*}
+				\vec{e}_1\times\vec{e}_2 &  = &  \vec{e}_3,\\
+				\vec{e}_2\times\vec{e}_3 &  = &  \vec{e}_1,\\
+				\vec{e}_3\times\vec{e}_1 &  = &  \vec{e}_2.
+			\end{eqnarray*}
+			
+			
+		\end{column}
+		
+	\end{columns}
+
+	\begin{exampleblock}{Симметричность тензора напряжений}
+		\parbox{\textwidth}{
+			При отсутствии собственного момента количества движения среды и массовых и поверхностных пар имеет место симметричность тензора напряжений
+			\[
+			\sigma_{ij} = \sigma_{ji}.
 			\]
 		}
 	\end{exampleblock}
@@ -487,22 +615,98 @@
 	\begin{exampleblock}{Интегральная форма}
 		\parbox{\textwidth}{
 			\[
-			\frac{d}{dt}\int\limits_{\omega_t}\rho \left(\varepsilon + \frac{\vec{v}^2}{2}\right) \, d\vec{x} = -\int\limits_{s_t} (\vec{\sigma}_n\cdot\vec{v})\,dS -\int\limits_{s_t} (\vec{q}\cdot\vec{n}) \, dS + \int\limits_{\omega_t}\rho \vec{f} \cdot \vec{v} \, d\vec{x},
+			\frac{d}{dt}\int\limits_{\omega_t}\rho \left(\varepsilon + \frac{\vec{v}^2}{2}\right) \, d\vec{x} = \int\limits_{s_t} (\vec{\sigma}_n\cdot\vec{v})\,dS + \int\limits_{s_t} (\vec{q}\cdot\vec{n}) \, dS + \int\limits_{\omega_t}\rho \vec{f} \cdot \vec{v} \, d\vec{x},
 			\]
 			где $\varepsilon\argtxv$ -- внутренняя энергия единицы массы частицы сплошной среды; $\vec{q}\argtxv$ -- закон перетока тепла в сплошной среде.
 		}
 	\end{exampleblock}
 	
 	\begin{exampleblock}{Дифференциальная форма}
-		\parbox{\textwidth}{
-			
-			\alert{Добавить диф. форму.}
-%			\[
-%			\pd{\rho\vec{v}}{t} + \operatorname{div} (\rho\vec{v}\otimes\vec{v} + \sigma) = \rho\vec{f}.			
-%			\]
-		}
-	\end{exampleblock}
+	\parbox{\textwidth}{
+		\begin{tabular}{p{\textwidth}}
+			\em	Консервативная \\
+			\hline  \\
+			$
+			\displaystyle\pd{}{t} \left[ \rho \left(\varepsilon + \frac{\vec{v}^2}{2} \right) \right]
+			+ \operatorname{div}\left[ \rho \left(\varepsilon + \frac{\vec{v}^2}{2} \right) \vec{v} - \sigma\cdot \vec{v} - \vec{q} \right]= \rho\vec{f} 	
+			$ 
+		\end{tabular}
+	}
+\end{exampleblock}
 }
+
+\frame{
+	\frametitle{ Закон динамики кинетической энергии }
+	\parbox{\textwidth}{
+		Умножив закон сохранения массы в недивиргентной форме на $\displaystyle\frac{\vec{v}^2}{2}$, а уравнение закона сохранения импульса
+		скалярно на вектор $\vec{v}$, получим 
+		\[
+		\frac{\vec{v}^2}{2}\frac{d\rho}{dt} = -\frac{\rho\vec{v}^2}{2} \operatorname{div}\vec{v} 
+		\quad 
+		\text{и}
+		\quad
+		\rho\vec{v}\cdot\displaystyle\frac{d\vec{v}}{dt}   =  \operatorname{div} \sigma\cdot\vec{v}  + \rho\vec{f}\cdot \vec{v}.
+		\]
+		Тогда
+		\[
+		\frac{d}{dt} \frac{\rho \vec{v}^2}{2} = \frac{d}{dt} \frac{\rho \vec{v} \cdot \vec{v}}{2} = 
+		\rho\vec{v}\cdot\frac{d\vec{v}}{dt} + \frac{\vec{v}^2}{2}\frac{d\rho}{dt}=
+		\operatorname{div} \sigma\cdot\vec{v}+ 
+		\rho\vec{f}\cdot \vec{v}-
+		\frac{\rho\vec{v}^2}{2} \operatorname{div}\vec{v}.
+		\]
+		
+		Или
+		\[
+		\frac{d}{dt} \left(\frac{\rho \vec{v}^2}{2}\right) +
+		\frac{\rho\vec{v}^2}{2} \operatorname{div}\vec{v} -
+		\operatorname{div} \sigma\cdot\vec{v} = 
+		\rho\vec{f}\cdot \vec{v}
+		\]
+	}
+	
+}
+
+
+\frame{
+	\frametitle{ Неконсервативная форма закона сохранения энергии }
+	
+	\parbox{\textwidth}{
+	Рассмотрим слагаемое, связанное с работой поверхностных сил 
+	\[
+	\operatorname{div} (\sigma \cdot \vec{v}) =  
+	\operatorname{div}{\sigma} \cdot \vec{v} + 
+	\sigma_{ij} \pd{v_i}{x_j}.
+	\]
+	Используя разложение тензора на симметричную и несимметричную составляющие
+	\[
+	\pd{v_j}{x_k} = \frac{1}{2}\left(\pd{v_j}{x_k}+\pd{v_k}{x_j}\right)+ \frac{1}{2}\left(\pd{v_j}{x_k}-\pd{v_k}{x_j}\right) = e_{jk} + \omega_{jk},
+	\]
+	получим
+	\[
+		\operatorname{div} (\sigma \cdot \vec{v}) =  \operatorname{div}{\sigma} \cdot \vec{v} +  	\sigma_{ij} e_{ij}.
+	\]
+	где $e_{ij}$, $\omega_{ij}$ -- компоненты тензоров скоростей деформаций и вихря.
+	Слагаемое $\sigma_{ij}\omega_{ij}$ равно $0$, т.к. это свёртка симметричного и антисимметричного тензоров. 
+
+	}
+	
+	
+}
+
+
+\frame{
+	\frametitle{ Неконсервативная форма закона сохранения энергии }
+	
+	\parbox{\textwidth}{
+	Вычитая	из уравнения закона сохранения уравнения соотношение динамики кинетической энергии, полученное соотношение из предыдущего слайда и закон сохранения массы, умноженный на $\varepsilon$, получим
+	\[
+	\rho\frac{d\varepsilon}{dt} = \sigma_{ij}e_{ij} + \operatorname{div} \vec{q}.
+	\]
+	}
+	
+}
+
 
 \frame{
 	\frametitle{ Литература }
