@@ -1,0 +1,466 @@
+\documentclass{beamer}
+
+\usepackage{beamerthemesplit}
+\usetheme{Singapore} %Copenhagen}
+%\usecolortheme{whale}
+
+%\usepackage[T2A]{fontenc}
+%\usepackage[utf8]{inputenc}
+%\usepackage[russian]{babel}
+
+\usepackage[main=russian,english]{babel}   %% загружает пакет многоязыковой вёрстки
+\usepackage{fontspec}      %% подготавливает загрузку шрифтов Open Type, True Type и др.
+\defaultfontfeatures{Ligatures={TeX},Renderer=Basic}  %% свойства шрифтов по умолчанию
+\setmainfont{Times New Roman} %% задаёт основной шрифт документа
+%\usefonttheme{professionalfonts}% SOLUTION
+\usefonttheme{serif}
+
+\usepackage{hyperref}
+\usepackage{textcomp}
+\usepackage{amssymb,amsmath}
+%\usepackage{animate}
+%\usepackage{longtable}
+\usepackage{xcolor}
+
+%\usepackage{pgffor}
+\usepackage{enumitem}
+
+
+\newcounter{N}
+
+%% Форматирование окружения itemize
+%\usepackage{ragged2e}
+%\let\olditem\item
+%\renewcommand\item{\olditem\justifying}
+
+
+\newcommand{\argxi}{(\xi^1,\xi^2,\xi^3)}
+\newcommand{\argx}{(x^1,x^2,x^3)}
+
+\newcommand{\argxiv}{(\vec{\xi})}
+\newcommand{\argxv}{(\vec{x})}
+
+
+\newcommand{\argxbarn}{(\bar{x}^1,\bar{x}^2,\ldots, \bar{x}^n)}
+\newcommand{\argxn}{(x^1, x^2,\ldots, x^n)}
+
+\newcommand{\argtxi}{(t, \xi^1,\xi^2,\xi^3)}
+\newcommand{\argtoxi}{(t_0, \xi^1,\xi^2,\xi^3)}
+
+\newcommand{\argtxiv}{(t, \vec{\xi})}
+\newcommand{\argtoxiv}{(t_0, \vec{\xi})}
+
+
+\newcommand{\argtx}{(t, x^1,x^2,x^3)}
+\newcommand{\argtox}{(t_0, x^1,x^2,x^3)}
+
+\newcommand{\argtxv}{(t, \vec{x})}
+\newcommand{\argtoxv}{(t_0, \vec{x})}
+
+
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pdk}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+
+
+\title[]{Классические модели механики жидкости и газа в рамках континуального подхода}
+
+\author[]{ {\em Верещагин Антон Сергеевич}
+\\
+канд. физ.-мат. наук, старший преподаватель\\
+\bigskip
+Кафедра аэрофизики и газовой динамики ФФ НГУ}
+
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{../img/background.png}}
+
+\begin{document}
+	
+\frame{\titlepage}
+
+
+\frame{
+	\frametitle{Аннотация}
+	\parbox{\textwidth}{
+		Жидкость, газ, твёрдое тело основные отличия. Идеальные, не идеальные и линейные и нелинейные среды. Модели идеальной несжимаемой жидкости, идеального политропного нетеплопроводного газа, вязкой несжимаемой жидкости, вязкого сжимаемого теплопроводного газа.
+	}
+}
+
+\frame{
+	\frametitle{ Жидкость, газ, твёрдое тело }
+	
+	\begin{exampleblock}{}
+		\parbox{\textwidth}{
+			\centering
+			\Huge
+			В чём отличие?
+		}
+	\end{exampleblock}
+	
+}
+
+
+\frame{
+	\frametitle{ Жидкость, газ, твёрдое тело }
+	
+	\begin{tabular}{p{2.5cm}|p{2cm}|p{2cm}|p{2cm}}
+		\bf Свойство &  \bf  Газ & \bf Жидкость&  \bf Твёрдое тело \\
+		\hline
+		
+		\em Сжимаемость & сильная & очень слабая &  практически отсутствует \\
+		\hline
+		\em Анизотропия &  нет & нет & бывает \\
+		\hline
+		\em Внутренние напряжения & функции градиента скорости (при наличие вязкости) & функции градиента скорости (при наличии вязкости) & функции градиента перемещений \\
+		
+		
+	\end{tabular}
+	
+}
+
+\frame{
+	\frametitle{ Идеальные и не идеальные среды }
+	
+	\begin{columns}
+		\begin{column}{0.7\textwidth}
+			\begin{exampleblock}{Идеальная среда}
+				\parbox{\textwidth}{
+					Идеальная среда -- это такая среда, в которой отсутствует тангенциальная составляющая вектора напряжения $\vec{\sigma}_{n\tau}$ на любой площадке с нормалью $\vec{n}$, отвечающая за трение между слоями сплошной среды. При этом 
+					\[
+					\vec{\sigma}_{n}\argxv = -p\argxv\vec{n}.
+					\] 
+					Функция $p\argxv$ определяет давление в точке $\vec{x}$.
+				}
+			\end{exampleblock}
+		\end{column}
+		\begin{column}{0.3\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{../img/sigma_decomposition.pdf}
+			\[
+			\vec{\sigma}_n = \vec{\sigma}_{nn}+\vec{\sigma}_{n\tau}
+			\]
+		\end{column}
+	\end{columns}
+}
+
+\frame{
+	\frametitle{ Линейные и нелинейные среды }
+	
+	\begin{exampleblock}{Линейность среды}
+		\parbox{\textwidth}{
+			Сплошная среды называется \alert{линейной}, если имеет место линейная зависимость между напряжениями возникающими в ней и изменениями деформаций или изменениями скоростей деформаций.
+			
+			\medskip
+			Для {\em твёрдых тел} имеет место обобщённый закон Гука:
+			\[
+			\sigma_{ij} = C_{ijkm}\varepsilon_{km},\quad
+			\varepsilon_{km} = \frac{1}{2}\left(\pd{u_k}{x_m} + \pd{u_m}{x_k} \right).
+			\]
+			
+			\medskip
+			Для {\em жидкостей или газов}:
+			\[
+			\sigma_{ij} = -p\delta_{ij} +  D_{ijkm}e_{km},\quad
+			e_{km} = \frac{1}{2}\left(\pd{v_k}{x_m} + \pd{v_m}{x_k} \right).
+			\]
+			 Такие жидкости и газы называются \alert{ньютоновскими}. 
+			
+			
+		}
+		
+	\end{exampleblock}
+	
+}
+
+\frame{
+	\frametitle{ Идеальная несжимаемая жидкость }
+	
+	\begin{exampleblock}{Основные допущения}
+		\parbox{\textwidth}{
+		\begin{itemize}[partopsep=1pt,label=\textbullet]
+		\item Постоянная плотность среды
+		\[
+			\rho=const
+		\]
+			
+		\item Напряжение на площадке c произвольной нормалью одинаково и направлено вдоль неё
+		\[
+		\sigma_{ij} = -p \delta_{ij}.
+		\]
+		
+		В этом случае для любого вектора $\vec{n}$ единичной длины
+		\[
+		\vec{\sigma}_n = \vec{n} \cdot \sigma = -p\vec{n}.
+		\]
+		
+			
+		\end{itemize}	
+			
+		}
+	\end{exampleblock}
+	
+}
+
+
+
+
+\frame{
+	\frametitle{ Идеальная несжимаемая жидкость }
+	
+	\begin{exampleblock}{Уравнения Эйлера}
+		\parbox{\textwidth}{
+
+			
+			\[
+			\operatorname{div}	\vec{v} = 0,
+			\]
+			\[
+			\frac{d\vec{v}}{dt} = -\frac{1}{\rho} \nabla p + \vec{f},
+			\]
+		}
+	\end{exampleblock}
+
+
+	\begin{exampleblock}{Неизвестные функции}
+		\parbox{\textwidth}{
+		
+			Четыре искомых дифференцируемых функции, определённые в области $\Omega \subset R \times R^3$ :
+			\begin{itemize}[partopsep=1pt,label=]
+				\item
+			 $\vec{v}\argtxv = v_1\argtxv\vec{e}_1+ v_2\argtxv\vec{e}_2 + v_3\argtxv\vec{e}_3$,
+			 
+			 \item 
+			 $p = p\argtxv$.
+			 
+			\end{itemize}
+		}
+	\end{exampleblock}
+
+	\begin{exampleblock}{Заданные параметры}
+		\parbox{\textwidth}{
+			$\rho$ -- плотность жидкости; $\vec{f}=\vec{f}\argtxv$  -- вектор массовых сил.
+		}
+	\end{exampleblock}
+}
+
+
+
+\frame{
+	\frametitle{ Идеальный политропный нетеплопроводный газ }
+	
+	\begin{exampleblock}{Основные допущения}
+		\parbox{\textwidth}{
+			\begin{itemize}[partopsep=1pt,label=\textbullet]
+				\item
+					Уравнение состояния идеального газа:
+					\[
+						p = \rho R_1 T,
+					\]
+					где $p$, $\rho$, $T$ -- давление, плотность и температура газа; $R_1$ -- газовая постоянная для выбранного газа.
+					
+				\item
+					Линейная связь между удельной внутренней энергией и температурой:
+					\[
+					\varepsilon = C_V T,
+					\] 
+					где $C_V$ -- коэффициент теплоёмкости при постоянном объёме.
+												
+				\item Напряжение на площадке c произвольной нормалью одинаково и направлено вдоль неё
+				\[
+				\sigma_{ij} = -p \delta_{ij}.
+				\]
+				
+			\end{itemize}	
+			
+		}
+	\end{exampleblock}
+	
+}
+
+\frame{
+	\frametitle{ Идеальный политропный нетеплопроводный газ }
+	
+	\begin{exampleblock}{Основные уравнения}
+		\parbox{\textwidth}{
+			\[
+			\frac{d\rho}{dt} +  \rho \operatorname{div}	\vec{v} = 0,\quad
+			\frac{d\vec{v}}{dt} = -\frac{1}{\rho} \nabla p,
+			\]
+			\[
+			C_V \frac{dT}{dt} - \frac{p}{\rho^2} \frac{d\rho}{dt} =0.
+			\]
+		}
+	\end{exampleblock}
+	
+	
+	\begin{exampleblock}{Неизвестные функции}
+		\parbox{\textwidth}{
+			
+			Пять искомых дифференцируемых функции, определённых в области $\Omega \subset R \times R^3$ :	$\vec{v}\argtxv = v_1\argtxv\vec{e}_1+ v_2\argtxv\vec{e}_2 + v_3\argtxv\vec{e}_3$, $\rho = \rho\argtxv$, $T=T\argtxv$.
+				
+
+		}
+	\end{exampleblock}
+	
+	\begin{exampleblock}{Дополнительные соотношения}
+		\parbox{\textwidth}{
+			\[
+				p = \rho R_1 T, \quad
+				\varepsilon = C_V T,
+			\]			
+			где $R_1$, $C_V$ -- заданные параметры газа.
+		}
+	\end{exampleblock}
+}
+
+
+\frame{
+	\frametitle{ Вязкая несжимаемая жидкость }
+	
+	\begin{exampleblock}{Основные допущения}
+		\parbox{\textwidth}{
+			\begin{itemize}[partopsep=1pt,label=\textbullet]
+				\item
+				Плотность жидкости постоянна
+				\[
+				\rho = const.
+				\]
+				\item Тензор напряжения имеет вид
+				
+				\[
+				\sigma_{ij} = -p \delta_{ij} + 2 \mu  e_{ij},\quad
+				e_{ij} = \frac{1}{2}\left( \pd{v_i}{x_j}+\pd{v_j}{x_i} \right),
+				\]
+				где $p$ -- давление жидкости; $\mu$  -- коэффициент динамической вязкости; $e_{ij}$ -- тензор скоростей деформаций.
+				
+				
+
+			\end{itemize}	
+			
+		}
+	\end{exampleblock}
+	
+}
+
+\frame{
+	\frametitle{ Вязкая несжимаемая жидкость }
+	
+	\begin{exampleblock}{Уравнения Навье-Стокса}
+		
+		
+		\parbox{\textwidth}{
+			\[
+			\operatorname{div}	\vec{v} = 0,
+			\]
+			\[
+			\frac{d\vec{v}}{dt} = -\frac{1}{\rho} \nabla p + \nu \Delta \vec{v} + \vec{f}.
+			\]
+%			\[
+%			\Delta  = \pdk{}{x_1} + \pdk{}{x_2} + \pdk{}{x_3}.
+%			\]
+		}
+	\end{exampleblock}
+	
+	
+	\begin{exampleblock}{Неизвестные функции}
+		\parbox{\textwidth}{
+			
+			Четыре искомых дифференцируемых функции, определённых в области $\Omega \subset R \times R^3$ :	$\vec{v}\argtxv = v_1\argtxv\vec{e}_1+ v_2\argtxv\vec{e}_2 + v_3\argtxv\vec{e}_3$, $p = p\argtxv$.
+			
+			
+		}
+	\end{exampleblock}
+	
+	\begin{exampleblock}{Параметры среды}
+		\parbox{\textwidth}{
+			$\rho$ -- плотность; $\mu$ -- динамическая вязкость; $\nu=\mu/\rho$ -- кинематическая вязкость  жидкости; $f\argtxv$ -- заданный вектор массовых сил. 
+			
+		}
+	\end{exampleblock}
+}
+
+\frame{
+	\frametitle{ Вязкий сжимаемый теплопроводный газ }
+		\begin{exampleblock}{Основные допущения}
+		\parbox{\textwidth}{
+			\begin{itemize}[partopsep=1pt,label=\textbullet]
+				\item
+				Уравнение состояния  газа:
+				$p = p(\rho, T)$.
+					
+				\item
+				Калорическое уравнение состояния: $\varepsilon = \varepsilon(\rho, T)$.
+
+				\item Тензор напряжения имеет вид
+				\[
+				\sigma_{ij} = -p \delta_{ij} + 2 \mu  e_{ij} + \lambda \delta_{ij} \operatorname{div} \vec{v},\quad
+				e_{ij} = \frac{1}{2}\left( \pd{v_i}{x_j}+\pd{v_j}{x_i} \right),
+				\]
+				где $\lambda$, $\mu$  -- коэффициенты объёмной и динамической вязкостей; $e_{ij}$ -- тензор скоростей деформаций.
+				
+				\item Закон Фурье теплопроводности газа 
+				\[
+				\vec{q} = -\kappa \nabla T,
+				\]
+				где $\kappa$ -- коэффициент теплопроводности.
+				
+				
+			\end{itemize}	
+			
+		}
+	\end{exampleblock}
+	
+}
+
+
+\frame{
+	\frametitle{ Вязкий сжимаемый теплопроводный газ }
+	
+	\begin{exampleblock}{Уравнения Навье-Стокса-Дюгема}
+		
+		
+		\parbox{\textwidth}{
+			\[
+			\frac{d\rho}{dt}+\rho \operatorname{div}	\vec{v} = 0,
+			\]
+			\[
+			\rho\frac{d\vec{v}}{dt} = -\nabla p + \mu \Delta \vec{v} + 
+			(\lambda+\mu) \nabla (\operatorname{div} \vec{v})+
+			\rho \vec{f},
+			\]
+			\[
+			\rho\frac{d\varepsilon}{dt} = -p \operatorname{div} \vec{v} +
+			\lambda (\operatorname{div} \vec{v})^2 + 2\mu e_{ij}e_{ij} + \kappa \Delta T.
+			\]
+			%			\[
+			%			\Delta  = \pdk{}{x_1} + \pdk{}{x_2} + \pdk{}{x_3}.
+			%			\]
+		}
+	\end{exampleblock}
+	
+	
+	\begin{exampleblock}{Замыкающие соотношения}
+		\parbox{\textwidth}{
+			\[
+				p = p(\rho, T),\quad
+				\varepsilon = \varepsilon(\rho, T).
+			\]
+		}
+	\end{exampleblock}
+	
+	\begin{exampleblock}{Параметры среды}
+		\parbox{\textwidth}{
+			$\lambda$, $\mu$ -- объемная и динамическая вязкости;  $\kappa$ -- коэффициент теплопроводности; $\vec{f}$ -- вектор массовых сил. 
+			
+		}
+	\end{exampleblock}
+}
+
+\frame{
+	\frametitle{ Литература }
+	\begin{itemize}[partopsep=1pt,label=\textbullet]
+	\item {\em Дж. Мейз}. Теория и задачи механики сплошных сред. М.: Изд-во <<Мир>>, 1974.
+	\end{itemize}
+}
+
+
+
+\end{document}
