@@ -33,6 +33,8 @@
 %\let\olditem\item
 %\renewcommand\item{\olditem\justifying}
 
+\usepackage{ mathrsfs }
+\newcommand{\Rho}{\mathscr{P}}
 
 \newcommand{\argxi}{(\xi^1,\xi^2,\xi^3)}
 \newcommand{\argx}{(x^1,x^2,x^3)}
@@ -61,8 +63,11 @@
 \newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
 \newcommand{\pdk}[2]{\frac{\partial^2 #1}{\partial #2^2}}
 
+\newcommand{\grad}{\operatorname{grad}}
+\newcommand{\rot}{\operatorname{rot}}
+\newcommand{\divo}{\operatorname{div}}
 
-\title[]{Сильные разрывы в сплошной среде}
+\title[]{Общая теория движения жидких и газообразных сред}
 
 \author[]{ {\em Верещагин Антон Сергеевич}
 \\
@@ -86,12 +91,255 @@
 
 
 \frame{
+	\frametitle{ Модель идеального баротропного газа }
+	
+	\begin{exampleblock}{ Основные уравнения }
+		\parbox{\textwidth}{
+			\[
+			\pd{\rho}{t} + \operatorname{div}(\rho \vec{v}) = 0,
+			\]
+			\[
+			\pd{\vec{v}}{t} + (\vec{v}\cdot\nabla) \vec{v} = -\frac{1}{\rho} \nabla p + \vec{f},
+			\]
+			где $\rho$, $p$, $\vec{v}$ -- плотность, давление и скорость среды, заданные в Эйлеровой системе координат ($x$, $y$, $z$); $\vec{f}$ -- вектор объёмных сил.
+			
+		}
+	\end{exampleblock}
+	\begin{exampleblock}{Определение}
+		\parbox{\textwidth}{
+			Среда называется \alert{баротропной}, если между плотностью и давлением имеет место соотношение в общем виде
+			\[
+				p = p(\rho).
+			\]
+					
+		}
+	\end{exampleblock}	
+}
+
+\frame{
+	\frametitle{Примеры баротропных течений}
+	\begin{itemize}[partopsep=1pt,label=\textbullet]
+	\item  Изотермические течения
+			\[
+				p = \rho R T,
+			\]
+			где $R$ -- газовая постоянная; $T$ -- заданная температура.
+			
+	\item Изоэнтропические течения политропного газа
+		\[
+		p = A(S) \rho^\gamma,
+		\]
+		где $S$ -- энтропия; $\gamma=C_p/C_V$ -- показатель политропы.
+		
+	\item Идеальная жидкость
+			\[
+				\rho = const.
+			\]
+			
+	
+	\end{itemize}
+
+}
+
+\frame{
+	\frametitle{Преобразование конвективной части закона движения }
+	
+	\begin{exampleblock}{Предпосылки}
+		\parbox{\textwidth}{
+			Из формулы 
+			\[
+			\operatorname{grad} (\vec{a}\cdot\vec{b}) = (\vec{b}\cdot\nabla)\vec{a}+
+			(\vec{a}\cdot\nabla)\vec{b}+
+			\vec{b} \times \operatorname{rot} \vec{a} +
+			\vec{a} \times \operatorname{rot} \vec{b}
+			\]
+			следует, что
+			\[
+			\operatorname{grad} 
+			\left( \frac{\vec{v}^2}{2} \right) = (\vec{v} \cdot \nabla) \vec{v} +
+			\vec{v}\times \operatorname{rot} \vec{v}.
+			\]
+			
+		}
+	\end{exampleblock}
+	
+	\begin{exampleblock}{Модификация уравнений}
+		\parbox{\textwidth}{
+			\[
+			\pd{\vec{v}}{t} + \operatorname{grad} \left( \frac{\vec{v}^2}{2} \right) + \operatorname{rot} \vec{v} \times \vec{v} = \vec{f} - \frac{1}{\rho} \operatorname{grad} p.
+			\]
+		}
+	\end{exampleblock}
+	
+}
+
+\frame{
+	\frametitle{ Функция давления $\Rho(p)$ }
+	\begin{exampleblock}{Определение}
+		\parbox{\textwidth}{
+			Для баротропного течения, если существует $\rho=\rho(p)$, то определим
+			\[
+				\Rho(p) = \int\limits_{p_0}^{p} \frac{dp}{\rho}.
+			\]
+		}
+	\end{exampleblock}
+
+	\begin{exampleblock}{Свойство}
+		\parbox{\textwidth}{
+			Используя соотношение
+			\[
+				\pd{}{x}\Rho(p) = \pd{\Rho}{p} \pd{p}{x} = \frac{1}{\rho}  \pd{p}{x},
+			\]
+			получим
+			\[
+				\grad \Rho(p) =  \frac{1}{\rho} \grad p.
+			\]
+			
+		}
+	\end{exampleblock}
+}
+
+
+\frame{
+	\frametitle{ Форма Громеки-Ламба уравнения движения }
+	
+	\begin{exampleblock}{Основные уравнения}
+		\parbox{\textwidth}{
+			Используя преобразование конвективной составляющей уравнения движения и  введённую функцию давления получим уравнения движения в форме Громеки-Ламба
+			\[
+				\pd{\vec{v}}{t} + \grad E +
+				\vec{\Omega} \times \vec{v} = 0,
+			\]
+			где
+			\[
+				E = \frac{\vec{v}^2}{2} + \Rho + \Pi,\quad
+				\vec{\Omega} = \rot \vec{v}.
+			\]
+			
+			Здесь $\Pi$ -- потенциал массовых сил $\vec{f} = -\grad \Pi$.
+		}
+	\end{exampleblock}
+
+	\begin{exampleblock}{Определение}
+		\parbox{\textwidth}{
+			$E$ -- представляет собой полную приведённую механическую энергию системы,
+			$\vec{\Omega}$ -- вектор вихря.
+		}
+	\end{exampleblock}
+	
+}
+
+\frame{
+	\frametitle{ Уравнение динамической возможности движения }
+	
+		\parbox{\textwidth}{
+			Из уравнения в форме Громеки-Ламба следует, что
+			\[
+			\pd{\vec{v}}{t} + 			\vec{\Omega} \times \vec{v} = -\grad E,
+			\]
+			поэтому
+			\[
+			\rot \left(\pd{\vec{v}}{t} + \vec{\Omega} \times \vec{v} \right) = 0.
+			\]
+		}
+
+		\parbox{\textwidth}{
+			Зная разложение для ротора векторного произведения, равного
+			\[
+				\rot(\vec{\Omega} \times\vec{v}) = (\vec{v}\cdot\nabla)\vec{\Omega} -
+				(\vec{\Omega}\cdot\nabla) \vec{v}+
+				\vec{\Omega} \divo \vec{v} -
+				\vec{v} \divo \vec{\Omega},
+			\]
+			получим, используя полную производную, уравнение динамической возможности движения 
+			\[
+			\frac{d\vec{\Omega}}{dt} = (\vec{\Omega}\cdot\nabla) \vec{v}-
+			\vec{\Omega} \divo \vec{v}.
+			\]
+			
+		}
+	
+}
+
+\frame{
+	\frametitle{ Постоянство $E$ вдоль линий тока и вихревых линий }
+
+
+	\parbox{\textwidth}{
+		Пусть $\displaystyle\pd{\vec{v}}{t}=0$, тогда, умножив уравнение движения в форме Громеки-Ламба скалярно на вектор скорости $\vec{v}$, получим
+		\[
+		\vec{v} \cdot \grad E + \vec{v} \cdot (\vec{\Omega}\times \vec{v}) = 0.
+		\]
+		
+		Второе слагаемое равно нулю, в силу определения векторного произведения, а первое является производной от $E$ вдоль линии тока $\vec{r} = \vec{r}(s)$, таких что $\displaystyle\pd{\vec{r}}{s} = \vec{v}$:
+		\[
+		\grad E \cdot  \vec{v} \cdot = \grad E \cdot \pd{\vec{r}}{s} = \pd{E}{s} = 0.
+		\]
+		
+		Аналогично, умножая уравнение движения скалярно на вектор $\Omega$, можно показать, что функция $E$ постоянна вдоль вихревых линий.
+	}
+
+	
+}
+
+
+\frame{
+	\frametitle{ Интеграл Бернулли }
+	
+	\begin{exampleblock}{Условия существования}
+		\parbox{\textwidth}{
+		\[
+			p=p(\rho),\quad
+			\pd{\vec{v}}{t} = 0.
+		\]
+			
+		}
+	\end{exampleblock}
+
+	\begin{exampleblock}{Интеграл Бернулли}
+		\parbox{\textwidth}{
+			\[
+			\frac{\vec{v}^2}{2} + \Rho(p) + \Pi = C(L),
+			\]
+			где $C(L)$ -- константа вдоль линии тока или вихревой линии.
+		}
+	\end{exampleblock}
+	
+}
+
+\frame{
+	\frametitle{ Существование интеграла Бернулли во всей исследуемой области }
+	
+	\parbox{\textwidth}{
+	Пусть в исследуемой области $\vec{\Omega} \times \vec{v} = \vec{0}$ и движение стационарно, тогда автоматически выполняется условие
+	\[
+	\frac{\vec{v}^2}{2} + \Rho(p) + \Pi = const
+	\]
+	во всей области.
+	}
+
+	\begin{exampleblock}{$\vec{\Omega} \times \vec{v} = \vec{0}$}
+		\parbox{\textwidth}{
+			\begin{itemize}[partopsep=1pt,label=$\rightarrow$]
+				\item  $\vec{v} = 0$ -- покоящееся течение (гидростатика).
+				\item $\vec{\Omega}=\rot \vec{v} = \vec{0}$ -- безвихревое или потенциальное течение.
+				\item $\vec{\Omega} \parallel \vec{v}$ -- вихревые линии совпадают с линиями тока (винтовое течение).
+				
+			\end{itemize}
+		}
+	\end{exampleblock}
+	
+}
+
+
+\frame{
 	\frametitle{ Литература }
 	\begin{itemize}[partopsep=1pt,label=\textbullet]
 		\item  %{\em Овсянников~Л.~В.} Лекции по основам газовой динамики.  Москва-Ижевск:Институт компьютерных исследований, 2003.	
 		
 	\end{itemize}
 }
+
 
 
 \end{document}
