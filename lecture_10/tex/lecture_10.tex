@@ -91,7 +91,7 @@
 
 
 \frame{
-	\frametitle{ Модель идеального баротропного газа }
+	\frametitle{ Модель баротропного течения идеального газа }
 	
 	\begin{exampleblock}{ Основные уравнения }
 		\parbox{\textwidth}{
@@ -107,7 +107,7 @@
 	\end{exampleblock}
 	\begin{exampleblock}{Определение}
 		\parbox{\textwidth}{
-			Среда называется \alert{баротропной}, если между плотностью и давлением имеет место соотношение в общем виде
+			Течение называется \alert{баротропным}, если между плотностью и давлением имеет место соотношение 
 			\[
 				p = p(\rho).
 			\]
@@ -186,7 +186,7 @@
 
 	\begin{exampleblock}{Свойство}
 		\parbox{\textwidth}{
-			Используя соотношение
+			Используя соотношения аналогичные
 			\[
 				\pd{}{x}\Rho(p) = \pd{\Rho}{p} \pd{p}{x} = \frac{1}{\rho}  \pd{p}{x},
 			\]
@@ -251,7 +251,7 @@
 				\vec{\Omega} \divo \vec{v} -
 				\vec{v} \divo \vec{\Omega},
 			\]
-			получим, используя полную производную, уравнение динамической возможности движения 
+			получим, используя полную производную, \alert{уравнение динамической возможности движения}
 			\[
 			\frac{d\vec{\Omega}}{dt} = (\vec{\Omega}\cdot\nabla) \vec{v}-
 			\vec{\Omega} \divo \vec{v}.
@@ -276,7 +276,7 @@
 		\grad E \cdot  \vec{v} \cdot = \grad E \cdot \pd{\vec{r}}{s} = \pd{E}{s} = 0.
 		\]
 		
-		Аналогично, умножая уравнение движения скалярно на вектор $\Omega$, можно показать, что функция $E$ постоянна вдоль вихревых линий.
+		Аналогично, умножая уравнение движения скалярно на вектор $\vec{\Omega}$, можно показать, что функция $E$ постоянна вдоль вихревых линий.
 	}
 
 	
@@ -284,7 +284,7 @@
 
 
 \frame{
-	\frametitle{ Интеграл Бернулли }
+	\frametitle{Интеграл Бернулли для баротропного стационарного течения идеального газа}
 	
 	\begin{exampleblock}{Условия существования}
 		\parbox{\textwidth}{
@@ -301,7 +301,11 @@
 			\[
 			\frac{\vec{v}^2}{2} + \Rho(p) + \Pi = C(L),
 			\]
-			где $C(L)$ -- константа вдоль линии тока или вихревой линии.
+			где $C(L)$ -- константа вдоль линии тока или вихревой линии; $\Rho(p)$ -- функция давления; $\Pi$~-- потенциал объёмных сил
+			\[
+			\Rho(p) = \int\limits_{p_0}^{p} \frac{dp}{\rho},\quad
+			\vec{f} = -\nabla \Pi.
+			\]
 		}
 	\end{exampleblock}
 	
@@ -328,6 +332,162 @@
 			\end{itemize}
 		}
 	\end{exampleblock}
+	
+}
+
+\frame{
+	\frametitle{ Баротропное безвихревое течение }
+	
+	\begin{exampleblock}{Определение}
+		\parbox{\textwidth}{
+			Течение называется \alert{безвихревым} или \alert{потенциальным}, если 
+			\[
+				\vec{\Omega} = \rot \vec{v} = \vec{0}
+			\]
+			или 
+			\[
+				\vec{v} = \nabla \varphi,
+			\]
+			где $\varphi\argxv$ -- потенциал скорости. 
+			
+		}
+	\end{exampleblock}
+
+	\begin{exampleblock}{Уравнение движения в форме  Громеки-Ламба для потенциального течения}
+		\parbox{\textwidth}{
+			
+		\[
+			\grad \left( \pd{\varphi}{t} + \frac{(\nabla\varphi)^2}{2} + \Rho + \Pi\right) = 0,
+		\]
+		
+		 Слагаемое $\vec{\Omega} \times \vec{v}=0$ в силу того, что $\vec{\Omega}=\vec{0}$.
+		}
+	\end{exampleblock}
+	
+}
+
+
+\frame{
+	\frametitle{ Интеграл Коши для баротропного потенциального течения идеального газа }
+	
+		\begin{exampleblock}{Условия существования}
+		\parbox{\textwidth}{
+			\[
+			p=p(\rho),\quad
+			\vec{v} = \nabla\varphi.
+			\]
+			
+		}
+	\end{exampleblock}
+	
+	\begin{exampleblock}{Интеграл Коши}
+		\parbox{\textwidth}{
+			\[
+			\pd{\varphi}{t} + \frac{(\nabla\varphi)^2}{2} + \Rho + \Pi = F(t),
+			\]
+			где $F(t)$ -- постоянная функция во всей области, различающаяся в различные моменты времени; $\Rho(p)$ -- функция давления; $\Pi$ -- потенциал объёмных сил
+			\[
+			\Rho(p) = \int\limits_{p_0}^{p} \frac{dp}{\rho},\quad
+			\vec{f} = -\nabla \Pi.
+			\]
+		}
+	\end{exampleblock}
+	
+}
+
+\frame{
+	\frametitle{ Кинетическая энергия безвихревого стационарного течения  идеальной жидкости}
+	\begin{exampleblock}{Определение}
+		\parbox{\textwidth}{
+			Рассмотрим ограниченный односвязный объем $\omega$, в котором реализуется потенциальное течение c потенциалом $\varphi$ идеального жидкости ($\rho=const$). Тогда кинетическая энергия этого объёма будет задаваться формулой
+			\[
+			T = \frac{1}{2}\int\limits_\omega\rho\vec{v}^2 d\omega=
+			\frac{1}{2}\rho\int\limits_\omega\left(
+			\left(\pd{\varphi}{x}\right)^2+
+			\left(\pd{\varphi}{y}\right)^2+
+			\left(\pd{\varphi}{z}\right)^2
+			\right)d\omega.
+			\]
+		}
+	\end{exampleblock}
+
+}
+
+
+\frame{
+	\frametitle{Кинетическая энергия безвихревого стационарного течения идеальной жидкости  }
+		\begin{exampleblock}{Формула Грина}
+		\parbox{\textwidth}{
+			\[
+			\int\limits_\omega \left(
+			\pd{\varphi}{x}\pd{\varphi'}{x}+
+			\pd{\varphi}{y}\pd{\varphi'}{y}+
+			\pd{\varphi}{z}\pd{\varphi'}{z}
+			\right) d\omega=
+			-\int\limits_S \varphi\pd{\varphi'}{n} dS  -
+			\]
+			\[
+			-\int\limits_{\omega} \varphi \left(
+			\pdk{\varphi'}{x} +\pdk{\varphi'}{y}+\pdk{\varphi'}{z}	
+			\right) d\omega,
+			\]
+			где $S$ -- поверхность $\omega$; $\vec{n}$ -- вектор внешней единичной нормали.
+		}
+	\end{exampleblock}
+
+	\begin{exampleblock}{Уравнение неразрывности}
+		\parbox{\textwidth}{
+			Подставляя в уравнение неразрывности $\vec{v} = \nabla \varphi$ и $\rho=const$, получим
+			\[
+			\Delta \varphi = \pdk{\varphi}{x}+\pdk{\varphi}{y}+\pdk{\varphi}{z} = 0.
+			\]
+		}
+	\end{exampleblock}
+}
+
+
+\frame{
+	\frametitle{ Кинетическая энергия безвихревого стационарного течения идеальной жидкости }
+
+
+	\begin{exampleblock}{Кинетическая энергия}
+		\parbox{\textwidth}{
+			Используя формулу Грина и уравнение неразрывности получим
+			\[
+			T = -\frac{1}{2}\rho\int\limits_S\varphi\pd{\varphi}{n}dS.
+			\]
+			
+			Таким образом, кинетическая энергия объёма зависит только от значений потенциала и его производной на границе. Если на границе реализуется условие непротекания  $\displaystyle\pd{\varphi}{n} = 0$ или потенциал постоянен (а он определяется с точностью до константы), то жидкость внутри односвязного объёма покоится.
+			
+		}
+	\end{exampleblock}
+}
+
+\frame{
+	\frametitle{ Теорема В. Томсона }
+	
+	\small
+	
+	\begin{exampleblock}{Теорема}
+		\parbox{\textwidth}{
+			Кинетическая энергия несжимаемой жидкости, движущейся в односвязном объёме с потенциалом скоростей, меньше кинетической энергиии во всяком другом движении, при котором на границах объёма жидкость обладает движением, одинаковым с безвихревым, внутри же обладает вихрями.
+			
+		}
+	\end{exampleblock}
+
+	\begin{exampleblock}{Математическая формулировка}
+		\parbox{\textwidth}{
+			Рассмотрим два стационарных течения идеальной жидкости с плотностью $\rho$, одно безвихревое с потенциалом $\varphi$, другое -- не потенциальное со скоростью $\vec{v}$. Рассмотрим односвязный объём $\omega$ с границей $S$, такой что на нем выполняется условие
+			\[
+			\vec{v}\cdot\vec{n}|_S = \left. \pd{\varphi}{n} \right|_S.
+			\]
+			Тогда $T'>T$, где $T$, $T'$ - кинетическая энергия объема $\omega$ для потенциального и вихревого течений соответственно.
+		}
+	\end{exampleblock}
+}
+
+\frame{
+	\frametitle{ Теорема В. Томсона: доказательство }
 	
 }
 
