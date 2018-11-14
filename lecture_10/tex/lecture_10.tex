@@ -85,7 +85,7 @@
 \frame{
 	\frametitle{Аннотация}
 	\parbox{\textwidth}{
-
+	Баротропные течения. Функция давления. Форма Громеки-Ламба для уравнения движения. Уравнения динамической возможности движения. Интегралы Бернулли и Коши и условия их существования.  Кинетическая энергия безвихревого течения. Теорема Томсона.
 	}
 }
 
@@ -402,11 +402,11 @@
 			Рассмотрим ограниченный односвязный объем $\omega$, в котором реализуется потенциальное течение c потенциалом $\varphi$ идеального жидкости ($\rho=const$). Тогда кинетическая энергия этого объёма будет задаваться формулой
 			\[
 			T = \frac{1}{2}\int\limits_\omega\rho\vec{v}^2 d\omega=
-			\frac{1}{2}\rho\int\limits_\omega\left(
+			\frac{1}{2}\rho\int\limits_\omega\left[
 			\left(\pd{\varphi}{x}\right)^2+
 			\left(\pd{\varphi}{y}\right)^2+
 			\left(\pd{\varphi}{z}\right)^2
-			\right)d\omega.
+			\right]d\omega.
 			\]
 		}
 	\end{exampleblock}
@@ -466,8 +466,6 @@
 \frame{
 	\frametitle{ Теорема В. Томсона }
 	
-	\small
-	
 	\begin{exampleblock}{Теорема}
 		\parbox{\textwidth}{
 			Кинетическая энергия несжимаемой жидкости, движущейся в односвязном объёме с потенциалом скоростей, меньше кинетической энергиии во всяком другом движении, при котором на границах объёма жидкость обладает движением, одинаковым с безвихревым, внутри же обладает вихрями.
@@ -475,27 +473,153 @@
 		}
 	\end{exampleblock}
 
-	\begin{exampleblock}{Математическая формулировка}
+
+}
+
+\frame{
+	\frametitle{ Теорема В. Томсона }
+		\begin{exampleblock}{Математическая формулировка}
 		\parbox{\textwidth}{
-			Рассмотрим два стационарных течения идеальной жидкости с плотностью $\rho$, одно безвихревое с потенциалом $\varphi$, другое -- не потенциальное со скоростью $\vec{v}$. Рассмотрим односвязный объём $\omega$ с границей $S$, такой что на нем выполняется условие
+			Рассмотрим два стационарных течения идеальной жидкости с плотностью $\rho$, одно -- безвихревое с потенциалом $\varphi$, другое -- не потенциальное со скоростью $\vec{v}$. Рассмотрим односвязный объём $\omega$ с границей $S$, такой что на нем выполняется условие равенства нормальных скоростей
 			\[
-			\vec{v}\cdot\vec{n}|_S = \left. \pd{\varphi}{n} \right|_S.
+			\vec{v}\cdot\vec{n}|_S = \left. \nabla\varphi \cdot \vec{n} \right|_S,
 			\]
-			Тогда $T'>T$, где $T$, $T'$ - кинетическая энергия объема $\omega$ для потенциального и вихревого течений соответственно.
+			где $\vec{n}$ -- вектор внешней единичной нормали к $S$.
+			Тогда 
+			\[
+				T'>T,
+			\] 
+			где $T$, $T'$ - кинетическая энергия объёма $\omega$ для потенциального и вихревого течений соответственно.
 		}
 	\end{exampleblock}
+}
+
+
+\frame{
+	\frametitle{ Теорема В. Томсона: доказательство }
+	\parbox{\textwidth}{
+	Рассмотрим разность
+	\[
+	T'-T = 
+	\frac{1}{2}\rho\int\limits_\omega \vec{v}^2 d\omega - 
+	\frac{1}{2}\rho\int\limits_\omega (\nabla \varphi)^2 d\omega=
+	\]	
+	\[
+	=
+	\frac{1}{2}\rho\int\limits_\omega 2\left[ 
+	\pd{\varphi}{x}\left(v_x -\pd{\varphi}{x} \right)+
+	\pd{\varphi}{y}\left(v_y -\pd{\varphi}{y} \right)+
+	\pd{\varphi}{z}\left(v_z -\pd{\varphi}{z} \right)
+	\right] d\omega +
+	\]
+	\[ 
+	+
+	\frac{1}{2}\rho\int\limits_\omega \left[ 
+	\left(v_x -\pd{\varphi}{x} \right)^2+
+	\left(v_y -\pd{\varphi}{y} \right)^2+
+	\left(v_z -\pd{\varphi}{z} \right)^2
+	\right] d\omega.
+	\]
+	
+	Рассмотрим отдельно первое слагаемое.
+	}
+
+	
+}
+
+\frame{
+	\frametitle{Теорема В. Томсона: доказательство }
+	
+	\parbox{\textwidth}{
+		
+		В силу того, что жидкость несжимаемая и справедливы уравнения неразрывности
+		\[
+		\divo \vec{v} = 0,\quad
+		\Delta \varphi = 0,
+		\]
+		то
+		\[
+		\int\limits_\omega \left[ 
+		\pd{\varphi}{x}\left(v_x -\pd{\varphi}{x} \right)+
+		\pd{\varphi}{y}\left(v_y -\pd{\varphi}{y} \right)+
+		\pd{\varphi}{z}\left(v_z -\pd{\varphi}{z} \right)
+		\right] d\omega	=
+		\]
+		\[
+			=
+			\int\limits_\omega \left\{
+			\pd{}{x} \left[ \varphi\left(v_x - \pd{\varphi}{x}\right) \right]+
+			\pd{}{y} \left[ \varphi\left(v_y - \pd{\varphi}{y}\right) \right]+ 
+			\right.
+		\]
+		\[
+			\left.
+			+\pd{}{z} \left[ \varphi\left(v_z - \pd{\varphi}{z}\right) \right]
+			\right\} d\omega.
+		\]
+	}
+	
+
 }
 
 \frame{
 	\frametitle{ Теорема В. Томсона: доказательство }
 	
+	\parbox{\textwidth}{
+	В силу теоремы Гаусса-Остроградского 
+	\[
+	\int\limits_\omega \left\{
+	\pd{}{x} \left[ \varphi\left(v_x - \pd{\varphi}{x}\right) \right]+
+	\pd{}{y} \left[ \varphi\left(v_y - \pd{\varphi}{y}\right) \right]+ 
+	\right.
+	\]
+	\[
+	\left.
+	+\pd{}{z} \left[ \varphi\left(v_z - \pd{\varphi}{z}\right) \right]
+	\right\} d\omega=
+	\]	
+	\[
+		=
+		\int\limits_S	\varphi \left[
+		\left(v_x - \pd{\varphi}{x}\right) n_1+
+		\left(v_y - \pd{\varphi}{y}\right) n_2+		
+		\left(v_z - \pd{\varphi}{z}\right) n_3
+		\right] dS,
+	\]
+	где $\vec{n}=(n_1, n_2, n_3)$ -- вектор внешней единичной нормали к $S$. И это выражение \alert{равно $0$} из-за равенства нормальных составляющих скоростей на $S$ (по условию теоремы).
+	}
+	
+}
+
+\frame{
+	\frametitle{ Теорема В. Томсона: доказательство }
+	
+	\parbox{\textwidth}{
+		Таким образом,
+		\[
+		T'-T = 
+		\frac{1}{2}\rho\int\limits_\omega \left[ 
+		\left(v_x -\pd{\varphi}{x} \right)^2+
+		\left(v_y -\pd{\varphi}{y} \right)^2+
+		\left(v_z -\pd{\varphi}{z} \right)^2
+		\right] d\omega
+		\]
+		и
+		\[
+		T'-T>0,
+		\]
+		если скорость $\vec{v}$ хоть в одной точке не совпадает с потенциалом $\nabla\varphi$.	Что и требовалось доказать.	
+	}
+
 }
 
 
 \frame{
 	\frametitle{ Литература }
 	\begin{itemize}[partopsep=1pt,label=\textbullet]
-		\item  %{\em Овсянников~Л.~В.} Лекции по основам газовой динамики.  Москва-Ижевск:Институт компьютерных исследований, 2003.	
+		\item {\em Кочин~Н.~Е., Кибель~И.~А., Розе~Н.~В.} Теоретическая гидромеханика. М.:Гос. издат. физ.-мат. лит., 1963.
+			
+		\item {\em Лойцянский~Л.~Г.} Механика жидкости и газ: Учеб. для вузов. -- 7-е изд., испр. М.:Дрофа, 2003.	
 		
 	\end{itemize}
 }
