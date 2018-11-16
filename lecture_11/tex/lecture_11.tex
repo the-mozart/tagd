@@ -324,6 +324,264 @@
 	
 	
 }
+
+\frame{
+	\frametitle{ Теорема о производной циркуляции скорости }
+	
+	\begin{exampleblock}{Теорема}
+		\parbox{\textwidth}{
+			Производная по времени от циркуляции скорости $\vec{v}$ по некоторому замкнутому контуру равна циркуляции от ускорения $d\vec{v}/dt$ по тому же контуру
+			
+			\[
+			\frac{d}{dt}\oint\limits_L\vec{v}\cdot d\vec{s} =
+			\oint\limits_L\frac{d\vec{v}}{dt}\cdot d\vec{s}.
+			\]
+		}
+	\end{exampleblock}
+	
+}
+
+\frame{
+	\frametitle{ Теорема о производной циркуляции скорости: доказательство }
+	
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\includegraphics[width=\textwidth]{../img/J_def.pdf}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\parbox{\textwidth}{
+				Рассмотрим в момент времени $t_0$ какую-нибудь линию $A_0B_0$, проведённую в жидкости, состоящую из жидких частиц, которая в момент времени $t$ перейдёт в другую линию $AB$. Рассмотрим линейный интеграл от скорости по этой кривой
+
+			}
+		
+	
+		\end{column}
+	\end{columns}
+
+	\medskip
+	\[
+	J = \int\limits_{AB}\vec{v}\cdot d\vec{s}
+	\]
+
+	
+}
+
+\frame{
+	\frametitle{ Теорема о производной циркуляции скорости: доказательство }
+	\parbox{\textwidth}{
+		В момент времени $t'=t+\Delta t$ линия $AB$ перейдёт в $A'B'$ и можно определить $J'$
+		\[
+		J' =  \int\limits_{A'B'}\vec{v}'\cdot d\vec{s}
+		\]
+		
+		\pause
+		Определим производную по времени от линейного интеграла	$\displaystyle\frac{dJ}{dt}$ как 
+		\[
+		\frac{dJ}{dt} = \lim\limits_{\Delta\to 0}\frac{J'-J}{\Delta t}.
+		\]
+	}
+}
+
+\frame{
+	\frametitle{ Теорема о производной циркуляции скорости: доказательство }
+	
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\includegraphics[width=\textwidth]{../img/J_def.pdf}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\parbox{\textwidth}{
+				Параметризуем отрезок $A_0B_0$ параметром $\sigma$ равным расстоянию от выбранной точки $M_0$ вдоль дуги $A_0M_0$. Тогда точку $M$ отрезка $AB$ в момент времени $t$ можно однозначно определить с помощью следующих соотношений:
+			}
+			
+			
+		\end{column}
+	\end{columns}
+	
+	\[
+		x = x(\sigma, t),\quad
+		y = y(\sigma, t),\quad	
+		z = z(\sigma, t)
+	\]
+	или
+	\[
+	\vec{r} = \vec{r}(\sigma,t)\quad
+	(0\leq \sigma \leq \sigma_0, \, t \geq t_0),
+	\]
+	при этом
+	\[
+		\vec{r}(0, t) = A,\quad
+		\vec{r}(\sigma,t) = M,\quad
+		\vec{r}(\sigma_0,t)=B.
+	\]
+	
+	
+}
+
+\frame{
+	\frametitle{  Теорема о производной циркуляции скорости: доказательство }
+	
+	\parbox{\textwidth}{
+	Скорости жидких частиц отрезка $AB$ также можно параметризовать через $\sigma$ и $t$:
+	\[
+		\vec{v} = \vec{v}(\sigma,t).
+	\]
+		
+	\pause
+	Линейный интеграл $J$, используя $\sigma$ и $t$ можно переписать форме
+	\[
+	J = \int\limits_{0}^{\sigma_0}
+	\left(v_x\pd{x}{\sigma} + v_y\pd{y}{\sigma} + v_z\pd{z}{\sigma}\right)d\sigma=
+	\int\limits_{0}^{\sigma_0} \left( \vec{v} \cdot \pd{\vec{r}}{\sigma} \right) d\sigma,
+	\]
+	где предел интегрирования не зависит от переменной $t$.
+	}
+	
+}
+
+\frame{
+	\frametitle{ Теорема о производной циркуляции скорости: доказательство }
+	\parbox{\textwidth}{
+	Рассмотрим производную от $J$ по $t$:
+	\[
+	\frac{dJ}{dt} = 
+	\int\limits_{0}^{\sigma_0} \left(\pd{v}{t}\cdot\pd{\vec{r}}{\sigma}\right) d\sigma +
+	\int\limits_{0}^{\sigma_0} \left( \vec{v}\cdot \frac{\partial^2\vec{r} }{\partial\sigma \partial t} \right) d\sigma =
+	\]
+	\[
+	=
+	\int\limits_{0}^{\sigma_0} \left(\vec{a}\cdot\pd{\vec{r}}{\sigma}\right) d\sigma +
+	\int\limits_{0}^{\sigma_0} \left( \vec{v}\cdot \pd{\vec{v}}{\sigma} \right) d\sigma.
+	\]
+	Здесь
+	\[
+		\pd{}{t}\vec{r}(\sigma,t) = \vec{v}(\sigma,t),\quad
+		\frac{\partial^2 }{\partial\sigma \partial t}\vec{r} (\sigma,t) =  \pd{}{\sigma}  \vec{v}(\sigma,t),\quad
+		\pd{ }{t} \vec{v}(\sigma,t) = \vec{a}(\sigma,t),
+	\]
+	где $\vec{a}$ -- ускорение жидкой частицы.
+	}
+	
+}
+
+
+\frame{
+	\frametitle{Теорема о производной циркуляции скорости: доказательство }
+	
+	\parbox{\textwidth}{
+	Рассмотрим отдельно каждое слагаемое.
+	\[
+	\int\limits_{0}^{\sigma_0} \left(\vec{a}\cdot\pd{\vec{r}}{\sigma}\right) d\sigma=
+	\int\limits_{AB}\vec{a} \cdot d\vec{s} =
+	\int\limits_{AB}\frac{d\vec{v}}{dt} \cdot d\vec{s},
+	\]
+	в последнем равенстве $d/dt$ -- полная производная.
+	
+	\pause
+	\[
+	\int\limits_{0}^{\sigma_0} \left( \vec{v}\cdot \pd{\vec{v}}{\sigma} \right) d\sigma=
+	\frac{1}{2}\int\limits_{0}^{\sigma_0} \pd{}{\sigma}
+	\left( 
+	\vec{v}\cdot\vec{v}
+	\right) d\sigma =
+	\frac{v_B^2}{2} - \frac{v_A^2}{2},
+	\]
+	где $\vec{v}_B=\vec{v}(\sigma_0,t)$, $\vec{v}_A=\vec{v}(0,t)$ -- скорости жидких частиц в точках $B$, $A$.
+	}
+	
+	
+}
+
+
+\frame{
+	\frametitle{Теорема о производной циркуляции скорости: итог }
+	
+	\parbox{\textwidth}{
+		Подводя итог вышесказанного
+		\[
+		\frac{dJ}{dt} =
+		\int\limits_{AB}\frac{d\vec{v}}{dt} \cdot d\vec{s} +
+		\frac{v_B^2}{2} - \frac{v_A^2}{2}.
+		\]
+		
+
+		
+	}
+		\pause
+	\begin{exampleblock}{Результат}
+		\parbox{\textwidth}{
+			
+		Если в качестве линии $AB$ рассматривать замкнутый контур $L$, тогда точки $A$ и $B$ совпадают и 
+		\[
+		\frac{d}{dt}\oint\limits_L \vec{v} \cdot d\vec{s} =
+		\oint\limits_L \frac{d\vec{v}}{dt} \cdot d\vec{s}.
+		\]	
+		}
+	\end{exampleblock}
+}
+
+\frame{
+	\frametitle{ Теорема Томсона }
+	
+	\begin{exampleblock}{Теорема}
+		\parbox{\textwidth}{
+			Если массовые силы допускают потенциал, а идеальная жидкость баротропна, то циркуляция скорости по любому замкнутому контуру во все время движения жидкости остаётся неизменной. 
+		}
+	\end{exampleblock}
+	
+}
+
+\frame{
+	\frametitle{ Теорема Томсона: доказательство }
+	
+	\begin{exampleblock}{Уравнение движения}
+		\parbox{\textwidth}{
+			Для баротропного течения идеальной жидкости с потенциальными массовыми силами уравнение движения допускает следующее упрощение (см. предыдущую лекцию)
+			\[
+			\frac{d\vec{v}}{dt} = -\grad\left( \Rho(p) + \Pi \right).
+			\]
+			Здесь 
+			\[
+			\Rho(p) = \int\limits_{p_0}^{p} \frac{dp}{\rho},\quad
+			\vec{f} = -\nabla \Pi,
+			\]
+			где $\Rho(p)$ -- функция давления; $\vec{f}$, $\Pi$ -- вектор и потенциал объёмных сил.
+			
+		}
+	\end{exampleblock}
+}
+
+\frame{
+	\frametitle{ Теорема Томсона: доказательство }
+
+	\parbox{\textwidth}{
+	Рассмотрим производную циркуляции вектора скорости по замкнутому контуру $L$. По теореме о циркуляции и закона движения имеем
+	\[	\frac{d}{dt}\oint\limits_L \vec{v} \cdot d\vec{s} =
+	\oint\limits_L \frac{d\vec{v}}{dt} \cdot d\vec{s} = 
+%	\]
+%	\[
+%	=
+	-\oint\limits_L \grad\left( \Rho(p) + \Pi \right) ds = 
+%	-\oint\limits_L d \left( \Rho(p) + \Pi \right) = 
+	0.
+	\]
+	}
+
+	\pause
+	\begin{exampleblock}{Результат}
+		\parbox{\textwidth}{
+		Таким образом,
+		\[
+			\oint\limits_L \vec{v} \cdot d\vec{s} = const.
+		\]
+		}
+	\end{exampleblock}
+
+
+	
+}
+
+
 \frame{
 	\frametitle{ Литература }
 	\begin{itemize}[partopsep=1pt,label=\textbullet]
