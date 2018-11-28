@@ -234,7 +234,7 @@
 	
 	\begin{exampleblock}{Теорема}
 		\parbox{\textwidth}{
-			Циркуляция вектора вихря по любому замкнутому контуру, охватывающему данную вихревую трубку постоянна.
+			Циркуляция вектора скорости по любому замкнутому контуру, охватывающему данную вихревую трубку постоянна.
 		}
 	
 	\bigskip\pause
@@ -292,8 +292,8 @@
 		0 = 
 		\int\limits_{S_1} \vec{\Omega}\cdot \vec{n}_1 dS+
 		\int\limits_{S_2} \vec{\Omega}\cdot \vec{n}_2 dS=
-		\oint\limits_{C_1} \vec{\Omega} \cdot d\vec{l} -
-		\oint\limits_{C_2} \vec{\Omega} \cdot d\vec{l}. 	
+		\oint\limits_{C_1} \vec{v} \cdot d\vec{l} -
+		\oint\limits_{C_2} \vec{v} \cdot d\vec{l}. 	
 		\]
 		В последнем равенстве появился знак минус, потому что нормали $\vec{n}_1$ и $\vec{n}_2$ направлены в разные стороны. Так как контуры $C_1$ и $C_2$ выбраны произвольно, то справедливо утверждение теоремы. 
 	}
@@ -315,8 +315,8 @@
 		0 = 
 		\int\limits_{S_1} \vec{\Omega}\cdot \vec{n}_1 dS+
 		\int\limits_{S_2} \vec{\Omega}\cdot \vec{n}_2 dS=
-		\oint\limits_{C_1} \vec{\Omega} \cdot d\vec{l} -
-		\oint\limits_{C_2} \vec{\Omega} \cdot d\vec{l}. 	
+		\oint\limits_{C_1} \vec{v} \cdot d\vec{l} -
+		\oint\limits_{C_2} \vec{v} \cdot d\vec{l}. 	
 		\]
 		
 		Дополнительно показано, что интенсивность вихревой трубки одна и та же в любом сечении. 
@@ -445,7 +445,7 @@
 	Рассмотрим производную от $J$ по $t$:
 	\[
 	\frac{dJ}{dt} = 
-	\int\limits_{0}^{\sigma_0} \left(\pd{v}{t}\cdot\pd{\vec{r}}{\sigma}\right) d\sigma +
+	\int\limits_{0}^{\sigma_0} \left(\pd{\vec{v}}{t}\cdot\pd{\vec{r}}{\sigma}\right) d\sigma +
 	\int\limits_{0}^{\sigma_0} \left( \vec{v}\cdot \frac{\partial^2\vec{r} }{\partial\sigma \partial t} \right) d\sigma =
 	\]
 	\[
@@ -561,7 +561,7 @@
 %	\]
 %	\[
 %	=
-	-\oint\limits_L \grad\left( \Rho(p) + \Pi \right) ds = 
+	-\oint\limits_L \grad\left( \Rho(p) + \Pi \right) \cdot d \vec{s} = 
 %	-\oint\limits_L d \left( \Rho(p) + \Pi \right) = 
 	0.
 	\]
