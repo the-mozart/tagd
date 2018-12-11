@@ -36,6 +36,8 @@
 \usepackage{ mathrsfs }
 \newcommand{\Rho}{\mathscr{P}}
 
+\renewcommand{\Re}{\operatorname{Re}}
+
 \newcommand{\argxi}{(\xi^1,\xi^2,\xi^3)}
 \newcommand{\argx}{(x^1,x^2,x^3)}
 
@@ -92,14 +94,14 @@
 }
 
 \frame{
-	\frametitle{ Основная задача обтекания абсолютно твердого тела }
+	\frametitle{ Задача обтекания абсолютно твердого тела }
 	
 	\includegraphics[width=\linewidth]{../img/flow_body.pdf}
 }
 
 
 \frame{
-	\frametitle{ Математическая постановка задачи обтекания тела потенциальным потоком идельной жидкости}
+	\frametitle{ Математическая постановка задачи обтекания тела потенциальным потоком идеальной жидкости}
 
 	\begin{exampleblock}{}
 	\parbox{\textwidth}{
@@ -340,7 +342,7 @@
 
 
 \frame{
-	\frametitle{ Формула Блазиуса-Чаплыгина для силы }
+	\frametitle{ Сила }
 	
 	
 	\begin{exampleblock}{}
@@ -364,6 +366,94 @@
 		}
 	\end{exampleblock}
 }
+
+\frame{
+	\frametitle{ Момент главных сил }
+	\parbox{\textwidth}{
+	\[
+	L = -\oint\limits_C p (x \cos(\vec{n},y)-y\cos(\vec{n},x)) ds =
+	-\oint\limits_C p (x \cos\theta + y\sin\theta) ds =
+	\]
+	\[
+	=
+	-\oint\limits_C p (x dx + y dy) =
+		-\oint\limits_C \left(c + \frac{\rho v^2}{2}\right) (x dx + y dy) =
+	\]
+	\[
+	=
+	-\oint\limits_C c\, d(x^2+y^2) - \frac{\rho}{2}\oint\limits_C v^2 (x dx + y dy)=
+%	\]
+%	\[
+%	= 
+	\Re \left( 
+	-\frac{\rho}{2}\oint\limits_C v^2zdz^*
+	\right)=
+	\]
+	\[
+	=
+	\Re \left( 
+	-\frac{\rho}{2}\oint\limits_C (v^*)^2zdz,
+	\right),
+	\]
+	т.к. $v^2 dz^* = (v^*)^2 dz$.
+	}
+	
+}
+
+\frame{
+	\frametitle{ Формулы Блазиуса-Чаплыгина для потенциального течения }
+	
+	\begin{exampleblock}{ }
+		\parbox{\textwidth}{
+			Если течение потенциально, тогда существует комплексный потенциал
+			\[
+			w(z)= \varphi(z) + i \psi(z) \quad\text{и}\quad
+			\od{w}{z} = v^*.
+			\]
+		}
+	\end{exampleblock}
+
+	\begin{exampleblock}{ Формулы Блазиуса-Чаплыгина }
+		\parbox{\textwidth}{
+		\[
+		R^* = X - i Y = \frac{i\rho}{2} \oint\limits_C \left(\od{w}{z} \right)^2 dz,
+		\]	
+		\[
+		L = \Re \left[
+		-\frac{\rho}{2}\oint\limits_C \left(\od{w}{z} \right)^2 zdz
+		\right].
+		\]
+		}
+	\end{exampleblock}
+}
+
+\frame{
+	\frametitle{ Формула Кутта-Жуковского }
+
+\begin{exampleblock}{Предположения }
+	\parbox{\textwidth}{
+		Поток потенциален везде вне тела, которое можно заменить на конечное число источников, вихрей и диполей, лежащих внутри границы тела, контура $C$.
+	}
+\end{exampleblock}
+
+
+\begin{exampleblock}{Формула для силы и реакции}
+	\parbox{\textwidth}{
+		\[
+		R^* =  X - iY = i\rho\Gamma v_\infty^*,		
+		\]
+		\[
+		L = \Re \left[
+		-\rho v_\infty^*\sum\limits_{k=1}^m\Gamma_kb_k-i\rho M v_\infty^*
+		\right],
+		\]
+		где
+		$\Gamma_i$ -- циркуляции вихрей, находящихся в точках $b_i$ $(i=1,\ldots,m)$; $M$ -- суммарный момент источников и диполей, $\Gamma$ -- суммарная циркуляция вихрей, находящихся внутри тела.
+	}
+\end{exampleblock}
+
+}
+
 
 
 
