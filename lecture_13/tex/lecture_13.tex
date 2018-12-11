@@ -92,7 +92,7 @@
 }
 
 \frame{
-	\frametitle{ Основная задача обтекания тела }
+	\frametitle{ Основная задача обтекания абсолютно твердого тела }
 	
 	\includegraphics[width=\linewidth]{../img/flow_body.pdf}
 }
@@ -221,7 +221,7 @@
 		\parbox{\textwidth}{
 			В случае набегающего потока с параметрами на бесконечности равными 
 			\[
-			v_x=v_\infty\quad 
+			v_x=v_\infty,\quad 
 			v_y = 0,
 			\]
 			то для бесконечно удалённых точек
@@ -237,15 +237,132 @@
 	\frametitle{ Задача обтекание тела }
 	
 		\parbox{\textwidth}{
-			Таким образом, задача обтекания тела плоским потенциальным потоком идеальной жидкости сводится к решению \alert{задачи Дирихле}, т.к. внутри исследуемой области решается уравнение Лапласа 
+			Таким образом, задача обтекания тела плоским потенциальным потоком идеальной жидкости сводится к решению \alert{задачи Дирихле} для функции тока $\psi$: 
+			\begin{itemize}[label=\textbullet]
+				\item
+			внутри исследуемой области решается уравнение Лапласа 
 			\[
 			\Delta \psi = 0, 
 			\]
+			\item
 			а на бесконечности и границе обтекаемого тела заданы значения функции $\psi$ в зависимости от условий обтекания.
+			\end{itemize}
 			
 			
 		}
 	
+}
+
+\frame{
+	\frametitle{ Сила  при безотрывном обтекании }
+	
+	\begin{exampleblock}{Определение}
+		\parbox{\textwidth}{
+			По аналогии с комплексными скоростью и потенциалом, определим комплексную силу $R$, действующую на контур $C$ в области течения по формуле
+			\[
+			R = X + i Y,
+			\]
+			где $X$, $Y$ -- вещественные проекции силы на оси координат.
+			
+		}
+	\end{exampleblock}	
+}
+
+\frame{
+	\frametitle{ Формула для силы через давление при безотрывном обтекании}
+	
+	\centering
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\includegraphics[width=\linewidth]{../img/vn.pdf}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\begin{exampleblock}{}
+				\parbox{\textwidth}{
+					Комплексно-сопряжённая сила $R^*$ вдоль контура тела $C$ при безотрывном обтекании
+					\[
+					R^* = X - i Y = 
+					\]
+					\[
+					=
+					-\oint\limits_C p (\cos(\vec{n},x) - i \cos(\vec{n},y)) ds = 
+					\]
+					\[
+					=
+					-\oint\limits_C p (\sin\theta + i \cos\theta) ds = 
+					\]
+					\[
+					=
+					-i \oint\limits_C p e^{-\theta i} ds.
+					\]
+					
+					
+				}
+			\end{exampleblock}
+		\end{column}
+	\end{columns}
+		
+
+}
+
+\frame{
+	\frametitle{ Предварительные выкладки }
+	
+	\begin{exampleblock}{Выражение для комплексного дифференциала}
+		\parbox{\textwidth}{
+			\[
+			dz = dx + i dy = ds(\cos\theta + i \sin\theta) = e^{i\theta}ds,
+			\]
+			\[
+			dz^* = dx - i dy = ds(\cos\theta - i \sin\theta) = e^{-i\theta}ds.
+			\]
+			Отсюда
+			\[
+			dz^* = e^{-2\theta i} dz.
+			\]
+			
+		}
+	\end{exampleblock}\pause
+
+	\begin{exampleblock}{Интеграл Бернулли}
+		\parbox{\textwidth}{
+			Связь давления и скорости через интеграл Бернулли
+			\[
+				p = c - \frac{1}{2}\rho v^2
+			\]
+			справедлива вдоль контура тела при безотрывном обтекании, т.к. он является линией тока. При потенциальном течении она справедлива во всей области течения.
+			
+		}
+	\end{exampleblock}
+
+	
+}
+
+
+\frame{
+	\frametitle{ Формула Блазиуса-Чаплыгина для силы }
+	
+	
+	\begin{exampleblock}{}
+		\parbox{\textwidth}{
+		\[
+			R^* = -i c \oint\limits_{C}d z^* + \frac{i \rho}{2} \oint\limits_C v^2 dz^*=
+			\frac{i \rho}{2} \oint\limits_C v^2 dz^*=
+			\frac{i \rho}{2} \oint\limits_C (v e^{-i \theta})^2 dz.
+		\]\pause
+		
+		Используя то, что
+		\[
+		v e^{-i \theta} = v \cos\theta -i v \sin\theta = v_x-i v_y = v^*,
+		\]
+		получим 
+		\[
+		R^* = X - i Y = \frac{i\rho}{2} \oint\limits_C (v^*)^2 dz.
+%		 = \frac{i\rho}{2} \oint\limits_C \left(\od{w}{z} \right)^2 dz
+		\]
+		
+		}
+	\end{exampleblock}
 }
 
 
