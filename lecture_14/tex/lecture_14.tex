@@ -1,0 +1,211 @@
+\documentclass{beamer}
+
+\usepackage{beamerthemesplit}
+\usetheme{Singapore} %Copenhagen}
+%\usecolortheme{whale}
+
+%\usepackage[T2A]{fontenc}
+%\usepackage[utf8]{inputenc}
+%\usepackage[russian]{babel}
+
+\usepackage[main=russian,english]{babel}   %% загружает пакет многоязыковой вёрстки
+\usepackage{fontspec}      %% подготавливает загрузку шрифтов Open Type, True Type и др.
+\defaultfontfeatures{Ligatures={TeX},Renderer=Basic}  %% свойства шрифтов по умолчанию
+\setmainfont{Times New Roman} %% задаёт основной шрифт документа
+%\usefonttheme{professionalfonts}% SOLUTION
+\usefonttheme{serif}
+
+\usepackage{hyperref}
+\usepackage{textcomp}
+\usepackage{amssymb,amsmath}
+%\usepackage{animate}
+%\usepackage{longtable}
+\usepackage{xcolor}
+
+%\usepackage{pgffor}
+\usepackage{enumitem}
+\usepackage[export]{adjustbox}
+
+\newcounter{N}
+
+%% Форматирование окружения itemize
+%\usepackage{ragged2e}
+%\let\olditem\item
+%\renewcommand\item{\olditem\justifying}
+
+\usepackage{ mathrsfs }
+\newcommand{\Rho}{\mathscr{P}}
+
+\renewcommand{\Re}{\operatorname{Re}}
+
+\newcommand{\argxi}{(\xi^1,\xi^2,\xi^3)}
+\newcommand{\argx}{(x^1,x^2,x^3)}
+
+\newcommand{\argxiv}{(\vec{\xi})}
+\newcommand{\argxv}{(\vec{x})}
+
+
+\newcommand{\argxbarn}{(\bar{x}^1,\bar{x}^2,\ldots, \bar{x}^n)}
+\newcommand{\argxn}{(x^1, x^2,\ldots, x^n)}
+
+\newcommand{\argtxi}{(t, \xi^1,\xi^2,\xi^3)}
+\newcommand{\argtoxi}{(t_0, \xi^1,\xi^2,\xi^3)}
+
+\newcommand{\argtxiv}{(t, \vec{\xi})}
+\newcommand{\argtoxiv}{(t_0, \vec{\xi})}
+
+
+\newcommand{\argtx}{(t, x^1,x^2,x^3)}
+\newcommand{\argtox}{(t_0, x^1,x^2,x^3)}
+
+\newcommand{\argtxv}{(t, \vec{x})}
+\newcommand{\argtoxv}{(t_0, \vec{x})}
+
+
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pdk}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+
+\newcommand{\od}[2]{\frac{d #1}{d #2}}
+
+\newcommand{\grad}{\operatorname{grad}}
+\newcommand{\rot}{\operatorname{rot}}
+\newcommand{\divo}{\operatorname{div}}
+
+\title[]{Трёхмерные осесимметричные потенциальные течения идеальной жидкости}
+
+\author[]{ {\em Верещагин Антон Сергеевич}
+\\
+канд. физ.-мат. наук, старший преподаватель\\
+\bigskip
+Кафедра аэрофизики и газовой динамики ФФ НГУ}
+
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{../img/background.png}}
+
+\begin{document}
+	
+\frame{\titlepage}
+
+
+\frame{
+	\frametitle{Аннотация}
+	\parbox{\textwidth}{
+		
+	}
+}
+
+\frame{
+	\frametitle{ Основные определения}
+	
+	\begin{exampleblock}{Определение}
+	\parbox{\textwidth}{
+		Течение называется \alert{осесимметричным}, если существует такая прямая $l$, что во всех плоскостях, проходящих через $l$ картина течения одинакова и траектория жидкой частицы лежит в полуплоскостях, проходящих через $l$.
+		
+	}
+	\end{exampleblock}
+
+	\begin{exampleblock}{Определение}
+		\parbox{\textwidth}{
+			Течение называется \alert{потенциальным}, если в некоторой области пространства можно определить потенциал $\varphi(t,x,y,z)$, такой что
+			\[
+			\vec{v} = \grad \varphi.
+			\]
+			
+		}
+	\end{exampleblock}
+
+}
+
+
+
+\frame{
+	\frametitle{Основные уравнения}
+	
+	\parbox{\textwidth}{
+	Для трёхмерных потенциальных течений идеальной жидкости определённых в некоторой области пространства справедливы следующие уравнения.	
+	}
+	
+	\bigskip
+	
+	
+	\begin{exampleblock}{Уравнение неразрывности}
+		\parbox{\textwidth}{
+			\[
+				\divo\vec{v}=\Delta\varphi = 0,\quad
+				\vec{v}=\nabla \varphi
+			\]
+		}
+	\end{exampleblock}
+	
+	\begin{exampleblock}{Интеграл Коши}
+		\parbox{\textwidth}{
+			\[
+			\frac{\nabla\varphi^2}{2} + \frac{p}{\rho} = f(t)\footnote{Считаем, что поле внешних сил отстутствует}
+			\]
+			
+		Интеграл Коши позволяет найти распределение давления по заданному потенциалу, определённому из уравнения неразрывности ($\rho=const$).
+		}
+	\end{exampleblock}
+}
+
+\frame{
+	\frametitle{ Уравнение неразрывности в различных системах координат}
+	
+	\begin{exampleblock}{Сферическая система координат $r$, $\theta$, $\lambda$}
+		\parbox{\textwidth}{
+			\[
+			\frac{1}{r^2 \sin\theta}
+			\left\{
+			\pd{}{r}\left( r^2 \sin\theta \pd{\varphi}{r} \right) + 
+			\pd{}{\theta} \left( \sin\theta \pd{\varphi}{\theta} \right) +
+			\pd{}{\lambda}\left( \frac{1}{\sin\theta} \pd{\varphi}{\lambda} \right)
+			\right\}
+			 = 0,
+			\]
+			где
+			\[
+			v_r = \pd{\varphi}{r},\quad
+			v_\theta = \frac{1}{r}\pd{\varphi}{\theta},\quad
+			v_\lambda = \frac{1}{r\sin\theta} \pd{\varphi}{\lambda}.
+			\]
+		}
+	\end{exampleblock}
+	
+	\begin{exampleblock}{}
+		\parbox{\textwidth}{
+			В случае осесимметричного течения можно пренебречь зависимостью $\varphi$ от $\lambda$.
+		}
+	\end{exampleblock}
+}
+
+\frame{
+	\frametitle{ Уравнение неразрывности в различных системах координат}
+	
+	\begin{exampleblock}{Цилиндрическая система координат $r$, $\theta$, $z$}
+		\parbox{\textwidth}{
+			\[
+			\frac{1}{r}
+			\left\{
+			\pd{}{r}\left( r v_r \right) + 
+			\pd{}{\theta} v_\theta +
+			\pd{}{\lambda}\left( r v_z \right)
+			\right\}
+			= 0,
+			\]
+			где
+			\[
+			v_r = \pd{\varphi}{r},\quad
+			v_\theta = \frac{1}{r}\pd{\varphi}{\theta},\quad
+			v_z =  \pd{\varphi}{z}.
+			\]
+		}
+	\end{exampleblock}
+	
+	\begin{exampleblock}{}
+		\parbox{\textwidth}{
+			В случае осесимметричного течения можно пренебречь зависимостью $\varphi$ от $\theta$.
+		}
+	\end{exampleblock}
+}
+
+
+\end{document}
