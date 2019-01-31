@@ -402,8 +402,88 @@
 \frame{
 	\frametitle{ Функция тока для осесимметричных течений }
 	
+	\begin{exampleblock}{Уравнение неразрывности в цилиндрической системе координат с осевой симметрией в переменных $(r,z)$}
+		\parbox{\textwidth}{
+		\[
+			\divo \vec{v} = \pd{}{r}(r v_r) + \pd{}{z}(r v_z) = 0\quad \Rightarrow \quad
+			\pd{}{r}(r v_r)  = -\pd{}{z}(r v_z).
+		\]	
+		}
+	\end{exampleblock}
+	\begin{exampleblock}{Существование полного дифференциала}
+		\parbox{\textwidth}{
+			\[
+			d\psi = r v_r dz - r v_z dr = \pd{\psi}{z} dz + \pd{\psi}{r} dr
+			\]
+			является полным дифференциалом (см. теорию про интегрирующий множитель).
+		}
+	\end{exampleblock}
+	\begin{exampleblock}{Определение}
+		\parbox{\textwidth}{
+		Функцию $\psi(r,z)$  такую, что
+		$
+		v_r = \displaystyle\frac{1}{r}\pd{\psi}{z}$,
+		$v_z = -\displaystyle\frac{1}{r}\pd{\psi}{r}
+		$
+		называют \alert{функцией тока для осесимметричных течений}.	
+		}
+	\end{exampleblock}
+}
+
+\frame{
+	\frametitle{Свойства функции тока }
 	
+	\begin{exampleblock}{Постоянство на линиях тока}
+		\parbox{\textwidth}{
+			Уравнения линий тока в случае осесимметричного течения
+			\[
+			\frac{dr}{v_r} = \frac{dz}{v_z},
+			\]
+			поэтому на линиях тока 
+			\[
+			v_r dz - v_z dr = 0,
+			\]
+			следовательно
+			\[
+			d\psi = r (v_r dz - v_z dr) = 0
+			\]
+			и $\psi = const$.
+
+			
+		}
+	\end{exampleblock}
 	
+}
+
+\frame{
+	\frametitle{ Свойства функции тока }
+	
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+			\includegraphics[width=\textwidth,frame]{../img/square_streamlines.pdf}
+		\end{column}
+		\begin{column}{0.6\textwidth}
+			\[
+			\int\limits_B^A \vec{v}\cdot\vec{n} ds = 
+			\int\limits_B^A \left( v_z n_z + v_r n_r \right) ds = 
+			\]
+			\[
+			=
+			\int\limits_0^{s_0} \left( \left(-\frac{1}{r}\pd{\psi}{r} \right) \left(-\pd{r}{s}\right) + \frac{1}{r}\pd{\psi}{z} \pd{z}{s} \right) ds=
+			\]
+			\[
+			=
+			\int\limits_0^{s_0} \frac{1}{r}\frac{d}{ds} \psi(r(s),z(s)) ds = \psi(A) - \psi(B),
+			\]
+			\[
+			x=x(s),\quad y=y(s),
+			\]
+			\[
+			(x,y)|_{s=0} = B,\quad
+			(x,y)|_{s=s_0} = A.
+			\]
+		\end{column}
+	\end{columns}
 }
 
 
