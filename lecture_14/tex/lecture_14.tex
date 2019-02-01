@@ -557,4 +557,123 @@
 }
 
 
+\frame{
+	\frametitle{ Функция тока  для простейших осесимметричных течений}
+	
+	\begin{exampleblock}{Поступательное движение}
+		\parbox{\textwidth}{
+			
+			\[
+			\varphi = V z \quad\Rightarrow\quad
+			\psi = -\frac{V^2}{2}r^2
+			\]
+		}
+	\end{exampleblock}
+
+	\begin{exampleblock}{Источник}
+		\parbox{\textwidth}{
+		\[
+		\varphi = -\frac{q}{4\pi} \frac{1}{r^2+z^2}\quad\Rightarrow\quad
+		\psi = \frac{q}{4\pi}\frac{z}{\sqrt{r^2+z^2}} + C
+		\]	
+		}
+	\end{exampleblock}
+	\begin{exampleblock}{Диполь}
+		\parbox{\textwidth}{
+			\[
+			\varphi =  -\frac{M}{4\pi} \frac{z}{r^3}\quad\Rightarrow\quad
+			\psi =  -\frac{M}{4\pi} \frac{r^2}{(\sqrt{r^2+z^2})^3}+C
+			\]
+		}
+	\end{exampleblock}
+
+	
+}
+
+\frame{
+	\frametitle{ Продольное обтекание тела вращения }
+
+
+
+	\begin{exampleblock}{Постановка задачи}
+		\parbox{\textwidth}{
+			
+			\medskip
+			Требуется найти потенциал или функцию тока течения, описывающие осесимметричное течение идеальной жидкости на бесконечности направленной вдоль оси $Oz$ около тела, образованного вращением заданной дуги $AB$ вокруг оси $Oz$.
+		}
+	\end{exampleblock}
+
+	\medskip
+	\centering
+	\includegraphics[width=0.8\linewidth]{../img/axisymmetric_body}
+}
+
+
+\frame{
+	\frametitle{Продольное обтекание тела вращения}
+	\begin{exampleblock}{Метод источников и стоков}
+		\parbox{\textwidth}{
+			Рассмотрим на оси $Oz$ распределенные источники и стоки с плотностью распределения $\mu(\zeta)$, где $\zeta$ -- положении на оси $Oz$ между точками $A$ и $B$.
+		}
+	\end{exampleblock}
+	
+	
+	\begin{exampleblock}{Функция тока от источников, распределённых вдоль оси $Oz$ }
+		\parbox{\textwidth}{
+			\[
+			\psi_1(r,z) = -\frac{1}{4\pi}\int\limits_A^B
+			\mu(\zeta) \left(
+			1 - \frac{z-\zeta}{\sqrt{r^2+(z-\zeta)^2}}
+			\right) d\zeta
+			\]
+		}
+	\end{exampleblock}
+
+	\begin{exampleblock}{Функция тока от поступательного потока}
+		\parbox{\textwidth}{
+			\[
+			\psi_2 = -r^2\frac{V}{2}
+			\]
+			
+		}
+	\end{exampleblock}
+}
+
+\frame{
+	\frametitle{Продольное обтекание тела вращения }
+	
+	\begin{exampleblock}{Искомый потенциал для задачи}
+		\parbox{\textwidth}{
+			\[
+			\psi = \psi_1+\psi_2 = -r^2\frac{V}{2} + -\frac{1}{4\pi}\int_A^B
+			\mu(\zeta) \left(
+			1 - \frac{z-\zeta}{\sqrt{r^2+(z-\zeta)^2}}
+			\right) d\zeta
+			\]
+		}
+	\end{exampleblock}\pause
+
+	\begin{exampleblock}{Условие <<непроницаемости>> тела}
+		\parbox{\textwidth}{
+			\[
+			\int_A^B \mu(\zeta) = 0
+			\]
+			
+		}
+	\end{exampleblock}\pause
+
+	\begin{exampleblock}{Поверхность тела -- поверхность тока}
+		\parbox{\textwidth}{
+			\[
+			\psi|_S = 0 \quad\Rightarrow\quad
+			\frac{1}{4\pi}\int_A^B  \frac{(z-\zeta)\mu(\zeta) d\zeta}{\sqrt{\tilde{r}(z)^2+(z-\zeta)^2}} = 
+			\frac{1}{2}V\tilde{r}(z),
+			\]
+			где $r=\tilde{r}(z)$ -- уравнение дуги $AB$, где $z$ -- координата между точками $A$ и $B$.
+		}
+	\end{exampleblock}
+	
+}
+
+
 \end{document}
