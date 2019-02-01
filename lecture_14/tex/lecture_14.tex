@@ -459,31 +459,101 @@
 	\frametitle{ Свойства функции тока }
 	
 	\begin{columns}
-		\begin{column}{0.4\textwidth}
-			\includegraphics[width=\textwidth,frame]{../img/square_streamlines.pdf}
+		\begin{column}{0.35\textwidth}
+			\includegraphics[width=\textwidth]{../img/streamfunction_flow.pdf}
 		\end{column}
-		\begin{column}{0.6\textwidth}
-			\[
-			\int\limits_B^A \vec{v}\cdot\vec{n} ds = 
-			\int\limits_B^A \left( v_z n_z + v_r n_r \right) ds = 
-			\]
-			\[
-			=
-			\int\limits_0^{s_0} \left( \left(-\frac{1}{r}\pd{\psi}{r} \right) \left(-\pd{r}{s}\right) + \frac{1}{r}\pd{\psi}{z} \pd{z}{s} \right) ds=
-			\]
-			\[
-			=
-			\int\limits_0^{s_0} \frac{1}{r}\frac{d}{ds} \psi(r(s),z(s)) ds = \psi(A) - \psi(B),
-			\]
-			\[
-			x=x(s),\quad y=y(s),
-			\]
-			\[
-			(x,y)|_{s=0} = B,\quad
-			(x,y)|_{s=s_0} = A.
-			\]
+		\begin{column}{0.65\textwidth}
+
+\begin{exampleblock}{Поток жидкости через поверхность $S$}
+	\parbox{\textwidth}{
+					
+		\[
+		\int\limits_S \vec{v}\cdot\vec{n} ds = 
+		\int\limits_{0}^{2\pi}  \int\limits_B^A \left( v_z n_z + v_r n_r \right) r d\theta dl = 
+		\]
+		\[
+		=
+		2 \pi \int\limits_0^{l_0} \left( \left(-\frac{1}{r}\pd{\psi}{r} \right) \left(-\pd{r}{l}\right) + \frac{1}{r}\pd{\psi}{z} \pd{z}{l} \right) r dl=
+		\]
+		\[
+		=
+		2\pi\int\limits_0^{s_0} \od{}{l} \psi(r(l),z(l)) dl = 2\pi(\psi(A) - \psi(B)),
+		\]
+		\[
+		r=r(l),\quad z=z(l),
+		\]
+		\[
+		(r,z)|_{l=0} = B,\quad
+		(r,z)|_{l=l_0} = A.
+		\]
+		
+	}
+\end{exampleblock}			
 		\end{column}
 	\end{columns}
+}
+\frame{
+	\frametitle{ Связь функции тока и потенциала для осесимметричных течений}
+	
+	\begin{exampleblock}{Соотношения}
+		\parbox{\textwidth}{
+			\[
+				\pd{\varphi}{r} = \frac{1}{r}\pd{\psi}{z},\quad
+				\pd{\varphi}{z} = -\frac{1}{r}\pd{\psi}{r}
+			\]
+			Полученные соотношения \alert{отличаются} от условий Коши-Римана.
+		}
+	\end{exampleblock}\pause
+
+	\begin{exampleblock}{Уравнение для функции тока}
+		\parbox{\textwidth}{
+			\[
+			\pdk{\psi}{r}+\pdk{\psi}{z} \alert{-} \frac{1}{r}\pd{\psi}{r} = 0
+			\]
+			
+			Полученное соотношение не является уравнением Лапласа, записанным в цилиндрической системе координат. В случае осесимметричных течений не работают методы ТФКП. В этом случае может быть применён \alert{метод источников и стоков}. 
+		}
+	\end{exampleblock}
+
+
+}
+
+\frame{
+	\frametitle{Связь между функций тока и потенциалом}
+	
+	\begin{exampleblock}{Предпосылки}
+		\parbox{\textwidth}{
+			\[
+			d\psi = 
+			\pd{\psi}{r}dr+\pd{\psi}{z}dz = 
+			-r\left( \pd{\varphi}{z}dr - \pd{\varphi}{r} dz \right),
+			\]
+			\[
+			d\varphi = 
+			\pd{\varphi}{r}dr+\pd{\varphi}{z}dz = 
+			\frac{1}{r}\left( \pd{\psi}{z}dr - \pd{\psi}{r} dz \right),
+			\]
+			
+		}
+	\end{exampleblock}
+
+	\begin{exampleblock}{Искомые соотношения}
+		\parbox{\textwidth}{
+			
+		\[
+		\psi(r,z) = \psi(r_0,z_0) + \int\limits_{r_0,z_0}^{r,z} r \left(
+		 \pd{\varphi}{r} dz - \pd{\varphi}{z} dr		
+		\right),
+		\]
+		\[
+		\varphi(r,z) = \varphi(r_0,z_0) + \int\limits_{r_0,z_0}^{r,z} \frac{1}{r} \left(
+		\pd{\psi}{z} dr - \pd{\psi}{r} dz		
+		\right).
+		\]
+		}
+	\end{exampleblock}
+	
+	
 }
 
 
