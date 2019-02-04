@@ -642,10 +642,10 @@
 \frame{
 	\frametitle{Продольное обтекание тела вращения }
 	
-	\begin{exampleblock}{Искомый потенциал для задачи}
+	\begin{exampleblock}{Искомая функция тока для задачи}
 		\parbox{\textwidth}{
 			\[
-			\psi = \psi_1+\psi_2 = -r^2\frac{V}{2} + -\frac{1}{4\pi}\int_A^B
+			\psi = \psi_1+\psi_2 = -r^2\frac{V}{2} -\frac{1}{4\pi}\int_A^B
 			\mu(\zeta) \left(
 			1 - \frac{z-\zeta}{\sqrt{r^2+(z-\zeta)^2}}
 			\right) d\zeta
@@ -675,5 +675,217 @@
 	
 }
 
+\frame{
+	\frametitle{Поперечное обтекание тела вращения }
+	
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
 
+			
+			\medskip
+			\centering
+			\includegraphics[width=\linewidth]{../img/axisymmetric_body_across}
+		\end{column}
+		\begin{column}{0.6\textwidth}
+		\begin{exampleblock}{Постановка задачи}
+			\parbox{\textwidth}{
+				
+				\medskip
+				Требуется найти потенциал или функцию тока течения, описывающие течение идеальной жидкости на бесконечности направленной вдоль оси $Ox$ около тела, образованного вращением заданной дуги $AB$ вокруг оси $Oz$.
+			}
+		\end{exampleblock}
+		\end{column}
+	\end{columns}
+}
+
+
+\frame{
+	\frametitle{Поперечное обтекание тела вращения }
+	
+	\begin{exampleblock}{Метод источников и стоков}
+	\parbox{\textwidth}{
+		Рассмотрим  диполи, распределенные на оси $Oz$, с плотностью распределения $\mu(\zeta)$, где $\zeta$ -- положении на оси $Oz$ между точками $A$ и $B$.
+	}
+	\end{exampleblock}\pause
+
+	\begin{exampleblock}{Потенциал диполей}
+		\parbox{\textwidth}{
+		\[
+			\varphi_1 = 
+			\frac{1}{4\pi}\int\limits_A^B \frac{-\mu(\zeta)x d\zeta}{\left(\sqrt{x^2+y^2+(z-\zeta)^2}\right)^3}=
+			\frac{r\cos\theta}{4\pi}
+			\int\limits_A^B \frac{-\mu(\zeta) d\zeta}{\left(\sqrt{r^2+(z-\zeta)^2}\right)^3}.
+		\]
+		}
+	\end{exampleblock}
+	
+	\begin{exampleblock}{Потенциал поступательного движения}
+		\parbox{\textwidth}{
+		\[
+		\varphi_2  = V x = V r \cos\theta
+		\]
+			
+		}
+	\end{exampleblock}	
+}
+
+\frame{
+	\frametitle{Поперечное обтекание тела вращения }
+	
+	\begin{exampleblock}{Искомый потенциал течения}
+		\parbox{\textwidth}{
+		\[
+			\varphi = \varphi_1 +\varphi_2 = 
+			V r \cos\theta - \frac{r\cos\theta}{4\pi}
+			\int\limits_A^B \frac{\mu(\zeta) d\zeta}{\left(\sqrt{r^2+(z-\zeta)^2}\right)^3}.
+		\]	
+		}
+	\end{exampleblock}\pause
+
+	\begin{exampleblock}{Уравнения линий тока в цилиндрической системе координат}
+		\parbox{\textwidth}{
+		\[
+			\frac{dr}{v_r} = \frac{dz}{v_z} = \frac{r d\theta}{v_\theta},
+			\]
+			где
+	\only<2>{
+			\[
+			v_r = \pd{\varphi}{r} = V\cos\theta - \frac{\cos\theta}{4\pi}\pd{}{r} \left\{
+			r \int_A^B \frac{\mu(\zeta) d\zeta}{\left(\sqrt{r^2+(z-\zeta)^2}\right)^3}
+			\right\},
+			\]
+	}
+	\only<3>{
+		\[
+		v_z = \pd{\varphi}{z} =
+		- \frac{r\cos\theta}{4\pi} \pd{}{z}\left\{
+		\int\limits_A^B \frac{\mu(\zeta) d\zeta}{\left(\sqrt{r^2+(z-\zeta)^2}\right)^3}
+		\right\},
+		\]
+	}
+	\only<4>{
+		\[
+		v_\theta = \frac{1}{r}\pd{\varphi}{\theta} =
+		-V\sin\theta+
+		- \frac{\sin\theta}{4\pi}
+		\int\limits_A^B \frac{\mu(\zeta) d\zeta}{\left(\sqrt{r^2+(z-\zeta)^2}\right)^3}.
+		\]
+	}
+			
+	}
+	\end{exampleblock}	
+}
+
+\frame{
+	\frametitle{Поперечное обтекание тела вращения }
+	
+	\begin{exampleblock}{Линии тока на теле вращения}
+		\parbox{\textwidth}{
+			Линии тока должны проходить вдоль поверхности тела вращения, поэтому соотношение
+			\[
+			\od{r}{z} =  \frac{v_r}{v_z} = f(r,z) = 
+			\frac{
+				V - \displaystyle\frac{1}{4\pi}\pd{}{r} \left[
+				r \int\limits_A^B \frac{\mu(\zeta) d\zeta}{\left(\sqrt{r^2+(z-\zeta)^2}\right)^3}
+				\right]
+			}
+			{
+				- \displaystyle\frac{r}{4\pi} \pd{}{z}\left[
+				\int\limits_A^B \frac{\mu(\zeta) d\zeta}{\left(\sqrt{r^2+(z-\zeta)^2}\right)^3}
+				\right]
+			},
+			\]
+			где $r=\Phi(z)$ и $\displaystyle\od{r}{z} = \Phi'(z)$ -- заданные функции, описывающие поверхность тела вращения, позволяет найти распределение диполей $\mu(\zeta)$, где $\zeta$ -- координата между точками $A$ и $B$.
+		}
+	\end{exampleblock}
+	
+}
+
+\frame{
+	\frametitle{ Общий случай обтекания тела вращения }
+	
+	\begin{exampleblock}{Постановка задачи}
+		\parbox{\textwidth}{
+			Требуется найти потенциал течения при обтекании тела вращения с поверхностью $S$ поступательным потоком идеальной жидкости со скоростью $\vec{V}$ на бесконечности. 
+		}
+	\end{exampleblock}
+
+
+	\centering
+	\includegraphics[width=0.5\linewidth]{../img/axisymmetric_body_jeneral}
+	
+}
+
+\frame{
+	\frametitle{ Общий случай обтекания тела вращения }
+
+	\begin{exampleblock}{Математическая постановка задачи}
+		\parbox{\textwidth}{
+			Всегда можно выбрать систему координат так, чтобы вектор $\vec{V}$ лежал в плоскости $Oxz$, тогда для потенциала течения требуется решить
+			\[
+			\Delta\varphi = 0
+			\]
+			при условии на поверхности тела
+			\[
+			\left. \pd{\varphi}{n} \right|_S = 0
+			\]
+			и на бесконечности
+			\[
+			\pd{\varphi}{x} = V_x,\quad
+			\pd{\varphi}{y} = 0,\quad
+			\pd{\varphi}{z} = V_z.
+			\]
+		}
+
+	\end{exampleblock}
+		
+}
+
+\frame{
+	\frametitle{Общий случай обтекания тела вращения }
+	
+	\begin{exampleblock}{Задача обтекания тела продольным потоком со скоростью $V_z$}
+		\parbox{\textwidth}{
+		\[
+		\Delta\varphi_1 = 0,\quad
+		\left. \pd{\varphi_1}{n} \right|_S = 0,\quad
+		\pd{\varphi_1}{x} = \alert{0},\quad
+		\pd{\varphi_1}{y} = 0,\quad
+		\pd{\varphi_1}{z} = \alert{V_z}.
+		\]
+		}
+	\end{exampleblock} \pause
+
+
+	\begin{exampleblock}{Задача обтекания тела поперечным потоком со скоростью $V_x$}
+		\parbox{\textwidth}{
+		\[
+			\Delta\varphi_2 = 0,\quad
+			\left. \pd{\varphi_2}{n} \right|_S = 0,\quad
+			\pd{\varphi_2}{x} = \alert{V_x},\quad
+			\pd{\varphi_2}{y} = 0,\quad
+			\pd{\varphi_2}{z} = \alert{0}.
+		\]
+			
+		}
+	\end{exampleblock}\pause
+
+	\begin{exampleblock}{Искомый потенциал}
+		\parbox{\textwidth}{
+			\[
+			\varphi = \varphi_1 + \varphi_2.
+			\]
+		}
+	\end{exampleblock}
+}
+
+\frame{
+	\frametitle{ Литература }
+	\begin{itemize}[partopsep=1pt,label=\textbullet]
+		\item 
+		{\em Кочин~Н.~Е., Кибель~И.~А., Розе~Н.~В.} Теоретическая гидромеханика. М.:Гос. издат. физ.-мат. лит., 1963.
+		\item {\em Валландер~С.~В.} Лекции по аэрогидромеханике. Учеб. пособие. Л., Изд-во Ленингр. ун-та, 1978. 
+	\end{itemize}
+}
+ 
 \end{document}
