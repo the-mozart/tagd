@@ -754,6 +754,54 @@
 	\end{exampleblock}
 }
 
+\frame{
+	\frametitle{Кинетическая энергия жидкости}
+	
+	\begin{exampleblock}{Определение}
+		\parbox{\textwidth}{
+			Кинетическая энергия объёма $\tau$, ограниченного сферой большого радиуса  $a$ с поверхностью $\Sigma$ и поверхностью тела $S$
+			\[
+			T_\tau = \frac{\rho}{2}\int\limits_\tau v^2 dV = 
+%			\]
+%			\[
+%			=
+			 \frac{\rho}{2}\int\limits_\tau \left[
+			 \left( \pd{\varphi}{x} \right)^2 +
+ 			 \left( \pd{\varphi}{y} \right)^2 +
+ 			 \left( \pd{\varphi}{y} \right)^2 +
+			 \right]  dV =
+			\]\pause
+			По формуле Грина
+			\[
+			=
+			 \frac{\rho}{2}\int\limits_\Sigma \varphi\pd{\varphi}{n} dS -  \frac{\rho}{2}\int\limits_S \varphi\pd{\varphi}{n} dS \overset{a \to \infty}{\to}
+			-  \frac{\rho}{2}\int\limits_S \varphi\pd{\varphi}{n} dS,
+			\]
+			т.к. площадь сферы имеет порядок \alert{$4\pi a^2$}, а функции $\varphi$ и $\displaystyle\pd{\varphi}{n}$ --  \alert{$1/a^2$} и \alert{$1/a^3$}.
+		}
+	\end{exampleblock}
+	
+}
+
+\frame{
+	\frametitle{Кинетическая энергия жидкости}
+	
+	\begin{exampleblock}{Определение}
+		\parbox{\textwidth}{
+			Кинетическая энергия всей жидкости
+			\[
+			T = -\frac{\rho}{2}\int\limits_S \varphi\pd{\varphi}{n} dS.
+			\]
+			
+			Подставляя выражение для разложения Кирхгофа потенциала $\vaphi$
+			\[
+			T = \frac{1}{2}\sum\limits_{i,k=1}^6 \lambda_{ik} U_k U_i.
+			\]
+		
+		}
+	\end{exampleblock}
+	
+}
 
 \frame{
 	\frametitle{ Литература }
