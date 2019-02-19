@@ -612,42 +612,145 @@
 
 \frame{
 	\frametitle{Течение Пуазейля: плоский канал }
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
+			\begin{exampleblock}{Скорость течения}
+				\parbox{\textwidth}{
+					\[
+					v(y) = \frac{\Delta p \cdot h^2}{2\mu L}
+					\left[
+					1 - \left(\frac{y}{h}\right)^2
+					\right],
+					\]
+					\[
+					v_{max} = \frac{1}{2}\frac{\Delta p\cdot  h^2}{\mu L}.
+					\]		
+				}
+			\end{exampleblock}
+			
+			\begin{exampleblock}{Расход по сечению}
+				\parbox{\textwidth}{
+					\[
+					Q = \int\limits_{-h}^h v(y) dy = \frac{2}{3} \frac{\Delta p\cdot h^3}{\mu L}.
+					\]
+				}
+			\end{exampleblock}
+			
+			\begin{exampleblock}{Средняя скорость по течению}
+				\parbox{\textwidth}{
+					\[
+					v_{avg} = \frac{Q}{2h} = \frac{1}{3} \frac{\Delta p \cdot h^2}{\mu L} =
+					\frac{2}{3} v_{max}.
+					\]
+					
+				}
+			\end{exampleblock}
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\centering\scriptsize
+			\includegraphics[width=0.9\linewidth]{../img/Poiseuille_flat.pdf}\\
+			
+			\medskip
+			Профиль скорости при 
+			$\Delta p = 5 \cdot 10^4$~ Па, $h=5$~мм, $L=10$~м, $\mu=1004 \cdot 10^{-6}$~Па$\cdot$с.
+			
+			
+		\end{column}
+	\end{columns}
 	
-	\begin{exampleblock}{Скорость течения}
-		\parbox{\textwidth}{
-		\[
-		v = \frac{\Delta p \cdot h^2}{2\mu L}
-		\left[
-		1 - \left(\frac{y}{h}\right)^2
-		\right],
-		\]
-		\[
-		v_{max} = \frac{1}{2}\frac{\Delta p\cdot  h^2}{\mu L}.
-		\]		
-		}
-	\end{exampleblock}
-
-	\begin{exampleblock}{Расход по сечению}
-		\parbox{\textwidth}{
-			\[
-				Q = \int\limits_{-h}^h w dy = \frac{2}{3} \frac{\Delta p\cdot h^3}{\mu L}.
-			\]
-		}
-	\end{exampleblock}
-
-	\begin{exampleblock}{Средняя скорость по течению}
-		\parbox{\textwidth}{
-		\[
-			v_{avg} = \frac{Q}{2h} = \frac{1}{3} \frac{\Delta p \cdot h^2}{\mu L} =
-			\frac{2}{3} v_{max}.
-		\]
-	
-		}
-	\end{exampleblock}
 	
 	
 }
 
+\frame{
+	\frametitle{Течение Пуазейля: плоский канал }
+	
+	\begin{exampleblock}{Закон сопротивления плоского канала}
+		\parbox{\textwidth}{
+			Вводя коэффициент сопротивления $\lambda$ для плоского канала
+			\[
+			\frac{\Delta p}{L} = \lambda \frac{1}{2h} \frac{\rho v_{avg}^2}{2},
+			\]
+			получим выражение для коэффициента сопротивления через число Рейнольдса
+			\[
+			\lambda = \frac{24}{\Re}, \,\, \text{где}\,\,
+			\Re = \frac{v_{avg} 2h}{\nu}.
+			\]
+		}
+	\end{exampleblock}
+	
+}
+
+
+\frame{
+	\frametitle{ Течение Пуазейля: эллиптический канал }
+	
+		\begin{columns}
+		\begin{column}{0.65\textwidth}
+			\begin{exampleblock}{Скорость течения}
+				\parbox{\textwidth}{
+					\[
+					v(x,y) = \frac{\Delta p }{2\mu L}
+					\frac{a^2b^2}{a^2+b^2}
+					\left(
+					1 - \frac{x^2}{a^2} - \frac{y^2}{b^2}
+					\right),
+					\]
+					\[
+					v_{max} = \frac{\Delta p}{2 \mu L} \frac{a^2b^2}{a^2+b^2}.
+					\]		
+				}
+			\end{exampleblock}
+			
+			\begin{exampleblock}{Расход по сечению}
+				\parbox{\textwidth}{
+					\[
+					Q = \int\limits_{S} v(x,y) dx dy = \frac{1}{2} \pi a b v_{max}.
+					\]
+				}
+			\end{exampleblock}
+			
+			\begin{exampleblock}{Средняя скорость по течению}
+				\parbox{\textwidth}{
+					\[
+					v_{avg} = \frac{Q}{\pi a b} = \frac{1}{2} v_{max}.
+					\]
+					
+				}
+			\end{exampleblock}
+		\end{column}
+		\begin{column}{0.35\textwidth}
+			\centering\scriptsize
+%			\includegraphics[width=0.9\linewidth]{../img/Poiseuille_flat.pdf}\\
+			
+			\medskip
+			Профиль скорости при 
+			$\Delta p = 5 \cdot 10^4$~ Па, $a=5$~мм, $b=5$~мм, $L=10$~м, $\mu=1004 \cdot 10^{-6}$~Па$\cdot$с.
+			
+			
+		\end{column}
+	\end{columns}
+	
+}
+
+\frame{
+	\frametitle{Течение Пуазейля: круглый канал }
+	
+	\begin{exampleblock}{Закон сопротивления эллиптического канала}
+		\parbox{\textwidth}{
+			Вводя коэффициент сопротивления $\lambda$ для круглого канала диаметра $d$
+			\[
+			\frac{\Delta p}{L} = \frac{\lambda}{\pi r^2} \frac{\rho v_{avg}^2}{2},
+			\]
+			получим выражение для коэффициента сопротивления через число Рейнольдса
+			\[
+			\lambda = \frac{64}{\Re}, \,\, \text{где}\,\,
+			\Re = \frac{v_{avg} d}{\nu}.
+			\]
+		}
+	\end{exampleblock}
+	
+}
 
 
 \frame{
