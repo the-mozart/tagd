@@ -93,7 +93,7 @@
 \frame{
 	\frametitle{Аннотация}
 	\parbox{\textwidth}{
-
+	Понятие вязкой жидкости. Тензор напряжения для вязкой несжимаемой жидкости. Система уравнений Навье-Стокса. Постановка граничных условий. Подобие течений вязкой несжимаемой жидкости. $\Pi$-теорема. Течение Пуазейля.
 	}
 }
 
@@ -669,7 +669,7 @@
 		\parbox{\textwidth}{
 			Вводя коэффициент сопротивления $\lambda$ для плоского канала
 			\[
-			\frac{\Delta p}{L} = \lambda \frac{1}{2h} \frac{\rho v_{avg}^2}{2},
+			\Delta p = \lambda \frac{L}{2h} \frac{\rho v_{avg}^2}{2},
 			\]
 			получим выражение для коэффициента сопротивления через число Рейнольдса
 			\[
@@ -681,9 +681,59 @@
 	
 }
 
-
 \frame{
 	\frametitle{ Течение Пуазейля: эллиптический канал }
+	
+	%	\begin{columns}
+	%		\begin{column}{0.65\textwidth}
+	\begin{exampleblock}{Скорость течения}
+		\parbox{\textwidth}{
+			\[
+			v(x,y) = \frac{\Delta p }{2\mu L}
+			\frac{a^2b^2}{a^2+b^2}
+			\left(
+			1 - \frac{x^2}{a^2} - \frac{y^2}{b^2}
+			\right),
+			\]
+			\[
+			v_{max} = \frac{\Delta p}{2 \mu L} \frac{a^2b^2}{a^2+b^2}.
+			\]		
+		}
+	\end{exampleblock}
+	
+	\begin{exampleblock}{Расход по сечению}
+		\parbox{\textwidth}{
+			\[
+			Q = \int\limits_{S} v(x,y) dx dy = \frac{1}{2} \pi a b v_{max}.
+			\]
+		}
+	\end{exampleblock}
+	
+	\begin{exampleblock}{Средняя скорость по течению}
+		\parbox{\textwidth}{
+			\[
+			v_{avg} = \frac{Q}{\pi a b} = \frac{1}{2} v_{max}.
+			\]
+			
+		}
+	\end{exampleblock}
+	%		\end{column}
+	%		\begin{column}{0.35\textwidth}
+	%			\centering\scriptsize
+	%			%			\includegraphics[width=0.9\linewidth]{../img/Poiseuille_flat.pdf}\\
+	%			
+	%			\medskip
+	%			Профиль скорости при 
+	%			$\Delta p = 5 \cdot 10^4$~ Па, $a=5$~мм, $b=5$~мм, $L=10$~м, $\mu=1004 \cdot 10^{-6}$~Па$\cdot$с.
+	%			
+	%			
+	%		\end{column}
+	%	\end{columns}
+	%	
+}
+
+\frame{
+	\frametitle{ Течение Пуазейля: круглый канал }
 	
 		\begin{columns}
 		\begin{column}{0.65\textwidth}
@@ -691,13 +741,13 @@
 				\parbox{\textwidth}{
 					\[
 					v(x,y) = \frac{\Delta p }{2\mu L}
-					\frac{a^2b^2}{a^2+b^2}
+					\frac{r^2}{2}
 					\left(
-					1 - \frac{x^2}{a^2} - \frac{y^2}{b^2}
+					1 - \frac{x^2+y^2}{r^2} 
 					\right),
 					\]
 					\[
-					v_{max} = \frac{\Delta p}{2 \mu L} \frac{a^2b^2}{a^2+b^2}.
+					v_{max} = \frac{\Delta p}{2 \mu L} \frac{r^2}{2}.
 					\]		
 				}
 			\end{exampleblock}
@@ -705,7 +755,7 @@
 			\begin{exampleblock}{Расход по сечению}
 				\parbox{\textwidth}{
 					\[
-					Q = \int\limits_{S} v(x,y) dx dy = \frac{1}{2} \pi a b v_{max}.
+					Q = \int\limits_{S} v(x,y) dx dy = \frac{1}{2} \pi r^2 v_{max}.
 					\]
 				}
 			\end{exampleblock}
@@ -713,25 +763,28 @@
 			\begin{exampleblock}{Средняя скорость по течению}
 				\parbox{\textwidth}{
 					\[
-					v_{avg} = \frac{Q}{\pi a b} = \frac{1}{2} v_{max}.
+					v_{avg} = \frac{Q}{\pi r^2} = \frac{1}{2} v_{max}.
 					\]
 					
 				}
 			\end{exampleblock}
 		\end{column}
-		\begin{column}{0.35\textwidth}
+		\begin{column}{0.45\textwidth}
 			\centering\scriptsize
-%			\includegraphics[width=0.9\linewidth]{../img/Poiseuille_flat.pdf}\\
+			\includegraphics[width=\linewidth]{../img/Poiseuille_circle.pdf}\\
 			
 			\medskip
 			Профиль скорости при 
-			$\Delta p = 5 \cdot 10^4$~ Па, $a=5$~мм, $b=5$~мм, $L=10$~м, $\mu=1004 \cdot 10^{-6}$~Па$\cdot$с.
+			$\Delta p = 5 \cdot 10^4$~ Па, $r=5$~мм, $L=10$~м, $\mu=1004 \cdot 10^{-6}$~Па$\cdot$с.
 			
 			
 		\end{column}
 	\end{columns}
 	
 }
+
+
+
 
 \frame{
 	\frametitle{Течение Пуазейля: круглый канал }
@@ -740,12 +793,12 @@
 		\parbox{\textwidth}{
 			Вводя коэффициент сопротивления $\lambda$ для круглого канала диаметра $d$
 			\[
-			\frac{\Delta p}{L} = \frac{\lambda}{\pi r^2} \frac{\rho v_{avg}^2}{2},
+			\Delta p = \lambda \frac{L}{2r} \frac{\rho v_{avg}^2}{2},
 			\]
 			получим выражение для коэффициента сопротивления через число Рейнольдса
 			\[
 			\lambda = \frac{64}{\Re}, \,\, \text{где}\,\,
-			\Re = \frac{v_{avg} d}{\nu}.
+			\Re = \frac{v_{avg} 2r}{\nu}.
 			\]
 		}
 	\end{exampleblock}
@@ -754,11 +807,36 @@
 
 
 \frame{
+	\frametitle{ Реальное течение в канале }
+	
+	\centering
+	\includegraphics[width=0.7\textwidth]{../img/Reinolds_1.png}
+
+	
+}
+
+\frame{
+	\frametitle{ Реальное течение в канале }
+	
+	\centering
+	\includegraphics[width=0.7\textwidth]{../img/Reinolds_2.png}
+	
+	\medskip
+	\parbox{\textwidth}{
+	\small
+	Повторение эксперимента Рейнольдса с краской. Критическое число Рейнольдса $\Re$ в приведённом эксперименте оказалось ниже $13000$ в отличие от оригинального эксперимента Рейнольдса в следствие уличного движения в современном Манчестере.
+	
+	\medskip
+	\scriptsize
+	{\em М. Ван-Дайк}. Альбом течений жидкости и газа. М.:Мир, 1986
+	}
+}
+
+\frame{
 	\frametitle{ Литература }
 	\begin{itemize}[partopsep=1pt,label=\textbullet]
 		\item 
-		{\em Кочин~Н.~Е., Кибель~И.~А., Розе~Н.~В.} Теоретическая гидромеханика. М.:Гос. издат. физ.-мат. лит., 1963.
-		\item {\em Валландер~С.~В.} Лекции по аэрогидромеханике. Учеб. пособие. Л., Изд-во Ленингр. ун-та, 1978. 
+		{\em Лойцянский~Л.~Г.} Механика жидкости газа и плазмы: Учеб. для вузов. --- 7-е изд., испр. -- М.:Дрофа, 2003
 	\end{itemize}
 }
 
