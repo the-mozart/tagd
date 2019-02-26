@@ -108,7 +108,7 @@
 	\includegraphics[width=0.5\textwidth]{../img/sphere.pdf}
 	\begin{exampleblock}{Постановка задачи (\textit{G.G Stokes}, 1851)}
 		\parbox{\textwidth}{
-			Определить силу , действующую на сферу радиуса $a$, движущуюся со скоростью $U$ в потоке вязкой жидкости плотности $\rho$ и динамической вязкостью $\mu$, при малых числах Рейнольдса 
+			Определить силу, действующую на сферу радиуса $a$, движущуюся со скоростью $U$ в потоке вязкой жидкости плотности $\rho$ и динамической вязкостью $\mu$, при малых числах Рейнольдса 
 			\[
 			\Re= \frac{2 a U \rho}{\mu} \ll 1.
 			\]
@@ -350,24 +350,222 @@
 		}
 	\end{exampleblock}\pause
 
-	\begin{exampleblock}{Компоненты тензора напряжений на поверхности сферы}
+
+}
+
+\frame{
+	\frametitle{ Сравнение с обтеканием сферы идеальной жидкостью }
+	
+	\begin{exampleblock}{Коэффициент давления}
 		\parbox{\textwidth}{
-		\[
-		\sigma_{rr}|_{r=a} = \left( -p + 2 \mu \pd{v_r}{r}\right)_{r=a} = \frac{3}{2}\mu\frac{Ua}{r^2}\cos\theta,
-		\]		
-		\[
-		\sigma_{r\theta}|_{r=a} = \mu\left(\frac{1}{r}\pd{v_r}{\theta}+\pd{v_\theta}{r} -\frac{v_\theta}{r} \right)_{r=a}=-\frac{3\mu U}{2a}\sin\theta.
-		\]	
+				\[
+			c_p = \frac{p-p_\infty}{\frac{1}{2}\rho U^2} = -\frac{3\mu}{\rho U a}\frac{\cos\theta}{(r/a)^2} = \frac{6}{\Re}\frac{\cos\theta}{(r/a)^2}.
+			\]
+		}
+	\end{exampleblock}\pause
+
+	
+
+	\begin{enumerate}[label=(\arabic*)]
+	\item Коэффициент давления является функцией числа Рейнольдса $\Re$ и угла $\theta$.\pause
+	\item Распределение давления не симметрично относительно миделевой плоскости, так что главный вектор сил давления отличен от $0$ (парадокс Даламбера не имеет место).\pause
+	\item Коэффициент давления в критических точках не равен единице; при $\theta=\pi/2$ давление равно давлению в невозмущенном потоке; максимальное разряжение достигается в задней критической точке.
+	\end{enumerate}	
+
+	
+	
+}
+
+
+\frame{
+	\frametitle{ Сила, действующая на тело со стороны  жидкости }
+	\small
+	\begin{exampleblock}{Компоненты тензора напряжений в сферической системе координат}
+		\parbox{\textwidth}{
+
+			\[
+			\sigma_{rr} = -p+2\mu\pd{v_r}{r},\quad
+			\sigma_{r\theta} = \mu\left(\frac{1}{r}\pd{v_r}{\theta}+\pd{v_\theta}{r}-\frac{v\theta}{r}\right),
+			\]
+			\[
+			\sigma_{\theta\theta} = -p + 2\mu\left(\frac{1}{r}\pd{v_\theta}{\theta}+\frac{v_r}{r}\right),\quad
+			%	\]
+			%	\[
+			\sigma_{\theta\lambda} = \mu\left(
+			\frac{1}{r\sin\theta}\pd{v_\theta}{\lambda}+\frac{1}{r}\pd{v_\lambda}{\theta}-
+			\frac{v_\lambda\ctg\theta}{r}
+			\right),
+			\]
+			\[
+			\sigma_{\lambda\lambda} = -p + 2\mu\left(
+			\frac{1}{r\sin\theta}\pd{v_\lambda}{\lambda}+\frac{v_r}{r}+
+			\frac{v_\theta\ctg\theta}{r}
+			\right),
+			\]
+			\[
+			\sigma_{\lambda r} = \mu\left(
+			\pd{v_r}{r} + \frac{1}{r\sin\theta}\pd{v_r}{\lambda}-\frac{v_\lambda}{r}
+			\right).
+			\]
 		}
 	\end{exampleblock}
+
+	\begin{exampleblock}{Сила}
+		\parbox{\textwidth}{
+		\[
+		\vec{F} = \int_S \vec{n}\cdot\sigma dS,
+		\]
+		где $S$ -- поверхность тела, $\vec{n}$ -- вектор внешней единичной нормали, направленный в жидкость.
+		}
+	\end{exampleblock}
+	
+
+	
+}
+
+
+
+\frame{
+	\frametitle{ Сила Стокса }
+	
+	\begin{exampleblock}{Компоненты тензора напряжений на поверхности сферы}
+		\parbox{\textwidth}{
+			\[
+			\sigma_{rr}|_{r=a} = \left( -p + 2 \mu \pd{v_r}{r}\right)_{r=a} = \frac{3}{2}\mu\frac{Ua}{r^2}\cos\theta,
+			\]		
+			\[
+			\sigma_{r\theta}|_{r=a} = \mu\left(\frac{1}{r}\pd{v_r}{\theta}+\pd{v_\theta}{r} -\frac{v_\theta}{r} \right)_{r=a}=-\frac{3\mu U}{2a}\sin\theta.
+			\]	
+		}
+	\end{exampleblock}\pause
+	
+	\begin{exampleblock}{Сила, действующая на сферу}
+		\parbox{\textwidth}{
+			\[
+			W = \int\limits_S (\sigma_{rr}\cos\theta - \sigma_{r\theta}\sin\theta) dS = 
+			\int\limits_0^\pi (\sigma_{rr}\cos\theta - \sigma_{r\theta}\sin\theta) 2 \pi a^2 \sin\theta d\theta = 
+			\]
+			\[
+			=
+			3\pi\mu U a \int\limits_0^\pi \sin\theta d\theta =
+			6\pi\mu U a.
+			\]
+			
+		}
+	\end{exampleblock}
+
+}
+
+\frame{
+	\frametitle{ Границы применимости формулы Стокса }
+	
+	\centering
+	\includegraphics[width=0.9\textwidth]{../img/flow_sphere_1.png}\\
+	
+	Линии тока в осевой плоскости установившегося течения около сферы радиуса $a$ (Танеда, 1956б).
+	
+	
+}
+
+
+\frame{
+	\frametitle{ Границы применимости формулы Стокса }
+	
+	\centering
+	\includegraphics[width=0.9\textwidth]{../img/flow_sphere_2.png}\\
+	
+	Линии тока в осевой плоскости установившегося течения около сферы радиуса $a$ (Танеда, 1956б).
+	
+	
+}
+
+\frame{
+	\frametitle{Коэффициент сопротивления}
+	
+	\begin{exampleblock}{Коэффициент сопротивления для решения Стокса}
+		\parbox{\textwidth}{
+		
+		\medskip
+		\[
+			c_z = \frac{W}{\frac{1}{2}\rho U^2 \pi a^2} = 
+			\frac{6\pi \mu a U}{\frac{1}{2}\rho U^2 \pi a^2} = \frac{24}{\Re}.
+		\]
+%		\[
+%			\Re = \displaystyle\frac{\rho U d}{\mu} = \frac{U d}{\nu},\quad
+%			d=2a.
+%		\]
+		}
+	\end{exampleblock}\pause
+
+	\begin{exampleblock}{Теория Озеена и Озеена-Гольдстейна}
+		\parbox{\textwidth}{
+			\[
+			c_z = \frac{24}{\Re}\left(
+			1 + \frac{3}{16}\Re-\frac{19}{1280}\Re^2+\ldots			
+			\right).
+			\]
+			Если сохранить только первый член, то будет формула Стокса, первые два -- формула Озеена и т.д. 
+			
+			\medskip
+			Формула Озеена получается при лианеризации конвективного слагаемого в уравнениях Навье-Стокса по формуле
+			\[
+			(\vec{v}\cdot\nabla)\vec{v} \approx (\vec{U} \cdot\nabla)\vec{v}.
+			\]
+		}
+	\end{exampleblock}
+
+}
+
+\frame{
+	\frametitle{ Сравнение теорий }
+	\centering
+	\includegraphics[width=0.8\textwidth]{../img/cx.png}\\
+	
+	Зависимость коэффициента сопротивления сферы от числа Рейнольдса (1 -- Стокс, 2 -- Озеен, 3 -- эксперимент)
+}
+
+
+\frame{
+	\frametitle{ Другие решения уравнений Стокса }
+	
+	\begin{exampleblock}{Постановка задачи}
+		\parbox{\textwidth}{
+			Определить силу сопротивления сферы радиуса $a$ потоку вязкой несжимаемой жидкости плотности $\rho$ и вязкости $\mu$, движущемуся  поступательно с заданной переменной скоростью $\vec{U}(t)$ ($\vec{U}(0)=0$).
+		}
+	\end{exampleblock}\pause
+	
+	\begin{exampleblock}{Формула Буссинеска}
+		\parbox{\textwidth}{
+			\[
+			\vec{W} = -\underbrace{6\pi\mu a \vec{U}(t)}_{\text{Стокс}}  \underbrace{-\frac{2}{3}\pi\rho a^3\vec{U}'(t)}_{\text{присоединенная масса}} -
+			\underbrace{6\pi\mu a^2 \frac{1}{\sqrt{\pi\nu}}
+			\int\limits_0^t \frac{\vec{U}'(\tau) d\tau}{\sqrt{t-\tau}}}_{\text{Бассе}}.
+			\]\pause
+			
+			\vspace{-5mm}			
+			Сила для импульсно приведённого из состояния покоя в движения шара до скорости $U_0$
+			\[
+			W = 6\pi\mu a U_0 \left(1 + \sqrt{\frac{a^2}{\pi\nu t}}\right).
+			\]
+		}
+	\end{exampleblock}
+	
 }
 
 
 \frame{
 	\frametitle{ Литература }
 	\begin{itemize}[partopsep=1pt,label=\textbullet]
+		\item {\em Кочин~Н.~Е., Кибель~И.~А., Розе~Н.~В.} Теоретическая гидромеханика. М.:Гос. издат. физ.-мат. лит., 1963.
+		
 		\item 
 		{\em Лойцянский~Л.~Г.} Механика жидкости газа и плазмы: Учеб. для вузов. --- 7-е изд., испр. -- М.:Дрофа, 2003
+		
+		\item {\em Бэтчелор Дж.} Введение в динамику жидкости. --- М.: Мир, 1973.
+		
+		\item {\em Ландау~Л.~Д., Лифшиц~Е.~М.} Теоретическая физика: Учебное пособие. В 10 т. Т. VI. Гидродинамика. -- 3-е изд., перераб. --- М.: Наука. Гл. ред. физ-мат. лит., 1986.
+		
+		
 	\end{itemize}
 }
 
