@@ -223,11 +223,32 @@
 	\end{exampleblock}
 	
 }
+\frame{
+	\frametitle{Элементы термодинамики}
+	
+	\begin{exampleblock}{Формулы для внутренней энергии}
+		\parbox{\textwidth}{
+			Из второго начала термодинамики следует, что
+			\[
+			\pd{}{V}\left(
+			\frac{1}{T} \pd{\varepsilon}{T}  
+			\right) = \pd{}{T}\left( 
+			\frac{1}{T} \pd{\varepsilon}{V}+\frac{p}{T}
+			\right) \quad\text{или}\quad
+			\pd{\varepsilon}{V} = T^2 \pd{}{T}\left(\frac{p}{T} \right).
+			\]
+			
+			При заданных уравнениях состояния $p = p(V,T)$ и $S=S(V,T)$ внутренняя энергия находится с точностью до константы.
+		}
+	\end{exampleblock}
+}
+
+
 
 \frame{
 	\frametitle{Элементы термодинамики}
 	
-	\begin{exampleblock}{}
+	\begin{exampleblock}{Формулы для энтропии}
 		\parbox{\textwidth}{
 			Из второго начала термодинамики следует, что
 			\[
@@ -300,6 +321,77 @@
 		}
 	\end{exampleblock}
 	
+}
+
+\frame{
+	\frametitle{ Совершенный газ }
+	
+	\begin{exampleblock}{Определение}
+		\parbox{\textwidth}{
+			\alert{Совершенным (идеальным) газом} называется газ, для которого справедлив закон Менделеева-Клайперона
+			\[
+			p V = R T,
+			\]
+			где $R$ -- газовая постоянная.
+		}
+	\end{exampleblock}
+
+
+
+
+
+}
+
+\frame{
+	\frametitle{ Совершенный газ }
+		\begin{exampleblock}{Внутренняя энергия совершенного газа}
+		\parbox{\textwidth}{
+			Из полученных соотношений для внутренней энергии		
+			\[
+			\pd{\varepsilon}{V} = 0 \quad\Rightarrow\quad
+			\varepsilon = \varepsilon(T),
+			\]
+			при этом удельная теплоёмкость $c_V= \displaystyle\pd{\varepsilon}{T} = c_V(T)$.
+		}
+	\end{exampleblock}\pause
+	
+	\begin{exampleblock}{Определение}
+		\parbox{\textwidth}{
+			Газ называется \alert{политропным}, если  $c_V$ не зависит от $T$. В этом случае
+			\[
+			\varepsilon = c_V T.
+			\]
+		}
+	\end{exampleblock}
+}
+
+\frame{
+	\frametitle{Совершенный газ}
+	
+	\begin{exampleblock}{Выводы кинетической теории}
+		\parbox{\textwidth}{
+			Выражения для удельных теплоёмкостей имеют вид
+			\[
+			c_V = \frac{f}{2}k\frac{N_A}{M},\quad
+			R = c_p-c_V,
+			\]
+			где $f$ -- число степеней свободы молекулы газа ($f=3$ для одноатомного, $f=5$ для двухатомного), $k$ -- постоянная Больцмана, $N_A$ -- постоянная Авогадро, $M$ -- молекулярный вес.
+		}
+	\end{exampleblock}\pause
+
+	\begin{exampleblock}{Энтропия}
+		\parbox{\textwidth}{
+			Из соотношении для энтропии при заданных уравнениях состояния следует, что 
+			\[
+			S = c_V \ln T + R \ln V + const = c_V \ln T + c_p \ln V - c_V \ln V  + const = 
+			\]
+			\[
+			=
+			c_V \ln p + c_p \ln V + const.			
+			\]
+		}
+	
+	\end{exampleblock}
 }
 
 
