@@ -22,7 +22,7 @@
 %\usepackage{longtable}
 \usepackage{xcolor}
 
-%\usepackage{pgffor}
+\usepackage{pgffor}
 \usepackage{enumitem}
 \usepackage[export]{adjustbox}
 
@@ -142,7 +142,7 @@
 		\parbox{\textwidth}{
 			При рассмотрении звуковых колебаний будет считать течение \alert{изоэнтропическим} ($S=const$), тогда из общей системы уравнений остаются только уравнение неразрывности и уравнение Эйлера, а в замыкающем соотношении пропадает зависимость от $S$, как функции от координаты и времени.
 		}
-	\end{exampleblock}\pause
+	\end{exampleblock}
 
 
 
@@ -245,7 +245,7 @@
 }
 
 \frame{
-	\frametitle{Решение волнового уравнения с плоскими волнами}
+	\frametitle{Решение волнового уравнения для плоских волн}
 	
 	\begin{exampleblock}{Одномерное плоское течение}
 		\parbox{\textwidth}{
@@ -277,6 +277,72 @@
 	\end{exampleblock}
 }
 
+
+\foreach \n in {
+	01, 02, 03, 04, 05, 06, 07}
+{
+	
+	\frame{
+		\frametitle{  Иллюстрация перемещения волн  }
+		
+		\centering
+		\includegraphics[width=\linewidth]{../img/solitons/signal_\n.pdf}
+		
+	
+	}
+	
+}
+
+\frame{
+	\frametitle{Решение волнового уравнения в сферической симметрии }
+	
+	\begin{exampleblock}{Волновое уравнение в сферической симметрии }
+		\parbox{\textwidth}{
+			Если $\varphi = \varphi(t,r)$, тогда волновое уравнение имеет вид
+			\[
+			\frac{1}{c_0^2} \pdk{\varphi}{t} = \frac{1}{r^2}
+			\left(
+			\pd{}{r} 
+			\left(
+			r^2 \pd{\varphi}{r}
+			\right)
+			\right)\quad
+			\iff\quad
+			\frac{1}{c_0^2} \pdk{}{t} (r \varphi)= \pdk{}{r}
+			\left(
+			r \varphi
+			\right).
+			\]			
+		}
+	\end{exampleblock}
+	
+	\begin{exampleblock}{Одномерное сферическое течение}
+		\parbox{\textwidth}{
+			Решением полученного волнового уравнения будет
+			\[
+			\varphi(t,r) = \frac{f_1(r - c_0 t) + f_2(r + c_0 t)}{r} = \frac{Q_1(\xi)}{r} + \frac{Q_2(\eta)}{r},
+			\]
+			где $Q_1(\xi)$, $Q_2(\eta)$ -- произвольные дважды дифференцируемые функции своих аргументов
+			$\xi = r - c_0 t$, $\eta = r + c_0 t$.
+		}
+	\end{exampleblock}
+	
+}
+
+\foreach \n in {05, 06, 07, 08, 09, 10, 11, 12, 13, 14}
+{
+	
+	\frame{
+		\frametitle{  Иллюстрация перемещения волн при сферической симметрии }
+		
+		\centering
+		\includegraphics[width=\linewidth]{../img/solitons/spherical_signal_\n.pdf}
+		
+		На рисунке $\varphi(t,r) = \displaystyle\frac{1}{r}\left( f_1(r - c_0 t) + f_2(r + c_0 t)\right)$ для заданных функций $f_1(\xi)$  и $f_2(\eta)$.
+		
+	}
+	
+}
 
 
 
