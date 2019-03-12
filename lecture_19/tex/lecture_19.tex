@@ -283,12 +283,12 @@
 {
 	
 	\frame{
-		\frametitle{  Иллюстрация перемещения волн  }
+		\frametitle{  Иллюстрация распространения плоских волн  }
 		
 		\centering
 		\includegraphics[width=\linewidth]{../img/solitons/signal_\n.pdf}
 		
-	
+		На рисунке $\varphi(t,x) =  f_1(x - c_0 t) + f_2(x + c_0 t)$ для заданных функций $f_1(\xi)$  и $f_2(\eta)$.
 	}
 	
 }
@@ -333,7 +333,7 @@
 {
 	
 	\frame{
-		\frametitle{  Иллюстрация перемещения волн при сферической симметрии }
+		\frametitle{  Иллюстрация распространения сферических волн }
 		
 		\centering
 		\includegraphics[width=\linewidth]{../img/solitons/spherical_signal_\n.pdf}
@@ -345,22 +345,55 @@
 }
 
 
+\frame{
+	\frametitle{Запаздывающие потенциалы}
+	
+	\begin{exampleblock}{Определение}
+		\parbox{\textwidth}{
+			Возмущения из точки $r=0$ до доходят до некоторой точки $r \neq 0$ только через определённое время, поэтому полученное решение волнового уравнения называется \alert{запаздывающим потенциалом}.
+		}
+	\end{exampleblock}\pause
 
-%\begin{exampleblock}{Одномерное течение}
-%	\parbox{\textwidth}{
-%		$
-%		\displaystyle\pd{\rho'}{t} + \pd{v'}{x} = 0$,
-%		$\displaystyle\pd{v'}{t} + \frac{c_0^2}{\rho_0} \pd{\rho'}{x} = 0,			
-%		$
-%		где $\rho' = \rho'(t,x)$, $v' = v'(t,x)$.
-%	}
-%\end{exampleblock}
-%
-%\begin{exampleblock}{Одномерное течение в сферической симметрии}
-%	\parbox{\textwidth}{
-%		
-%	}
-%\end{exampleblock}
+	\begin{exampleblock}{Потенциал источника звука}
+		\parbox{\textwidth}{
+			Функция вида 
+			\[
+			\varphi^*(t,x,y,z) = 
+			-\frac{Q
+				\left(
+					c_0(t-t_0) - \sqrt{(x-x_0)^2 + (y-y_0)^2 + (z-z_0)^2}
+				\right) 
+			}
+			{4\pi \sqrt{(x-x_0)^2 + (y-y_0)^2 + (z-z_0)^2} }
+			\]
+			является решением волнового уравнения для источника звука, начинающего действовать в момент времени $t=t_0$ в точке с координатами $(x_0, y_0, z_0)$.
+		}
+	\end{exampleblock}
+	
+}
+
+\frame{
+	\frametitle{Способы конструирования решений волнового уравнения}
+	
+	\begin{exampleblock}{Принцип суперпозиций}
+		\parbox{\textwidth}{
+			В силу линейности волнового уравнения суммарным потенциалом при движении твёрдого тела по траектории 
+			\[
+			x_0 = x_0(t_0),\quad
+			y_0 = y_0(t_0),\quad
+			z_0 = z_0(t_0)
+			\]
+			можно рассматривать потенциал, являющийся суммой источников звука, возбуждаемых телом в момент времени $t_0$ в соответствующих точках траектории с заданной интенсивностью $Q_{t_0}$, при этом
+			\[
+			\varphi = \int\limits_0^t \varphi^* dt_0.
+			\]
+			
+		}
+	\end{exampleblock}
+	
+}
+
+
 
 \frame{
 	\frametitle{ Литература }
