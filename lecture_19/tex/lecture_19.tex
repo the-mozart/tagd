@@ -215,7 +215,7 @@
 			$\vec{v} = 0$, $p=p_0$, $\rho = \rho_0$:
 			\[
 			\begin{array}{lcl}
-			\vec{v} & = & \vec{v}',\\
+			\vec{v} & = & \vec{v},\\
 			c  & = & c_0 + c',\\
 			\rho & = & \rho_0 + \rho '.
 			\end{array}
@@ -226,10 +226,10 @@
 	\begin{exampleblock}{Уравнения движения}
 		\parbox{\textwidth}{
 		\[
-		\pd{(\rho_0 + \rho')}{t}+ \divo(\rho_0 + \rho') \vec{v}' = 0,
+		\pd{(\rho_0 + \rho')}{t}+ \divo(\rho_0 + \rho') \vec{v} = 0,
 		\]
 		\[
-		\pd{\vec{v}'}{t} + (\vec{v}' \cdot \nabla) \vec{v}' = -\frac{1}{\rho_0+\rho'} (c_0 + c')^2 \nabla (\rho_0 + \rho').
+		\pd{\vec{v}}{t} + (\vec{v} \cdot \nabla) \vec{v} = -\frac{1}{\rho_0+\rho'} (c_0 + c')^2 \nabla (\rho_0 + \rho').
 		\]
 		}
 	\end{exampleblock}
@@ -244,15 +244,15 @@
 		\parbox{\textwidth}{
 			Считая колебания малыми, отбрасываем все слагаемые, имеющие порядок малости два и выше, получим
 			\[
-			\pd{\rho'}{t} + \rho_0 \divo \vec{v}' = 0,\quad
-			\pd{\vec{v}'}{t} + \frac{c_0^2}{\rho_0} \nabla \rho' = 0.
+			\pd{\rho'}{t} + \rho_0 \divo \vec{v} = 0,\quad
+			\pd{\vec{v}}{t} + \frac{c_0^2}{\rho_0} \nabla \rho' = 0.
 			\]
 		}
 	\end{exampleblock}\pause
 
 	\begin{exampleblock}{Потенциальное течение и волновое уравнение}
 		\parbox{\textwidth}{
-			Если $\vec{v}' = \nabla \varphi$, тогда 
+			Если $\vec{v} = \nabla \varphi$, тогда 
 			\[
 			\pd{\rho'}{t} + \rho_0 \Delta\varphi = 0,\quad
 			\pd{}{t}\nabla\varphi + \frac{c_0^2}{\rho_0} \nabla \rho' = 0.
@@ -516,6 +516,165 @@
 	
 	
 }
+
+\frame{
+	\frametitle{Энергия звуковых колебаний}
+	
+	\begin{exampleblock}{Закон сохранения энергии идеального газа}
+		\parbox{\textwidth}{
+			\[
+			\pd{}{t}\rho \left(\varepsilon + \frac{v^2}{2} \right) + 
+			\divo \rho\vec{v}\left(\varepsilon + \frac{v^2}{2} + \frac{p}{\rho}\right) = 0.
+			\]
+			
+		}
+	\end{exampleblock}
+	
+	\begin{exampleblock}{Энергия единицы объёма}
+		\parbox{\textwidth}{
+			Разложение полной энергии единицы объёма покоящейся сплошной среды относительно состояния $\rho_0$, $\varepsilon_0$ при её малых возмущениях
+			\[
+			\rho = \rho_0 + \rho',\quad
+			\varepsilon = \varepsilon_0 + \varepsilon'
+			\]
+			до второго порядка малости имеет вид
+			\[
+			E = \rho\varepsilon+\frac{\rho v^2}{2} \approx
+			\rho_0 \varepsilon_0 + \rho' \left. \pd{(\rho\varepsilon)}{\rho} \right|_{\rho=\rho_0} + \left.\frac{\rho'^2}{2} \pdk{(\rho\varepsilon)}{\rho} \right|_{\rho=\rho_0}+ \frac{\rho_0 v^2}{2}.
+			\]
+			
+		}
+	\end{exampleblock}
+	
+}
+
+\frame{
+	\frametitle{Энергия звуковых колебаний}
+	
+	\begin{exampleblock}{Термодинамические соотношения}
+		\parbox{\textwidth}{
+			Т.к.
+			\[
+			d\varepsilon = T dS - p dV = T dS + \frac{p}{\rho^2} d\rho
+			\quad\text{или}\quad
+			dw = T dS + \frac{dp}{\rho},
+			\]
+			где $w = \varepsilon + p/\rho$ -- энтальпия,	то
+			\[
+			\left( \pd{(\rho\varepsilon)}{\rho}  \right)_S = \varepsilon + \frac{p}{\rho} = w,
+			\]\pause
+			\[
+			\left( \pdk{(\rho\varepsilon)}{\rho} \right)_S = 
+			\left( \pd{w}{\rho} \right)_S = \left( \pd{w}{p} \right)_S \left( \pd{p}{\rho} \right)_S = \frac{c^2}{\rho}.
+			\]
+		}
+	\end{exampleblock}
+	
+}
+
+
+\frame{
+	\frametitle{ Энергия звуковых колебаний}
+	
+	\begin{exampleblock}{Полная энергия единицы объёма сплошной среды}
+		\parbox{\textwidth}{
+			\[
+				E \approx \rho_0 \varepsilon_0 + w_0 \rho' + \frac{c_0^2}{2\rho_0}\rho'^2 + \rho_0 \frac{v^2}{2},
+			\]\pause
+			где
+			\begin{enumerate}[label = \arabic*)]
+				\item $\rho_0 \varepsilon_0$ -- энергия единицы объёма неподвижной среды;\pause
+				\item $w_0 \rho'$ -- изменение энергии, связанное с изменением количества вещества (массы).
+			\end{enumerate}
+		}
+	\end{exampleblock}\pause
+
+	\begin{exampleblock}{Плотность звуковой энергии}
+		\parbox{\textwidth}{
+			\[
+			E_s = \frac{\rho_0 v^2}{2} + \frac{c_0^2 \rho'^2}{2\rho_0}.
+			\]\pause
+			
+			В случае плоских волн $\rho' = \rho_0 v/c_0$ 
+			\[
+			E_s = \rho_0 v^2.
+			\]
+			
+		}
+	\end{exampleblock}
+
+	
+
+	
+}
+
+\frame{
+	\frametitle{ Плотность потока энергии звуковых колебаний }
+	
+	\begin{exampleblock}{Плотность потока энергии}
+		\parbox{\textwidth}{
+			Линеаризация плотности потока покоящегося идеального газа около состояния
+			\[
+				w = w_0 + w',\quad p = p_0 + p'
+			\]
+			имеет вид
+			\[
+			\vec{j} = \rho\vec{v} \left(\varepsilon + \frac{v^2}{2} + \frac{p}{\rho}\right) =
+			\rho\vec{v} \left(\frac{v^2}{2} + w \right) \approx
+			w_0 \rho \vec{v} + \rho w' \vec{v}.
+			\]
+		}
+	\end{exampleblock}
+
+
+}
+
+\frame{
+	\frametitle{Плотность потока энергии звуковых колебаний}
+	\small
+	\begin{exampleblock}{}
+		\parbox{\textwidth}{
+			С точностью до первого порядка малости
+			$w' = \left( \displaystyle\pd{w}{p} \right)_S p' = \displaystyle\frac{p'}{\rho}$, отсюда
+			\[
+			\vec{j} \approx w_0 \rho \vec{v} + p'\vec{v},
+			\]\pause
+			где слагаемое $w_0 \rho \vec{v}$ отвечает за плотность потока энергии, связанного с движением массы.
+		}
+	\end{exampleblock}\pause
+	\begin{exampleblock}{Плотность потока энергии звуковых колебаний}
+		\parbox{\textwidth}{
+		\[
+		\vec{j}_s = p'\vec{v}.
+		\]	
+		}
+	\end{exampleblock}\pause
+	\begin{exampleblock}{Плоская волна}
+	\parbox{\textwidth}{
+		Учитывая соотношение для плоской волны $p' = c_0 \rho_0 v$,
+		\[
+		\vec{j}_s = c_0 \rho_0 v^2 \vec{n} = c_0 E_s \vec{n},
+		\]
+		где $\vec{n}$ -- вектор направления движения волны, $E_s$ -- энергия плоской звуковой волны.
+	}
+	\end{exampleblock}
+}
+
+
+\frame{
+	\frametitle{Уравнение сохранения энергии для звуковых колебаний }
+				\[
+	\pd{E_s}{t} + \divo \vec{j}_s = 0,
+	\]
+	где
+	\[
+	E_s = \frac{\rho_0 v^2}{2} + \frac{c_0^2 \rho'^2}{2\rho_0},
+	\]
+	\[
+	\vec{j}_s = p'\vec{v}.
+	\]
+}
+
 
 \frame{
 	\frametitle{ Литература }
