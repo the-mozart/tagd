@@ -2,7 +2,7 @@
 
 \usepackage{beamerthemesplit}
 \usetheme{Singapore} %Copenhagen}
-%\usecolortheme{whale}
+\usecolortheme{whale}
 
 %\usepackage[T2A]{fontenc}
 %\usepackage[utf8]{inputenc}
@@ -12,14 +12,14 @@
 \usepackage{fontspec}      %% подготавливает загрузку шрифтов Open Type, True Type и др.
 \defaultfontfeatures{Ligatures={TeX},Renderer=Basic}  %% свойства шрифтов по умолчанию
 \setmainfont{Times New Roman} %% задаёт основной шрифт документа
-%\usefonttheme{professionalfonts}% SOLUTION
+\usefonttheme{professionalfonts}% SOLUTION
 \usefonttheme{serif}
 
 \usepackage{hyperref}
 \usepackage{textcomp}
 \usepackage{amssymb,amsmath}
-%\usepackage{animate}
-%\usepackage{longtable}
+\usepackage{animate}
+\usepackage{longtable}
 \usepackage{xcolor}
 
 \usepackage{pgffor}
@@ -28,10 +28,10 @@
 
 \newcounter{N}
 
-%% Форматирование окружения itemize
-%\usepackage{ragged2e}
-%\let\olditem\item
-%\renewcommand\item{\olditem\justifying}
+% Форматирование окружения itemize
+\usepackage{ragged2e}
+\let\olditem\item
+\renewcommand\item{\olditem\justifying}
 
 \usepackage{ mathrsfs }
 \newcommand{\Rho}{\mathscr{P}}
@@ -517,6 +517,82 @@
 	
 }
 
+
+\frame{
+	\frametitle{Монохроматические волны}
+	
+	\begin{exampleblock}{Определение}
+		\parbox{\textwidth}{
+			\alert{Монохроматической волной} называют функции, в которых все величины являются простыми периодическим (гармоническими) функциями времени вида
+			\[
+			\varphi_0 = \Re \{ \varphi_0(x,y,z) e^{-i\omega t}  \},
+			\]
+			где $\omega$ -- частота волны.
+		}
+	\end{exampleblock}
+
+	\begin{exampleblock}{Уравнение монохроматической волны}
+		\parbox{\textwidth}{
+			\[
+			\Delta \varphi_0 + \frac{\omega^2}{c^2}\varphi_0 = 0,
+			\]
+			получаемое подстановкой выражения для монохроматической волны в волновое уравнение.
+		}
+	\end{exampleblock}
+	
+}
+
+\frame{
+	\frametitle{Бегущая плоская монохроматическая волна}
+	\begin{exampleblock}{Определение}
+		\parbox{\textwidth}{
+			Потенциал вида
+			\[
+			\varphi = \Re \left\{ 
+			A e^{-i \omega \left( t - \frac{x}{c}\right)}
+			\right\}
+			\]
+			является бегущей плоской монохроматической волной, где $A$ -- комплексная амплитуда. 
+		}
+	\end{exampleblock}
+	\begin{exampleblock}{Вещественное представление}
+		\parbox{\textwidth}{
+		\[
+		\varphi = a \cos \left(
+		\frac{\omega}{c} x - \omega t + \alpha
+		\right),
+		\]
+		где $a$ -- вещественная амплитуда волны, аргумент под знаком $\cos$ -- фаза.
+		}
+	\end{exampleblock}
+}
+
+\frame{
+	\frametitle{Волновой вектор и волновое число}
+	\begin{exampleblock}{Определение}
+		\parbox{\textwidth}{
+			Вектор 
+			\[
+			\vec{k} = \frac{\omega}{c}\vec{n} = \frac{2\pi}{\lambda}\vec{n}
+			\]
+			называют \alert{волновым вектором}, а его абсолютную величину \alert{волновым числом}, где $\vec{n}$ -- единичный вектор в направлении распространении волны. 
+		}
+	\end{exampleblock}
+
+	\begin{exampleblock}{Спектральное разложение}
+		\parbox{\textwidth}{
+			Вообще говоря любую волну можно представить в виде совокупности плоских монохроматических волн с различными волновыми векторами и частотами вида
+			\[
+			\varphi = \Re \left\{
+				A e^{i(\vec{k}\cdot\vec{r} - \omega t)} 
+				\right\},
+			\]
+			где $\vec{r}$ -- радиус вектор. Такое разложение является разложением в ряд или интегралом Фурье. 
+		}
+	\end{exampleblock}
+}
+
+
 \frame{
 	\frametitle{Энергия звуковых колебаний}
 	
@@ -677,14 +753,142 @@
 
 
 \frame{
+	\frametitle{ Задача об отражении и преломлении волны }
+	
+	\centering
+	\includegraphics[width=0.6\linewidth]{../img/sonic_waves_reflection.pdf}
+	
+
+	\only<1>{
+	\begin{exampleblock}{Постановка задачи}
+		\parbox{\textwidth}{
+			Описать отражённую и преломлённую волны получившиеся в результате взаимодействия падающей монохроматической волны с границей раздела двух сред.
+		}
+	\end{exampleblock}
+	}
+	\only<2>{
+	\begin{exampleblock}{Основные предположения}
+		\parbox{\textwidth}{
+		Волна падает в плоскости Oxy, а граница раздела находится в плоскости  Oxz.
+		}
+	\end{exampleblock}
+	}
+
+	\only<3>{
+	\begin{exampleblock}{Основные предположения}
+		\parbox{\textwidth}{
+			Все три волны будут иметь одинаковые частоты $\omega$ и одинаковые компоненты $k_y$, $k_z$, т.к. уравнение описывающее волну одно и тоже, а граничные условия при $x=0$ не зависят от $y$, $z$, $\omega$.
+		}
+	\end{exampleblock}
+	}
+
+	\only<4>{
+	\begin{exampleblock}{Волновые числа}
+		\parbox{\textwidth}{
+			Из рисунка видно, что
+			\[
+			\vec{k}_1 = \frac{\omega}{c_1}(-\cos\theta_1; -\sin\theta_1; 0),\quad
+			\vec{k}_1' = \frac{\omega}{c_1}(\cos\theta_1'; -\sin\theta_1'; 0),
+			\]
+			\[
+			\vec{k}_2 = \frac{\omega}{c_2}(-\cos\theta_2; -\sin\theta_2; 0).
+			\]
+			
+		}
+	\end{exampleblock}
+	}
+
+	\only<5>{
+	\begin{exampleblock}{Граничные условия}
+		\parbox{\textwidth}{
+			Из того, что $k_y$ одно и тоже во всех трёх волнах следует, что
+			\[
+			\theta_1 = \theta_1'
+			\quad\text{и}\quad
+			\frac{\sin\theta_1}{\sin\theta_2} = \frac{c_1}{c_2}.
+			\]
+			
+		}
+	\end{exampleblock}
+	}
+
+	\only<6>{
+	\begin{exampleblock}{Потенциалы волн}
+		\parbox{\textwidth}{
+			
+		\[
+		\varphi_1 = A_1 \exp \left\{ 
+		i\omega\left(
+		-\frac{x}{c_1}\cos\theta_1 - \frac{y}{c_1}\cos\theta_1 -t 
+		\right)
+		 \right\},
+		\]
+		\[
+		\varphi_1' = A_1' \exp \left\{ 
+		i\omega\left(
+		\frac{x}{c_1}\cos\theta_1 - \frac{y}{c_1}\cos\theta_1 -t 
+		\right)
+		\right\},
+		\]
+		\[
+		\varphi_2 = A_2 \exp \left\{ 
+		i\omega\left(
+		-\frac{x}{c_2}\cos\theta_2 - \frac{y}{c_2}\cos\theta_2 -t 
+		\right)
+		\right\}.
+		\]
+		
+		}
+	\end{exampleblock}
+	}
+
+
+	\only<7>{
+	\begin{exampleblock}{Граничные условия}
+		\parbox{\textwidth}{
+			Из условий сохранения на контактном разрыве следует равенство давления ($p = -\rho (\partial\varphi/\partial t)$) и непрерывность нормальной составляющей скорости ($v_x = \partial \varphi / \partial x$)
+			\[
+			\rho_1(A_1 + A_1') = \rho_2 A_2,\quad
+			\frac{\cos\theta_1}{c_1}(A_1 - A_1') = 
+			\frac{\cos\theta_2}{c_2} A_2.
+			\]
+			
+		}
+	\end{exampleblock}
+	}
+
+	\only<8>{
+	\begin{exampleblock}{Коэффициент отражения}
+		\parbox{\textwidth}{
+			Коэффициент отражения определяет отношение средних  (по времени) плотностей потока энергии в отраженной и падающей волнах
+			\[
+				R = \frac{c_1\rho_1 \overline{v_1'^2} }{ c_1\rho_1 \overline{v_1^2}} =
+				\frac{|A_1'|^2}{|A_1|^2} = 
+				\left(
+					\frac{\rho_2 \tg \theta_2 - \rho_1 \tg\theta_1}{\rho_2 \tg\theta_2 + \rho_1\tg\theta_1}
+				\right)^2.
+			\]
+			
+		}
+	\end{exampleblock}
+	}	
+
+}
+
+
+
+
+
+\frame{
 	\frametitle{ Литература }
 	\begin{itemize}[partopsep=1pt,label=\textbullet]
 
 		\item {\em Л.И. Седов.} Механика сплошной среды. Том 2. М.:Наука, 1970.
-%		{\em Рождественский Б.Л., Яненко Н.Н.} Системы квазилинейных уравнений и их приложения к газовой динамике. Изд. 2-е, Главная редакция физ.-мат. лит. Изд. <<Наука>>, М., 1978.
-%		
-%		\item
-%		{\em Базаров И.П.} Термодинамика. Учеб. для вузов. -- 4-е изд., перераб. и доп. --- М.: Высш. шк., 1991. 
+		
+		
+		\item {\em Ландау~Л.~Д., Лифшиц~Е.~М.} Теоретическая физика: Учебное пособие. В 10 т. Т. VI. Гидродинамика. -- 3-е изд., перераб. --- М.: Наука. Гл. ред. физ-мат. лит., 1986.
+	
+
 	\end{itemize}
 }
 
