@@ -21,6 +21,7 @@
 %\usepackage{animate}
 %\usepackage{longtable}
 \usepackage{xcolor}
+\usepackage{icomma}
 
 %\usepackage{pgffor}
 \usepackage{enumitem}
@@ -476,14 +477,14 @@
 	\frametitle{Влияние сжимаемости }
 
 	\parbox{\textwidth}{
-		Интегралы Бернулли для несжимаемой жидкости и адиабатического движения газа
+		Интегралы Бернулли для давления для несжимаемой жидкости и адиабатического движения газа
 		\[
 		p = p^* - \rho_0\frac{v^2}{2}\quad\text{и}\quad
 		p = p^*\left(
 		1 - \frac{v^2}{v_{max}^2}
 		\right)^{\gamma/(\gamma-1)}.
 		\]
-		Разложим в ряд Тейлора по малому параметру $v^2/v_{max}^2 << 1$
+		Разложим интеграл для газа в ряд Тейлора по параметру $\displaystyle\frac{v^2}{v_{max}^2} \ll 1$:
 		
 		\only<1>{
 		\[
@@ -499,6 +500,9 @@
 		\frac{\frac{\gamma}{\gamma-1}\left(\frac{\gamma}{\gamma-1}-1\right)}{2!}\frac{v^4}{v_{max}^4} + \ldots
 		\right] = 
 		\]
+		
+		\centering
+		вспомним, что $v_{max}^2 = \displaystyle\frac{2c^{*2}}{\gamma-1}$ и $\displaystyle\frac{\gamma p^*}{\rho^*} = c^{*2}$, тогда
 		}
 		
 		\only<2>
@@ -517,9 +521,17 @@
 		\ldots
 		\right).
 		\]
+		
+%		Отличие двух интегралов в слагаемом $\rho^*v^4/(8c^{*2})$.
+		
+		Разница не будет превышать $1$~\%, когда
+		\[
+		 v^2/(4c^{*2}) \leq 0,01 \quad\text{или}\quad v \leq c^*/5.
+		\]
+		При $c^* = 340$~м/с получается для скорости $v \leq 68$~м/с.
 		}
 	
-		Отличие двух интегралов в слагаемом $\rho^*v^4/(8c^{*2})$, что 
+
 			
 	}
 
@@ -528,5 +540,31 @@
 }
 
 
+\frame{
+	\frametitle{Влияние сжимаемости}
+	
+	
+	\parbox{\textwidth}{
+	Разложение интеграла Бернулли для плотности по формуле Тейлора имеет вид
+	\[
+	\frac{\rho}{\rho^*} = 1 - \frac{1}{\gamma-1} \frac{v^2}{v_{max}^2} + \ldots
+	\]
+	
+	Легко проверить, что при $v < \displaystyle\frac{c^*}{5} = 68$~$\displaystyle\frac{\text{м}}{\text{c}}$ будет справедливо
+	\[
+	\frac{|\rho - \rho^*|}{\rho^*} \leq 0,02.
+	\]
+		
+	}
+	
+}
+
+\frame{
+	\frametitle{ Литература }
+	\begin{itemize}[partopsep=1pt,label=\textbullet]
+			\item \textbf{Л.И. Седов.} {\em Механика сплошной среды}. Том 2. М.:Наука, 1970.
+			\item \textbf{М. Ван-Дайк}. {\em Альбом течений жидкости и газа}. М.:Мир, 1986
+	\end{itemize}
+}
 
 \end{document}
