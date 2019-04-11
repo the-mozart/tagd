@@ -4,6 +4,8 @@
 \usetheme{Singapore} %Copenhagen}
 %\usecolortheme{whale}
 
+\beamertemplatenavigationsymbolsempty % Hide navigation panel
+
 %\usepackage[T2A]{fontenc}
 %\usepackage[utf8]{inputenc}
 %\usepackage[russian]{babel}
@@ -80,7 +82,7 @@
 \newcommand{\rot}{\operatorname{rot}}
 \newcommand{\divo}{\operatorname{div}}
 
-\title[]{Стационарные адиабатные течения идеального газа}
+\title[]{Стационарные изоэнтропические течения идеального газа}
 
 \author[]{ {\em Верещагин Антон Сергеевич}
 \\
@@ -408,7 +410,7 @@
 	\parbox{\textwidth}{
 		Разделим обе части интеграла Бернулли
 		\[
-		\frac{v^2}{2} + \frac{c^2}{\gamma-1} = \frac{v_max^2}{2}
+		\frac{v^2}{2} + \frac{c^2}{\gamma-1} = \frac{v_{max}^2}{2}
 		\]
 		на $v^2/2$, тогда получим
 		\[
@@ -484,6 +486,8 @@
 		1 - \frac{v^2}{v_{max}^2}
 		\right)^{\gamma/(\gamma-1)}.
 		\]
+		
+		\vspace{-0.5cm}
 		Разложим интеграл для газа в ряд Тейлора по параметру $\displaystyle\frac{v^2}{v_{max}^2} \ll 1$:
 		
 		\only<1>{
@@ -526,7 +530,7 @@
 		
 		Разница не будет превышать $1$~\%, когда
 		\[
-		 v^2/(4c^{*2}) \leq 0,01 \quad\text{или}\quad v \leq c^*/5.
+		 \boxed{v^2/(4c^{*2})} \leq 0,01 \quad\text{или}\quad v \leq c^*/5.
 		\]
 		При $c^* = 340$~м/с получается для скорости $v \leq 68$~м/с.
 		}
