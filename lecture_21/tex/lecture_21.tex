@@ -197,13 +197,15 @@
 
 	\begin{exampleblock}{Соотношения на выделенной линии тока}
 		\parbox{\textwidth}{
-			Параметризовав линию тока $AB$ можно записать закон сохранения массы и интеграл Бернулли для параметров течения			
+			Параметризовав линию тока $AB$, можно записать закон сохранения массы и интеграл Бернулли для параметров течения			
 			\[
 			\rho v S = C_1,\quad
 			\frac{v^2}{2} + \frac{c^2}{\gamma-1} = C_2.
 			\]
 		}
 	\end{exampleblock}
+
+
 	
 }
 
@@ -241,7 +243,7 @@
 	
 	\begin{exampleblock}{Связь между скоростью, сечением и числом Маха}
 	\parbox{\textwidth}{
-	Исключая из последнего выражения $d\rho/\rho$ с помощью закона сохранения массы в дифференциалах, получим 
+	Исключая из последнего выражения $d\rho/\rho$ с помощью закона сохранения массы в дифференциалах, получим \alert{уравнение Гюгонио}
 	\[
 	(M^2-1) \,\frac{dv}{v} = \frac{dS}{S} \quad (v > 0), 
 	\]
@@ -289,8 +291,58 @@
 	
 	\end{columns}
 	\end{exampleblock}
+
+%	\begin{exampleblock}{Связь площади трубки тока и скорости потока}
+	\medskip
+		\parbox{\textwidth}{
+			Таким образом,
+			$
+			S(v) = \displaystyle\frac{C_1}{
+				\rho^* v \left(
+				1 - \displaystyle\frac{v^2}{v_{max}^2}
+				\right)^{1/(\gamma-1)}
+			}
+			$.
+		}
+%	\end{exampleblock}
 	
 }
+
+\frame{
+	\frametitle{Сужающаяся и расширяющаяся трубка тока}
+	
+	\includegraphics[width=\linewidth]{../img/tube_M.pdf}
+	
+}
+
+\frame{
+	\frametitle{ Простое сопло и сопло Лаваля }
+	
+	
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\centering
+			\small
+			\includegraphics[width=0.5\linewidth]{../img/simple_nozzle.pdf}\\
+			Простое сопло
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\centering\small
+			\includegraphics[width=\linewidth]{../img/Laval.pdf}\\
+			Сопло Лаваля
+		\end{column}
+	\end{columns}
+
+	\bigskip
+	\begin{exampleblock}{}
+		\parbox{\textwidth}{
+			Насадок, предназначенный для адиабатического разгона потока от дозвуковых скоростей к сверхзвуковым, обладающий зоной сужения и расширения называется \alert{соплом Лаваля}. Насадок имеющий только зону сжатия называется \alert{простым соплом}.
+		}
+	\end{exampleblock}
+
+	
+}
+
 
 %
 %\frame{
