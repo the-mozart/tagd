@@ -367,7 +367,7 @@
 	\begin{array}{lcclcc}
 	\displaystyle\frac{p}{p_1} & = & 
 	\left(
-	\frac{
+	\displaystyle\frac{
 		1 + \displaystyle\frac{\gamma-1}{2} M^2
 	}
 	{
@@ -376,7 +376,7 @@
 	\right)^{\frac{\gamma}{\gamma-1}}, &
 	\displaystyle\frac{\rho}{\rho_1} & = & 
 	\left(
-	\frac{
+	\displaystyle\frac{
 		1 + \displaystyle\frac{\gamma-1}{2} M^2
 	}
 	{
@@ -384,14 +384,14 @@
 	}
 	\right)^{\frac{1}{\gamma-1}}, \\
 	\displaystyle\frac{T}{T_1} & = &  
-	\frac{
+	\displaystyle\frac{
 		1 + \displaystyle\frac{\gamma-1}{2} M^2
 	}
 	{
 		1 +  \displaystyle\frac{\gamma-1}{2} M_1^2
 	}, &
 	\displaystyle\frac{v}{v_1} & = &
-	\frac{M}{M_1}
+	\displaystyle\frac{M}{M_1}
 	\left(
 	\frac{
 		1 + \displaystyle\frac{\gamma-1}{2} M^2
@@ -419,7 +419,7 @@
 	\frac{1}{M}
 	\left(
 		1 + \displaystyle\frac{\gamma-1}{2} M^2
-	\right)^{\frac{\gamma+1}{2(\gamma-1)}} = \alert{\Theta^{-1}},
+	\right)^{\frac{\gamma+1}{2(\gamma-1)}} = \alert{\Theta^{-1}(M)},
 	\]
 	\[
 	\begin{array}{lcc}
@@ -483,6 +483,149 @@
 }
 
 
+\frame{
+	\frametitle{Истечение газа через простое сопло}
+	
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\centering
+			\includegraphics[width=\linewidth]{../img/simple_nozzle_flow.pdf}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\begin{exampleblock}{Постановка и решение задачи}
+				\parbox{\textwidth}{
+					
+					\only<1>{					
+					Рассмотрим истечение газа из ёмкости большого объёма через конфузор с критическим сечением  $S_{min}$  и параметрами торможения газа вдали от сопла в ёмкости $p^*$, $\rho^*$, $T^*$. Противодавление снаружи равно $p_0$. Штрихами будем обозначать параметры на срезе сопла.
+					}
+				
+					\only<2>{
+					Пусть $m$ -- массовый расход газа через любое сечение сопла, тогда
+					\[
+					m = \rho v S = \rho' v' S_{min}.
+					\]
+					
+ 					Пусть $m_{\text{кр}} = \rho_{\text{кр}} v_{\text{кр}} S_{min}$ -- критическое значение массы, соответствующее числу Маха, равному $1$, тогда
+ 					\[
+ 						\frac{m}{m_{\text{кр}}} = \frac{\rho' v'}{\rho_{\text{кр}} v_{\text{кр}}} = \theta(M').
+ 					\]
+				
+					}
+				
+					\only<3>{
+					Используя формулу
+					\[
+					p' = p^* \left(
+						1 + \frac{\gamma-1}{2} M'^2
+					\right)^{-\frac{\gamma}{\gamma-1}},
+					\]	
+					исключаем $M'$ из выражения для $m/m_{\text{кр}}$ и получаем
+				}
+					
+				}
+			\end{exampleblock}
+
+			
+		\end{column}
+	\end{columns}
+	
+	\only<3>{
+	\bigskip
+	\bigskip
+	\[
+	\frac{m}{m_{\text{кр}}} = \sqrt{
+	\frac{2}{\gamma-1}
+	\left(
+		\frac{\gamma+1}{2}
+	\right)^\frac{\gamma+1}{\gamma-1}
+	\left(
+		\frac{p'}{p^*}
+	\right)^\frac{2}{\gamma}
+	\left[
+		1 - 
+		\left(
+			\frac{p'}{p^*}
+		\right)^\frac{\gamma-1}{\gamma}	
+	\right]
+	}.
+	\]	
+	}
+
+	
+}
+
+
+
+\frame{
+	\frametitle{Истечение газа через простое сопло}
+	
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\centering
+			\includegraphics[width=\linewidth]{../img/simple_nozzle_m.pdf}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\begin{exampleblock}{Описание}
+				\parbox{\textwidth}{
+					\only<1>{
+					До тех пор, пока давление на выходе из сопла не станет критическим, будет реализовываться дозвуковое течение, описываемое на графике оранжевой ветвью, и давление на выходе из сопла можно принимать равным противодавлению $p'=p_0$.
+					}
+				
+					\only<2>{
+						Как только давление на выходе из сопла станет критическим, то произойдёт его запирание и установится звуковое течение
+						\[
+						M'=1.
+						\]
+						Расход газа будет равен расходу при критическом истечении газа из сопла. 						
+					}
+					
+%					Как только давление на выходе станет критическим, то в минимальном сечении установится звуковое течение $M'=1$ 
+				
+					
+				}
+			\end{exampleblock}
+			
+			
+		\end{column}
+	\end{columns}
+	
+	\only<1>{
+	\bigskip\bigskip
+	\[
+	\frac{m}{m_{\text{кр}}} = \sqrt{
+	\frac{2}{\gamma-1}
+	\left(
+	\frac{\gamma+1}{2}
+	\right)^\frac{\gamma+1}{\gamma-1}
+	\left(
+	\frac{p'}{p^*}
+	\right)^\frac{2}{\gamma}
+	\left[
+	1 - 
+	\left(
+	\frac{p'}{p^*}
+	\right)^\frac{\gamma-1}{\gamma}	
+	\right]
+	}.
+	\]
+	}
+
+	\only<2>{
+	\[
+	m_{max} = m_{\text{кр}}	= \rho_{\text{кр}} v_{\text{кр}} S_{min} = 
+	\left(
+		\frac{2}{\gamma-1}
+	\right)^\frac{\gamma+1}{2(\gamma-1)} 
+	\sqrt{\gamma p^*\rho^*} S_{min}.
+	\]
+	}
+
+	
+}
+
+
+
+
 %
 %\frame{
 %	\frametitle{Сжимаемость трубок тока}
@@ -542,8 +685,11 @@
 \frame{
 	\frametitle{ Литература }
 	\begin{itemize}[partopsep=1pt,label=\textbullet]
-		\item %\textbf{Л.И. Седов.} {\em Механика сплошной среды}. Том 2. М.:Наука, 1970.
-%		\item \textbf{М. Ван-Дайк}. {\em Альбом течений жидкости и газа}. М.:Мир, 1986
+		\item 
+		\textbf{Л.И. Седов.} {\em Механика сплошной среды}. Том 2. М.:Наука, 1970.
+		
+		\item 
+		\textbf{Лойцянский~Л.~Г.} {\em  Механика жидкости газа и плазмы}. Учеб. для вузов. --- 7-е изд., испр. -- М.:Дрофа, 2003
 	\end{itemize}
 }
 
