@@ -235,7 +235,7 @@
 
 
 \frame{
-	\frametitle{Инварианты Римана для уравнений газовой динамики}
+	\frametitle{Характеристический вид уравнений газовой динамики}
 	
 	\begin{exampleblock}{Одномерная система уравнений газовой динамики}
 		\parbox{\textwidth}{
@@ -253,6 +253,7 @@
 				\[
 					p = p(\rho, S).
 				\]
+
 			\end{column}
 		\end{columns}
 
@@ -276,16 +277,133 @@
 			A = \left(
 			\begin{array}{ccc}
 			v & \rho & 0\\
-			c^2/\rho & v & 0\\
+			\displaystyle c^2/\rho & v & p_S/\rho\\
 			0 & 0 & v\\
 			\end{array}
-			\right).
+			\right),\quad
+			c^2 = \pd{p}{\rho}(\rho,S).
 			\]	
 			}
 		\end{exampleblock}
 
 
 }
+
+\frame{
+	\frametitle{Характеристический вид уравнений газовой динамики }
+	
+	\begin{exampleblock}{Характеристическое уравнение}
+		\parbox{\textwidth}{
+			\[
+			\chi(\lambda) = (v - \lambda)((v-\lambda)^2 - c^2)=0\iff
+			\lambda_{1,2} = v \pm c, \quad\lambda_3 = v.
+			\]
+		}
+	\end{exampleblock}	
+	\begin{exampleblock}{Собственные векторы}
+		\parbox{\textwidth}{
+			\[
+			\lambda_1 = v-c \Rightarrow \alpha_3 = \left(-\frac{c}{\rho}, 1, -\frac{1}{\rho c}p_S\right).
+			\]
+			\[
+			\lambda_2 = v+c \Rightarrow \alpha_2 = \left(\frac{c}{\rho}, 1, \frac{1}{\rho c}p_S\right),			
+			\]
+			\[
+			\lambda_3 = 0 \Rightarrow \alpha_1 = (0, 0, 1),			
+			\]
+
+			
+		}
+	\end{exampleblock}
+	
+	
+}
+
+\frame{
+	\frametitle{Характеристический вид уравнений газовой динамики }
+	
+	\begin{exampleblock}{Запись через частные производные}
+		\parbox{\textwidth}{
+		\[
+		S_t + v S_x = 0,
+		\]
+		\[
+		v_t + (v-c)v_x -
+		\frac{c}{\rho} \left[\rho_t + (v-c)\rho_x	\right]-
+		\frac{1}{\rho c} \pd{p}{S}\left[ S_t + (v-c) S_x \right] = 0,
+		\]
+		\[
+		v_t + (v+c)v_x +
+		\frac{c}{\rho} \left[\rho_t + (v+c)\rho_x	\right] +
+		\frac{1}{\rho c} \pd{p}{S}\left[ S_t + (v+c) S_x \right] = 0,
+		\]
+			
+		}
+	\end{exampleblock}
+	
+	
+	\begin{exampleblock}{Запись в дифференциалах}
+		\parbox{\textwidth}{
+		\[
+		dx = (v-c) dt, \quad dv - \frac{c}{\rho} d\rho - \pd{p}{S}\frac{1}{\rho c} dS = 0,
+		\]
+		\[
+		dx = v dt,\quad dS  = 0,
+		\]
+		\[
+		dx = (v+c) dt, \quad dv + \frac{c}{\rho} d\rho + \pd{p}{S}\frac{1}{\rho c} dS = 0.
+		\]
+		}
+	\end{exampleblock}
+	
+}
+
+\frame{
+	\frametitle{ Инварианты Римана для изоэнтропических течений}
+	
+	\begin{exampleblock}{Условия}
+		\parbox{\textwidth}{
+			Пусть $S\argtxo = S_0$ в всей области течения, тогда 
+			\[
+			p = p(\rho, S_0) \Rightarrow \pd{p}{S} = 0, \quad c(\rho) = \sqrt{\left(\pd{p}{\rho}\right)_S}.
+			\]
+			
+		}
+	\end{exampleblock}
+	\begin{exampleblock}{Инварианты Римана}
+		\parbox{\textwidth}{
+
+			\only<1>{				
+			Найдём $s(\rho,v)$ и $r(\rho,v)$ такие, что 
+			$
+			\nabla_{(\rho,v)} s = \alpha_1$, $\nabla_{(\rho,v)} r = \alpha_2$.
+			\[
+			\pd{s}{\rho} = -\frac{c(\rho)}{\rho},\quad
+			\pd{s}{v} = 1 \Rightarrow
+			s = v - \int\frac{c(\rho)}{\rho} d\rho.
+			\]
+			\[
+			\pd{r}{\rho} = \frac{c(\rho)}{\rho},\quad
+			\pd{r}{v} = 1 \Rightarrow
+			r = v + \int\frac{c(\rho)}{\rho} d\rho.
+			\]
+
+			}
+		
+			\only<2>{
+			\[
+			\pd{s}{t} + (v-c) \pd{s}{x} = 0,\quad \pd{r}{t} + (v+c) \pd{r}{x} = 0.
+			\]
+			Полученные $s(\rho,v)$ и $r(\rho,v)$ называются левым и правым инвариантом Римана соответственно.
+			
+			}
+			
+			
+		}
+	\end{exampleblock}
+	
+}
+
 
 
 \frame{
