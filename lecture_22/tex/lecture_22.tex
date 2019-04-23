@@ -101,7 +101,7 @@
 \frame{
 	\frametitle{Аннотация}
 	\parbox{\textwidth}{
-
+		Характеристики систем квазилинейных уравнений. Инварианты Римана систем квазилинейных уравнений. Характеристический вид уравнений газовой динамики. Инварианты Римана для изоэнтропических течений. Бегущие волны (волны Римана). Волны сжатия и разрежения. Центрированные волны. Автомодельные решения. Признак волны Римана. Задача о выдвигающемся поршне. 
 	}
 }
 
@@ -546,7 +546,7 @@
 }
 
 \frame{
-	\frametitle{Волны сжатия и разрежения в случае бегущей $r$-волны}
+	\frametitle{Волны сжатия и разрежения в случае бегущей $s$-волны}
 	
 	\begin{exampleblock}{Цепочка алгебраических следствий}
 		\parbox{\textwidth}{
@@ -574,7 +574,7 @@
 }
 
 \frame{
-	\frametitle{Волны сжатия и разрежения в случае бегущей $s$-волны}
+	\frametitle{Волны сжатия и разрежения в случае бегущей $r$-волны}
 	
 	\begin{exampleblock}{Цепочка алгебраических следствий}
 		\parbox{\textwidth}{
@@ -595,7 +595,7 @@
 			Таким образом, в области, где инвариант Римана $r\argtxo$ \textit{увеличивается} будет реализовываться \alert{волна сжатия}.  \pause
 			
 			\medskip
-			И наоборот, в случае \textit{уменьшения} инварианта $s\argtxo$ будет реализовываться \alert{волна разрежения}.
+			И, наоборот, в случае \textit{уменьшения} инварианта $s\argtxo$ будет реализовываться \alert{волна разрежения}.
 			
 		}
 	\end{exampleblock}
@@ -617,7 +617,7 @@
 	\begin{exampleblock}{Определение}
 	\parbox{\textwidth}{
 		Волна Римана ($s=s_0$) называется \alert{центрированной}, если $r$-характеристики образуют пучок прямых, выходящих из одной точки $(t_0,x_0)$.
-				Так как, $r$ постоянен вдоль любой характеристики, то 
+		Так как, $r$ постоянен вдоль любой характеристики, то 
 		\[
 		r = r\left(\frac{x-x_0}{t-t_0} \right),\quad s=s_0.
 		\]			
@@ -626,14 +626,177 @@
 	
 }
 
+\frame{
+	\frametitle{Автомодельные решения}
+	
+	\begin{exampleblock}{Определение}
+		\parbox{\textwidth}{
+			\alert{Автомодельными} называются решения, зависящие от переменной $y=\displaystyle\frac{x-x_0}{t-t_0}$.
+			
+		}
+	\end{exampleblock}\pause
+
+	\begin{exampleblock}{Утверждение}
+		\parbox{\textwidth}{
+			Центрированные волны Римана дают все автомодельные решения уравнений газовой динамики.
+		}
+	\end{exampleblock}
+}
+
+\frame{
+	\frametitle{Автомодельные решения}
+	
+		\begin{exampleblock}{Предположение}
+			\parbox{\textwidth}{
+				Пусть все параметры газа плотность $\rho$, скорость $v$, энтропия $S$  зависят от $y=\displaystyle\frac{x-x_0}{t-t_0}$.
+				Тогда
+				\[
+				\pd{}{t} = -\frac{y}{t-t_0}\od{}{y},\quad
+				\pd{}{x} = \frac{1}{t-t_0}\od{}{y}.
+				\]
+			}
+		\end{exampleblock}
+	
+		\begin{exampleblock}{Одномерная система уравнений газовой динамики}
+		\parbox{\textwidth}{
+			
+			\begin{columns}
+				\begin{column}{0.5\textwidth}
+					\begin{eqnarray*}
+						-y\od{\rho}{y} + v\od{\rho_x}{y} + \rho \od{v}{y} & = & 0,\\
+						-y \od{v}{y} + v \od{v}{y} + \frac{1}{\rho} \od{p}{y} & = & 0,\\
+						-y \od{S}{y} + v \od{S}{y} & = & 0.
+					\end{eqnarray*}
+				\end{column}
+				\begin{column}{0.5\textwidth}
+					Из последнего уравнения следует, что
+					\[
+					S = S_0,\quad p = p(\rho, S0),
+					\]
+					и можно далее использовать инварианты Римана.
+				\end{column}
+			\end{columns}
+			
+			
+		}
+	\end{exampleblock}
+}
+
+\frame{
+	\frametitle{Автомодельные решения}
+	
+	\begin{exampleblock}{Система уравнений газовой динамики в терминах инвариантов Римана в автомодельных переменных для политропного газа}
+		\parbox{\textwidth}{
+			\[
+			\left\{
+			\begin{array}{c}
+			-y \displaystyle\od{s}{y} + (\alpha s + \beta r) \od{s}{y} = 0,\\
+			-y \displaystyle\od{r}{y} + (\alpha r + \beta s) \od{r}{y} = 0.
+			\end{array}
+			\right.
+			\iff
+			\left\{
+			\begin{array}{c}
+			(\alpha s + \beta r - y ) \displaystyle\od{s}{y} = 0,\\
+			(\alpha r + \beta s - y) \displaystyle \od{r}{y} = 0.
+			\end{array}
+			\right.
+			\] \pause
+%			\[
+%			\Downarrow
+%			\]
+			\[
+			\left\{
+			\begin{array}{l}
+			s = s_0,\\
+			r = r_0.
+			\end{array}
+			\right. \quad
+			\left\{
+			\begin{array}{l}
+			s = s_0,\\
+			r = \displaystyle\frac{y-\beta s_0}{\alpha}.
+			\end{array}
+			\right. \quad
+			\left\{
+			\begin{array}{l}
+			r = r_0,\\
+			s = \displaystyle\frac{y-\beta r_0}{\alpha}.
+			\end{array}
+			\right. \quad
+			\left\{
+			\begin{array}{l}
+			r = \displaystyle\frac{y}{\alpha+\beta},\\
+			s = \displaystyle\frac{y}{\alpha+\beta}.
+			\end{array}
+			\right.
+			\]
+				
+		Последний вариант невозможен в силу того, что даёт нулевую скорость звука во всей области течения, поэтому любое автомодельное решение является волной Римана.	
+		}
+	\end{exampleblock}	
+}
+
+\frame{
+	\frametitle{Решение для политропного газа для волн Римана}
+	\begin{exampleblock}{Предположение}
+		\parbox{\textwidth}{
+			Пусть $v_0$, $p_0$, $c_0$ значение скорости давления и скорости звука для некоторой точки волны Римана.			
+		}
+	\end{exampleblock}
+	
+	\begin{exampleblock}{$r = r_0$}
+		\parbox{\textwidth}{
+			\[
+			c=c_0\left(
+			1 - \frac{\gamma-1}{2}\frac{v-v_0}{c_0}
+			\right),\quad
+			p = p_0 \left[
+			1 - \frac{\gamma-1}{2} \frac{v-v_0}{c_0}
+			\right]^{\frac{2\gamma}{\gamma-1}}.
+			\]
+		}
+	\end{exampleblock}
+
+	\begin{exampleblock}{$s = s_0$}
+	\parbox{\textwidth}{
+		\[
+		c=c_0\left(
+		1 + \frac{\gamma-1}{2}\frac{v-v_0}{c_0}
+		\right),\quad
+		p = p_0 \left[
+		1 + \frac{\gamma-1}{2} \frac{v-v_0}{c_0}
+		\right]^{\frac{2\gamma}{\gamma-1}}.
+		\]
+	}
+	\end{exampleblock}
+	
+}
+
+\frame{
+	\frametitle{Признак волны Римана}
+	
+	\begin{exampleblock}{Утвеждение}
+		\parbox{\textwidth}{
+			Всякое непрерывное течение, примыкающее к зоне постоянного течения, есть волна Римана.
+		}
+	\end{exampleblock}
+}
+
+\frame{
+	\frametitle{Задача о выдвигающемся поршне}
+	
+}
+
 
 \frame{
 	\frametitle{ Литература }
 	\begin{itemize}[partopsep=1pt,label=\textbullet]
 		\item 
+			\textbf{Рождественский Б.Л., Яненко Н.Н.} {\em Системы квазилинейных уравнений и их приложения к газовой динамике}. Изд. 2-е, Главная редакция физ.-мат. лит. Изд. <<Наука>>, М., 1978.
 %		\textbf{Л.И. Седов.} {\em Механика сплошной среды}. Том 2. М.:Наука, 1970.
 		
-		\item 
+%		\item 
 %		\textbf{Лойцянский~Л.~Г.} {\edocumentm  Механика жидкости газа и плазмы}. Учеб. для вузов. --- 7-е изд., испр. -- М.:Дрофа, 2003
 	\end{itemize}
 }
