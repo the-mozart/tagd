@@ -405,6 +405,227 @@
 }
 
 
+\frame{
+	\frametitle{Инварианты Римана для политропного газа}
+	
+	\begin{exampleblock}{Уравнение состояния}
+		\parbox{\textwidth}{
+			\[
+			p = a(S) \rho^\gamma,\quad \gamma = \frac{c_p}{c_V} > 1,
+			\]
+			\[
+			c^2 = a(S)\gamma \rho^{\gamma-1} = \frac{\gamma p}{\rho}.
+			\]
+			
+		}
+	\end{exampleblock}
+	\begin{exampleblock}{Инварианты Римана}
+		\parbox{\textwidth}{
+			\[
+			s = v - \int \frac{c(\rho)}{\rho} d\rho = 
+			v- \frac{2}{\gamma-1}c,\quad
+			r = v + \int \frac{c(\rho)}{\rho} d\rho = 
+			v + \frac{2}{\gamma-1}c.
+			\]
+			\[\Downarrow\]
+			\[
+			v = \frac{r+s}{2},\quad
+			c = \frac{\gamma-1}{4}(r-s).
+			\]
+			
+		}
+	\end{exampleblock}
+	
+}
+
+\frame{
+	\frametitle{Система дифференциальных уравнений изоэнтропического течения политропного газа}
+
+	\begin{exampleblock}{Общий случай}
+		\parbox{\textwidth}{
+		\[
+			\pd{s}{t}+(\alpha s + \beta r)\pd{s}{x} = 0,\quad
+			\pd{r}{t}+(\alpha r + \beta s)\pd{s}{x} = 0,
+		\]
+		где
+		\[
+		\alpha = \frac{1}{2}+\frac{\gamma-1}{4}>\frac{1}{2}>0,\quad
+		\beta  = \frac{1}{2}-\frac{\gamma-1}{4}.
+		\]
+		}
+	\end{exampleblock}\pause
+	
+	\begin{exampleblock}{Газ Чаплыгина $\gamma=1$}
+		\parbox{\textwidth}{
+		\[
+			\pd{s}{t}+r\pd{s}{x} = 0,\quad
+			\pd{r}{t}+s\pd{s}{x} = 0.
+		\]	
+		}
+	\end{exampleblock}\pause
+
+	\begin{exampleblock}{Случай $\gamma=3$}
+		\parbox{\textwidth}{
+		\[		
+			\pd{s}{t}+s\pd{s}{x} = 0,\quad
+			\pd{r}{t}+r\pd{s}{x} = 0.
+		\]
+		}			
+	\end{exampleblock}
+}
+
+\frame{
+	\frametitle{Задача Коши для изоэнтропического течения политропного газа}
+	
+	\begin{exampleblock}{Общий случай}
+		\parbox{\textwidth}{
+			\[
+			\pd{s}{t}+(\alpha s + \beta r)\pd{s}{x} = 0,\quad
+			\pd{r}{t}+(\alpha r + \beta s)\pd{s}{x} = 0,
+			\]
+			где
+			\[
+			\alpha = \frac{1}{2}+\frac{\gamma-1}{4},\quad
+			\beta  = \frac{1}{2}-\frac{\gamma-1}{4},\quad
+			\gamma \neq 1.
+			\]
+			Начальные условия при $t=0$:
+			\[
+			s(x,0) = s_0(x),\quad
+			r(x,0) = r_0(x).
+			\]
+			
+			В этом случае, из общей теории, следует существование решения в некоторой полосе $0 \leq t < t_0$; величина $t_0$ есть момент времени, в который производные решения становятся неограниченными.
+		}
+	\end{exampleblock}
+	
+}
+
+
+\frame{
+	\frametitle{Бегущие волны (волны Римана)}
+	
+	\begin{exampleblock}{Определение}
+		\parbox{\textwidth}{
+			Если в какой-то области изоэнтропического течения один из инвариантов Римана остаётся постоянным, то такое течение называют \alert{волной Римана} или \alert{бегущей волной}. 
+		}
+	\end{exampleblock}
+
+
+	
+}
+
+\frame{
+	\frametitle{Характеристики в области бегущей волны}
+	
+	\begin{exampleblock}{Уравнения бегущей волны}
+		\parbox{\textwidth}{
+			Пусть в некоторой области $r = r_0 = const$, тогда течение будет описываться уравнением
+			\[
+			\pd{s}{t}+(\alpha s + \beta r_0)\pd{s}{x} = 0,
+			\]	
+			где
+			\[
+			\alpha = \frac{1}{2}+\frac{\gamma-1}{4},\quad
+			\beta  = \frac{1}{2}-\frac{\gamma-1}{4},\quad
+			\gamma \neq 1.
+			\]
+			
+		}
+	\end{exampleblock}\pause
+	\begin{exampleblock}{Уравнения характеристик}
+		\parbox{\textwidth}{
+			Вдоль линии 
+			\[
+			\od{x}{t} = \frac{x-x_0}{t-t_0} = \alpha s(x,t) + \beta r_0
+			\]
+			сохраняется инвариант $s(x,t)$, это означает, что характеристики будут \alert{прямыми линиями}.
+		}
+	\end{exampleblock}
+	
+}
+
+\frame{
+	\frametitle{Волны сжатия и разрежения в случае бегущей $r$-волны}
+	
+	\begin{exampleblock}{Цепочка алгебраических следствий}
+		\parbox{\textwidth}{
+			\[
+			\pd{s}{x} > 0 \quad\text{и}\quad
+			\begin{array}{lcccc}
+			v = \displaystyle\frac{1}{2}(r_0+s) & \Rightarrow & \displaystyle\pd{v}{x} > 0, & & \\
+			c = \displaystyle\frac{\gamma-1}{4}(r_0-s) & \Rightarrow & \displaystyle\pd{c}{x} < 0 & \Rightarrow & \displaystyle\pd{\rho}{x} < 0.
+			\end{array} 
+			\]
+		}
+	\end{exampleblock}	\pause
+	
+	\begin{exampleblock}{Условия существования волн сжатия и разрежения}
+		\parbox{\textwidth}{
+		
+			
+			Таким образом, в области, где инвариант Римана $s\argtxo$ увеличивается, там происходит разгон течения с одновременным его \textit{расширением}. Такое течение будет называться \alert{волной разрежения}.  \pause
+			
+			\medskip
+			В случае \textit{уменьшения} инварианта $s\argtxo$, наоборот, скорость $v\argtxo$ будет  \textit{уменьшаться}, а плотность $\rho\argtxo$  \textit{увеличиваться}. Такая бегущая волна будет называться \alert{волной сжатия}.
+			
+		}
+	\end{exampleblock}
+}
+
+\frame{
+	\frametitle{Волны сжатия и разрежения в случае бегущей $s$-волны}
+	
+	\begin{exampleblock}{Цепочка алгебраических следствий}
+		\parbox{\textwidth}{
+			\[
+			\pd{r}{x} > 0 \quad\text{и}\quad
+			\begin{array}{lcccc}
+			v = \displaystyle\frac{1}{2}(r+s_0) & \Rightarrow & \displaystyle\pd{v}{x} > 0, & & \\
+			c = \displaystyle\frac{\gamma-1}{4}(r-s_0) & \Rightarrow & \displaystyle\pd{c}{x} > 0 & \Rightarrow & \displaystyle\pd{\rho}{x} > 0.
+			\end{array} 
+			\]
+		
+		}
+	\end{exampleblock}		\pause	
+	\begin{exampleblock}{Условия существования волн сжатия и разрежения}
+		\parbox{\textwidth}{
+			
+			
+			Таким образом, в области, где инвариант Римана $r\argtxo$ \textit{увеличивается} будет реализовываться \alert{волна сжатия}.  \pause
+			
+			\medskip
+			И наоборот, в случае \textit{уменьшения} инварианта $s\argtxo$ будет реализовываться \alert{волна разрежения}.
+			
+		}
+	\end{exampleblock}
+}
+
+\frame{
+	\frametitle{Центрированные волны}
+	
+	\begin{exampleblock}{Определение}
+		\parbox{\textwidth}{
+			Волна Римана ($r=r_0$) называется \alert{центрированной}, если $s$-характеристики образуют пучок прямых, выходящих из одной точки $(t_0,x_0)$.
+			Так как, $s$ постоянен вдоль любой характеристики, то 		
+			\[
+			s = s\left(\frac{x-x_0}{t-t_0} \right),\quad r=r_0.
+			\]			
+		}
+	\end{exampleblock}
+
+	\begin{exampleblock}{Определение}
+	\parbox{\textwidth}{
+		Волна Римана ($s=s_0$) называется \alert{центрированной}, если $r$-характеристики образуют пучок прямых, выходящих из одной точки $(t_0,x_0)$.
+				Так как, $r$ постоянен вдоль любой характеристики, то 
+		\[
+		r = r\left(\frac{x-x_0}{t-t_0} \right),\quad s=s_0.
+		\]			
+	}
+	\end{exampleblock}
+	
+}
+
 
 \frame{
 	\frametitle{ Литература }
