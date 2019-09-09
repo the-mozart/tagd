@@ -2,57 +2,24 @@
 
 \usepackage{beamerthemesplit}
 \usetheme{Singapore} %Copenhagen}
-%\usecolortheme{whale}
 
-\usepackage[main=russian,english]{babel}   %% загружает пакет многоязыковой вёрстки
-\usepackage{fontspec}      %% подготавливает загрузку шрифтов Open Type, True Type и др.
-\defaultfontfeatures{Ligatures={TeX},Renderer=Basic}  %% свойства шрифтов по умолчанию
-\setmainfont{Times New Roman} %% задаёт основной шрифт документа
-%\usefonttheme{professionalfonts}% SOLUTION
-\usefonttheme{serif}
-
-\usepackage{hyperref}
-\usepackage{textcomp}
-\usepackage{amssymb,amsmath}
-%\usepackage{animate}
-%\usepackage{longtable}
-\usepackage{xcolor}
-
-\newcounter{N}
-
-%% Форматирование окружения itemize
-%\usepackage{ragged2e}
-%\let\olditem\item
-%\renewcommand\item{\olditem\justifying}
-
-
-\newcommand{\argxi}{(\xi_1,\xi_2,\xi_3)}
-\newcommand{\argx}{(x_1,x_2,x_3)}
-
-\newcommand{\argxbarn}{(\bar{x}^1,\bar{x}^2,\ldots, \bar{x}^n)}
-\newcommand{\argxn}{(x^1, x^2,\ldots, x^n)}
-
-\newcommand{\argtxi}{(t, \xi_1,\xi_2,\xi_3)}
-\newcommand{\argtx}{(t, x_1,x_2,x_3)}
-
-\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
-\newcommand{\pdk}[2]{\frac{\partial^2 #1}{\partial {#2}^2}}
+\input{../../include/preamble.inc} 
+\input{../../include/definitions.inc} 
+\input{../../include/author.inc} 
 
 \title[]{Элементы тензорного исчисления}
 
-\author[]{{\em Верещагин Антон Сергеевич}\\
-канд. физ.-мат.наук, старший преподаватель\\
-\bigskip
-Кафедра аэрофизики и газовой динамики ФФ НГУ}
 
 \usebackgroundtemplate{\includegraphics[width=\paperwidth]{../img/background.png}}
 
 \begin{document}
-	
-\frame{\titlepage}
+
+\begin{frame}[plain]	
+\titlepage
+\end{frame}
 
 
-\frame{
+\frame[plain]{
 	\frametitle{Аннотация}
 	\parbox{\textwidth}{
 		Криволинейные системы координат. Скаляр. Вектор. Ковариантность и контравариантность. Тензор. Тензорная алгебра. Произведение тензоров. Сокращение индексов. Теоремы о тензорах. Фундаментальный квадратичная форма и тензор. Метрика. Скалярное произведение векторов.
@@ -149,7 +116,7 @@
 	
 	\begin{exampleblock}{Вектор $d\bar{x}^i$}
 	\[
-	d\bar{x}^i = \pd{\bar{x}^i}{x^1}dx^1+\pd{\bar{x}^i}{x^2}dx^1+\ldots+
+	d\bar{x}^i = \pd{\bar{x}^i}{x^1}dx^1+\pd{\bar{x}^i}{x^2}dx^2+\ldots+
 	\pd{\bar{x}^i}{x^n}dx^n = \pd{\bar{x}^i}{x^\alpha}dx^\alpha.
 	\]
 
@@ -498,13 +465,13 @@
 			\[
 			\bar{u}^\alpha = \delta^\alpha_i,\quad
 			\bar{v}^\beta = \delta^\beta_k,\quad
-			\bar{w}^\gamma = \delta_\gamma^j.
+			\bar{w}_\gamma = \delta_\gamma^j.
 			\] \pause
 			Тогда 
 			$\displaystyle
-			u^\alpha = \pd{x^\alpha}{\bar{x}^r}\bar{u}^r=\pd{x^\alpha}{\bar{x}^r}\delta^r_i=\pd{x^\alpha}{\bar{x}^i}$, $\displaystyle v^\beta = \pd{x^\beta}{\bar{x}^k}$, $\displaystyle w^\gamma = \pd{\bar{x}^j}{x^\gamma}$. \pause
+			u^\alpha = \pd{x^\alpha}{\bar{x}^r}\bar{u}^r=\pd{x^\alpha}{\bar{x}^r}\delta^r_i=\pd{x^\alpha}{\bar{x}^i}$, $\displaystyle v^\beta = \pd{x^\beta}{\bar{x}^k}$, $\displaystyle w_\gamma = \pd{\bar{x}^j}{x^\gamma}$. \pause
 			\[
-				\bar{f} = \bar{A}_{\alpha\beta}^\gamma \bar{u}^\alpha \bar{v}^\beta \bar{w}^\gamma =  \bar{A}^j_{ik},\quad \pause
+				\bar{f} = \bar{A}_{\alpha\beta}^\gamma \bar{u}^\alpha \bar{v}^\beta \bar{w}_\gamma =  \bar{A}^j_{ik},\quad \pause
 				f = A_{\alpha\beta}^\gamma u^\alpha v^\beta w_\gamma =  A_{\alpha\beta}^\gamma \pd{x^\alpha}{\bar{x}^i} \pd{x^\beta}{\bar{x}^k} \pd{\bar{x}^j}{x^\gamma}.
 			\]
 			\pause
@@ -526,7 +493,7 @@
  			\]
  			является инвариантом, то величина 
  			\[
- 			B_{\alpha\beta} = \frac{1}{2}\left( A_{a\alpha\beta} + A_{\beta\alpha} \right)
+ 			B_{\alpha\beta} = \frac{1}{2}\left( A_{\alpha\beta} + A_{\beta\alpha} \right)
  			\]
  			является составляющей ковариантного тензора. 
  			
@@ -596,7 +563,7 @@
 }
 
 \frame{
-	\frametitle{ Свойства фундаментального тензора }
+	\frametitle{ Постулаты для фундаментального тензора }
 	
 	\begin{exampleblock}{Инвариантность}
 		\parbox{\textwidth}{
@@ -631,7 +598,7 @@
 		}
 	\end{exampleblock}\pause
 
-	\begin{exampleblock}{Тензорная природа}
+	\begin{exampleblock}{Тензорная природа (следствие)}
 		\parbox{\textwidth}{
 			\centering
 			$g_{ij}$ -- ковариантный тензор по тензорному признаку для симметричного объекта
@@ -645,7 +612,7 @@
 	
 	\begin{exampleblock}{Определение}
 		\parbox{\textwidth}{
-			Пусть $A^k$ -- произвольный фундаментальный тензор, тогда рассмотрим вектор
+			Пусть $A^k$ -- произвольный вектор, тогда рассмотрим вектор
 			\[
 				A_i = g_{ik} A^k.
 			\]
@@ -654,7 +621,7 @@
 			\[
 				A^i = g^{ik} A_k. 
 			\] \pause 
-			Т.к. $A_i$, $A_k$ произвольные векторы, то по признаку тензорного объекта $g^{ik}$ является контравариантным тензором и называется \alert{контравариантным фундаментальным тензором}.
+			Т.к. $A^i$, $A_k$ произвольные векторы, то по признаку тензорного объекта $g^{ik}$ является контравариантным тензором и называется \alert{контравариантным фундаментальным тензором}.
 			
 		}
 	\end{exampleblock}
@@ -810,7 +777,7 @@
 	\parbox{\textwidth}{
 	Так как скалярному вектору $dx^i$ отвечает в пространстве вектор с составляющими 
 	\[
-		dy_\alpha =\pd{y_\alpha}{x^i} A^i \quad (\alpha=1,\ldots, m),
+		dy_\alpha =\pd{y_\alpha}{x^i} dx^i \quad (\alpha=1,\ldots, m),
 	\]
 	тогда вектор $A^i=dx^i/\lambda$ в пространстве $R^m$ будет иметь компоненты 
 	\[
@@ -856,11 +823,11 @@
 	
 }
 
-\frame{
-	\frametitle{ Векторное произведение }
-	\Huge \centering
-	\alert{Добавить слайд}
-}
+%\frame{
+%	\frametitle{ Векторное произведение }
+%	\Huge \centering
+%	\alert{Добавить слайд}
+%}
 
 
 
