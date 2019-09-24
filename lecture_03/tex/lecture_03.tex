@@ -9,7 +9,6 @@
 
 \title[]{Элементы тензорного исчисления}
 
-
 \usebackgroundtemplate{\includegraphics[width=\paperwidth]{../img/background.png}}
 
 \begin{document}
@@ -823,11 +822,46 @@
 	
 }
 
-%\frame{
-%	\frametitle{ Векторное произведение }
-%	\Huge \centering
-%	\alert{Добавить слайд}
-%}
+\frame{
+	\frametitle{ Векторное произведение }
+
+	\begin{exampleblock}{Определение}
+		\parbox{\textwidth}{
+			Пусть  $\boldsymbol{u} = \boldsymbol{A}\times\boldsymbol{B}$, тогда
+			\[
+			u_i = e^{\alpha\beta\phantom{i}}_{\phantom{\alpha\beta} i} A_\alpha B_\beta = 
+			g_{i\gamma}e^{\alpha\beta\gamma}A_\alpha B_\beta=
+			\]
+			\[
+			=	
+			\frac{1}{\sqrt{g}}\left\{
+			g_{i1}(A_2 B_3-A_3 B_2) + g_{i2}(A_3 B_1 -A_1 B_3) + g_{i3}(A_1 B_2 -A_2B_1)
+			\right\},
+			\]
+		}
+	\end{exampleblock}
+	
+\begin{exampleblock}{Обозначения}
+	\parbox{\textwidth}{
+	\[
+	e_{\alpha\beta\gamma} = \sqrt{g}\delta_{\alpha\beta\gamma},\quad
+	e^{\alpha\beta\gamma} = \frac{1}{\sqrt{g}}\delta_{\alpha\beta\gamma},\quad
+	g = |g_{ik}|.
+	\]	
+	\centering
+%	$\delta_{ijk}$ -- тензор, имеющий следующее определение
+	\[
+	\begin{array}{ccccccc}
+	\delta_{123} & = & \delta_{231} & = & \delta_{312} & = & 1,\\
+	\delta_{132} & = & \delta_{213} & = & \delta_{321} & = & -1,\\
+	\end{array}
+	\]
+	$\delta_{ijk} =  0$ во всех остальных случаях.
+	}
+\end{exampleblock}
+
+
+}
 
 
 
