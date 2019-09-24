@@ -33,3 +33,8 @@
 
 \let\otp\titlepage
 \renewcommand{\titlepage}{\otp\addtocounter{framenumber}{-2}}
+
+% Форматирование окружения itemize
+\usepackage{ragged2e}
+\let\olditem\item
+\renewcommand\item{\olditem\justifying}
