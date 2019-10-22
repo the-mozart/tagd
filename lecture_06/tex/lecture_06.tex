@@ -4,58 +4,14 @@
 \usetheme{Singapore} %Copenhagen}
 %\usecolortheme{whale}
 
-%\usepackage[T2A]{fontenc}
-%\usepackage[utf8]{inputenc}
-%\usepackage[russian]{babel}
 
-\usepackage[main=russian,english]{babel}   %% загружает пакет многоязыковой вёрстки
-\usepackage{fontspec}      %% подготавливает загрузку шрифтов Open Type, True Type и др.
-\defaultfontfeatures{Ligatures={TeX},Renderer=Basic}  %% свойства шрифтов по умолчанию
-\setmainfont{Times New Roman} %% задаёт основной шрифт документа
-%\usefonttheme{professionalfonts}% SOLUTION
-\usefonttheme{serif}
+\input{../../include/preamble.inc} 
+\input{../../include/definitions.inc} 
+\input{../../include/author.inc} 
 
-\usepackage{hyperref}
-\usepackage{textcomp}
-\usepackage{amssymb,amsmath}
-%\usepackage{animate}
-%\usepackage{longtable}
-\usepackage{xcolor}
-
-%\usepackage{pgffor}
 \usepackage{enumitem}
 
-
-\newcounter{N}
-
-%% Форматирование окружения itemize
-%\usepackage{ragged2e}
-%\let\olditem\item
-%\renewcommand\item{\olditem\justifying}
-
-
-\newcommand{\argxi}{(\xi^1,\xi^2,\xi^3)}
-\newcommand{\argx}{(x^1,x^2,x^3)}
-
-\newcommand{\argxbarn}{(\bar{x}^1,\bar{x}^2,\ldots, \bar{x}^n)}
-\newcommand{\argxn}{(x^1, x^2,\ldots, x^n)}
-
-\newcommand{\argtxi}{(t, \xi^1,\xi^2,\xi^3)}
-\newcommand{\argtoxi}{(t_0, \xi^1,\xi^2,\xi^3)}
-
-\newcommand{\argtx}{(t, x^1,x^2,x^3)}
-\newcommand{\argtox}{(t_0, x^1,x^2,x^3)}
-
-\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
-\newcommand{\pdk}[2]{\frac{\partial^2 #1}{\partial {#2}^2}}
-
 \title[]{Cилы, действующие на сплошную среду, тензор напряжений}
-
-\author[]{ {\em Верещагин Антон Сергеевич}
-\\
-канд. физ.-мат. наук, старший преподаватель\\
-\bigskip
-Кафедра аэрофизики и газовой динамики ФФ НГУ}
 
 \usebackgroundtemplate{\includegraphics[width=\paperwidth]{../img/background.png}}
 
@@ -224,7 +180,7 @@
 			\parbox{\textwidth}{
 			Выделим в сплошной среде, в окрестности точки $O$, тетраэдр $OA_1A_2A_3$, у которого рёбра $OA_1$, $OA_2$, $OA_3$ направлены вдоль координатных линий $x_1$, $x_2$, $x_3$, а грань $A_1A_2A_3$ перпендикулярна единичному вектору 
 			\[
-			\vec{n} =n_1 \vec{e}_1 + n_2 \vec{e}_2 + n_3 \vec{e}_3,
+			\vec{n} =n^1 \vec{e}_1 + n^2 \vec{e}_2 + n^3 \vec{e}_3,
 			\]
 			\[
 			|\vec{n}|=1.
@@ -356,9 +312,9 @@
 		\]	\pause 
 		Используя связь площадей боковых граней пирамиды тетраэдра и её основания,
 		\[
-			= -S_n (\vec{f}(M_1,\vec{e}_1) n_1 +
-					\vec{f}(M_2,\vec{e}_2) n_2 +		
-					\vec{f}(M_3,\vec{e}_3) n_3 -
+			= -S_n (\vec{f}(M_1,\vec{e}_1) n^1 +
+					\vec{f}(M_2,\vec{e}_2) n^2 +		
+					\vec{f}(M_3,\vec{e}_3) n^3 -
 					\vec{f}(M_n,\vec{n})).
 		\]	
 		
@@ -375,9 +331,9 @@
 		\parbox{\textwidth}{
 			Таким образом, сокращая на $S_n$, имеем
 			\[
-			 -\frac{1}{3}  \vec{\Phi}(M) h =  \vec{f}(M_1,\vec{e}_1) n_1 +
-			 \vec{f}(M_2,\vec{e}_2) n_2 +		
-			 \vec{f}(M_3,\vec{e}_3) n_3 -
+			 -\frac{1}{3}  \vec{\Phi}(M) h =  \vec{f}(M_1,\vec{e}_1) n^1 +
+			 \vec{f}(M_2,\vec{e}_2) n^2 +		
+			 \vec{f}(M_3,\vec{e}_3) n^3 -
 			 \vec{f}(M_n,\vec{n}).
 			\]\pause
 			При $h \to 0$ точки $M_i \to O$, $M_n \to O$, $M \to O$, при этом левая часть равенства стремится к $0$. \pause
@@ -385,9 +341,9 @@
 			\medskip			
 			Таким образом,  для произвольной точки $O$ \alert{
 			\[
-				\vec{f}(O,\vec{n}) = \vec{f}(O,\vec{e}_1) n_1 +
-				\vec{f}(O,\vec{e}_2) n_2 +		
-				\vec{f}(O,\vec{e}_3) n_3.
+				\vec{f}(O,\vec{n}) = \vec{f}(O,\vec{e}_1) n^1 +
+				\vec{f}(O,\vec{e}_2) n^2 +		
+				\vec{f}(O,\vec{e}_3) n^3.
 			\]}
 			
 		}
@@ -410,7 +366,7 @@
 				Напряжение в точке $\vec{x}$ на площадке перпендикулярной $\vec{n}$:
 			\alert{
 				\[
-				\vec{f}(\vec{x},\vec{n}) = \vec{\sigma}_n(\vec{x}) =  n_i \vec{\sigma_i}(\vec{x})=n_i \sigma_{ij}(\vec{x})\vec{e}_j,
+				\vec{f}(\vec{x},\vec{n}) = \vec{\sigma}_n(\vec{x}) =  n^i \vec{\sigma_i}(\vec{x})=n^i \sigma_i^j(\vec{x})\vec{e}_j,
 				\]	
 				\[
 				|\vec{n}|=1.
@@ -424,9 +380,9 @@
 	\begin{exampleblock}{Обозначения}
 		\parbox{\textwidth}{
 			\begin{eqnarray*}
-				\vec{f}(\vec{x},\vec{e}_1) & = & \sigma_{11}(\vec{x})\vec{e}_1 +  \sigma_{12}(\vec{x})\vec{e}_2 +  \sigma_{13}(\vec{x})\vec{e}_3 = \vec{\sigma}_1(\vec{x}), \\
-				\vec{f}(\vec{x},\vec{e}_2) & = & \sigma_{21}(\vec{x})\vec{e}_1 +  \sigma_{22}(\vec{x})\vec{e}_2 +  \sigma_{23}(\vec{x})\vec{e}_3 = \vec{\sigma}_2(\vec{x}), \\
-				\vec{f}(\vec{x},\vec{e}_3) & = & \sigma_{31}(\vec{x})\vec{e}_1 +  \sigma_{32}(\vec{x})\vec{e}_2 +  \sigma_{33}(\vec{x})\vec{e}_3 = \vec{\sigma}_3(\vec{x}).
+				\vec{f}(\vec{x},\vec{e}_1) & = & \sigma_1^1 (\vec{x})\vec{e}_1 +  \sigma_1^2 (\vec{x})\vec{e}_2 +  \sigma_1^3 (\vec{x})\vec{e}_3 = \vec{\sigma}_1(\vec{x}), \\
+				\vec{f}(\vec{x},\vec{e}_2) & = & \sigma_2^1 (\vec{x})\vec{e}_1 +  \sigma_2^2 (\vec{x})\vec{e}_2 +  \sigma_2^3 (\vec{x})\vec{e}_3 = \vec{\sigma}_2(\vec{x}), \\
+				\vec{f}(\vec{x},\vec{e}_3) & = & \sigma_3^1 (\vec{x})\vec{e}_1 +  \sigma_3^2 (\vec{x})\vec{e}_2 +  \sigma_3^3 (\vec{x})\vec{e}_3 = \vec{\sigma}_3(\vec{x}).
 			\end{eqnarray*}
 			}
 		
@@ -441,30 +397,30 @@
 		\parbox{\textwidth}{
 			Рассмотрим новый базис $\vec{g}_1$, $\vec{g}_2$, $\vec{g}_3$ в заданной точке, такой что
 			\[
-				\vec{e}_i  = \alpha_{ij} \vec{g}_j,\quad
-				\vec{g}_i  = \beta_{ij} \vec{e}_j,
+				\vec{e}_i  = \alpha_{i}^j \vec{g}_j,\quad
+				\vec{g}_l  = \beta_l^j \vec{e}_j,
 			\]
-			где $\alpha_{ij}$, $\beta_{jl}$ -- матрицы перехода между базисами, причём $|\alpha_{ij}|\neq 0$, $|\beta_{jl}|\neq 0$ и $\alpha_{ij}\beta_{jl}=\delta_i^l$.
+			где $\alpha_i^j$, $\beta_j^l$ -- матрицы перехода между базисами, причём $|\alpha_i^j|\neq 0$, $|\beta_j^l|\neq 0$ и $\alpha_i^j\beta_j^l=\delta_i^l$.
 		}
 	\end{exampleblock}
 	\begin{exampleblock}{Формулы перехода}
 		\parbox{\textwidth}{
 			
 			\[
-				\vec{n} = \bar{n}_i \vec{g}_i = \bar{n}_i \beta_{ik} \vec{e}_k= n_k \vec{e}_k.
+				\vec{n} = \bar{n}^i \vec{g}_i = \bar{n}_i \beta_i^k \vec{e}_k= n^k \vec{e}_k.
 		 	\]
-			Следовательно,  $n_k = \bar{n}_i \beta_{ik}$.
+			Следовательно,  $n^k = \bar{n}^i \beta_i^k$.
 			
 			Тогда
 			\[
-				\vec{\sigma}_n = n_i \sigma_{ij}\vec{e}_j = 
-				\bar{n}_k \beta_{ki}  \sigma_{ij} \beta_{jl}\vec{g}_l =
-				\bar{n}_k \bar{\sigma}_{kl} \vec{g}_l,
+				\vec{\sigma}_n = n^i \sigma_i^j \vec{e}_j = 
+				\bar{n}^k \beta_k^i  \sigma_i^j \alpha_j^l\vec{g}_l =
+				\bar{n}^k \bar{\sigma}_k^l \vec{g}_l,
 %				
 %							
 %				= n_k' \alpha_{ik} \sigma_{ij}  =
 			\]
-			где $\bar{\sigma}_{kl} = \beta_{ki} \beta_{jl} \sigma_{ij} $.  \alert{Такое преобразование компонент матрицы $\sigma_{ij}$ является признаком смешанного тензора второго ранга.}
+			где $\bar{\sigma}_k^l = \beta_k^i \alpha_j^l \sigma_i^l$.  \alert{Такое преобразование компонент матрицы $\sigma_{ij}$ является признаком смешанного тензора второго ранга.}
 			
 			
 		}
@@ -510,7 +466,11 @@
 		\begin{exampleblock}{Нормальная составляющая}
 			\parbox{\textwidth}{
 			\[
-			\sigma_{nn} = \vec{\sigma}_n \cdot \vec{n}  = (n_i \sigma_{ij}\vec{e}_j)\cdot (n_k \vec{e}_k)=n_i n_k \sigma_{ik}.
+			\sigma_{nn} = \vec{\sigma}_n \cdot \vec{n}  = (n^i \sigma_i^j \vec{e}_j)\cdot (n^k \vec{e}_k) = 
+			\]
+			\[=
+			n^i n^k \sigma_i^j (\vec{e}_j\cdot \vec{e}_k)=
+			n^i n^k \sigma_{ik}.
 			\]				
 			}
 		\end{exampleblock}\pause
@@ -520,14 +480,16 @@
 			\sigma_{n\tau}^2 = \sigma_n^2-\sigma_{nn}^2  = 
 			\]
 			\[
-			=(n_i \sigma_{ij}\vec{e}_j)\cdot(n_k \sigma_{kl}\vec{e}_l)-
-			n_i n_j \sigma_{ij} n_k n_l \sigma_{kl}=
+			=(n^i \sigma_i^j \vec{e}_j)\cdot(n^k \sigma_k^l \vec{e}_l)-
+			n^i n^j \sigma_{ij} n^k n^l \sigma_{kl} =
 			\]
 			\[
-			= n_i n_k \sigma_{ij} \sigma_{kl} \delta_{jl} - n_i n_j n_k n_l \sigma_{ij} \sigma_{kl}=
+			= 
+			n^i n^k \sigma_i^j \sigma_k^l (\vec{e}_j\cdot \vec{e}_l)  - 
+			n^i n^j n^k n^l \sigma_{ij} \sigma_{kl}=
 			\]
 			\[
-			=  n_i n_k \sigma_{ij} \sigma_{kl} (\delta_{jl} - n_j n_l).
+			=  n^i n^k \sigma_i^j \sigma_{kl} (\delta_j^l - n^j n^l).
 			\]
 			}
 		\end{exampleblock}
@@ -556,16 +518,16 @@
 	\end{exampleblock}
 }
 
-\frame{
-	\frametitle{ Определение собственных векторов }
-	
-	\centering
-	
-	\alert{
-		\Huge
-		Вывод диагональности тензора в системе координат собственных векторов
-	}
-}
+%\frame{
+%	\frametitle{ Определение собственных векторов }
+%	
+%	\centering
+%	
+%	\alert{
+%		\Huge
+%		Вывод диагональности тензора в системе координат собственных векторов
+%	}
+%}
 
 
 
@@ -574,18 +536,18 @@
 	
 	\begin{exampleblock}{}
 		\parbox{\textwidth}{
-		Пусть главные оси задаются ортонормированными векторами $\vec{g}_i$, а главные значения в этих осях тензора напряжения равны $\sigma_i$, тогда матрица перехода между ортонормированным базисом пространства $\vec{e}_j$ и введённым будет ортогональная (обратная совпадает с транспонированной), т.е. 
+		Пусть главные оси задаются ортонормированными векторами $\vec{g}_i$, а главные значения в этих осях тензора напряжения равны $\sigma^i$, тогда матрица перехода между ортонормированным базисом пространства $\vec{e}_j$ и введённым будет ортогональная (обратная совпадает с транспонированной), т.е. 
 		$
-		\alpha_{ij}\alpha_{kj} = \delta_{ik}.
+		\alpha_i^j \alpha^k_j = \delta_i^k.
 		$
 		
 		\medskip
 		Напряжении на площадке с нормалью $\vec{n}$ имеет вид	
 		\[			
-		\vec{\sigma}_n	= n_i\sigma_{ij}\vec{e}_j = \bar{n}_k \bar{\sigma}_{kl} \vec{g}_l = 
-		\bar{n}_l \sigma_l \vec{g}_l,
+		\vec{\sigma}_n	= n^i\sigma_i^j \vec{e}_j = \bar{n}^k \bar{\sigma}_k^l  \vec{g}_l = 
+		(\bar{n}^l \sigma^l) \vec{g}_l,
 		\]
-		где $\bar{n}_k$ -- координаты нормали в базисе $\vec{g}_k$, $\bar{\sigma}_{kl} = \sigma_k \delta_{kl}$ -- тензор напряжений в главных осях.
+		где $\bar{n}^k$ -- координаты нормали в базисе $\vec{g}_k$, $\bar{\sigma}_k^l = \sigma^l \delta_k^l$ -- тензор напряжений в главных осях.
 		
 		\medskip
 		Таким образом, учитывая то, что $|\vec{n}|=1$, из полученной формулы видно, что  вдоль главных осей имеют место только растягивающие или сжимающие напряжения.
