@@ -17,10 +17,10 @@
 
 \begin{document}
 	
-\frame{\titlepage}
+\frame[plain]{\titlepage}
 
 
-\frame{
+\frame[plain]{
 	\frametitle{Аннотация}
 	\parbox{\textwidth}{
 		Объемные и массовые силы. Поверхностные силы. Тензор напряжения Коши. Разложение напряжения на составляющие. Главные напряжения и оси тензора напряжения. 
@@ -204,11 +204,13 @@
 
 			\begin{exampleblock}{Площади граней}
 			\parbox{\textwidth}{
-				\begin{eqnarray*}
-				S_1 & = & S_n \cos(\vec{n},\vec{e}_1) = S_n n_1,\\
-				S_2 & = & S_n \cos(\vec{n},\vec{e}_2) = S_n n_2,\\
-				S_3 & = & S_n \cos(\vec{n},\vec{e}_3) = S_n n_3,
-				\end{eqnarray*}
+				\[
+				\begin{array}{ccccc}
+				S_1 & = & S_n \cos(\vec{n},\vec{e}_1) & = & S_n n^1,\\
+				S_2 & = & S_n \cos(\vec{n},\vec{e}_2) & = & S_n n^2,\\
+				S_3 & = & S_n \cos(\vec{n},\vec{e}_3) & = & S_n n^3,
+				\end{array}
+				\]
 				где $S_i$, $S_n$ -- площади граней, ортогональных $\vec{e}_i$ ($i=1,2,3$) и $\vec{n}$. 
 			}
 			\end{exampleblock}
@@ -420,7 +422,7 @@
 %							
 %				= n_k' \alpha_{ik} \sigma_{ij}  =
 			\]
-			где $\bar{\sigma}_k^l = \beta_k^i \alpha_j^l \sigma_i^l$.  \alert{Такое преобразование компонент матрицы $\sigma_{ij}$ является признаком смешанного тензора второго ранга.}
+			где $\bar{\sigma}_k^l = \beta_k^i \alpha_j^l \sigma_i^j$.  \alert{Такое преобразование компонент матрицы $\sigma_{ij}$ является признаком смешанного тензора второго ранга.}
 			
 			
 		}
@@ -480,7 +482,8 @@
 			\sigma_{n\tau}^2 = \sigma_n^2-\sigma_{nn}^2  = 
 			\]
 			\[
-			=(n^i \sigma_i^j \vec{e}_j)\cdot(n^k \sigma_k^l \vec{e}_l)-
+			=
+			(n^i \sigma_i^j \vec{e}_j)\cdot(n^k \sigma_k^l \vec{e}_l)-
 			n^i n^j \sigma_{ij} n^k n^l \sigma_{kl} =
 			\]
 			\[
@@ -489,7 +492,12 @@
 			n^i n^j n^k n^l \sigma_{ij} \sigma_{kl}=
 			\]
 			\[
-			=  n^i n^k \sigma_i^j \sigma_{kl} (\delta_j^l - n^j n^l).
+				=
+				n^i n^k \sigma_{il} \sigma_{ks} g^{ls} - n^i n^j n^k n^l \sigma_{ij} \sigma_{kl}=
+			\]
+			\[\alert{
+			=  n^i n^k \sigma_{il} \sigma_{ks} (g^{ls} - n^l n^s).
+				}
 			\]
 			}
 		\end{exampleblock}
@@ -536,18 +544,20 @@
 	
 	\begin{exampleblock}{}
 		\parbox{\textwidth}{
-		Пусть главные оси задаются ортонормированными векторами $\vec{g}_i$, а главные значения в этих осях тензора напряжения равны $\sigma^i$, тогда матрица перехода между ортонормированным базисом пространства $\vec{e}_j$ и введённым будет ортогональная (обратная совпадает с транспонированной), т.е. 
+		\small
+		Пусть главные оси задаются ортонормированными векторами $\vec{g}_i$, а главные значения в этих осях тензора напряжения  $\sigma_i^j$ равны $\sigma_l$, тогда матрица перехода между ортонормированным базисом пространства $\vec{e}_j$ и введённым будет ортогональная (обратная совпадает с транспонированной), т.е. 
 		$
-		\alpha_i^j \alpha^k_j = \delta_i^k.
+		\alpha_i^j \alpha^k_j = \delta_i^k,
 		$
+		а контравариантные,ковариантные и смешанные компоненты тензора совпадают.
 		
 		\medskip
 		Напряжении на площадке с нормалью $\vec{n}$ имеет вид	
 		\[			
 		\vec{\sigma}_n	= n^i\sigma_i^j \vec{e}_j = \bar{n}^k \bar{\sigma}_k^l  \vec{g}_l = 
-		(\bar{n}^l \sigma^l) \vec{g}_l,
+		(\bar{n}^l \sigma_l) \vec{g}_l,
 		\]
-		где $\bar{n}^k$ -- координаты нормали в базисе $\vec{g}_k$, $\bar{\sigma}_k^l = \sigma^l \delta_k^l$ -- тензор напряжений в главных осях.
+		где $\bar{n}^k$ -- координаты нормали в базисе $\vec{g}_k$, $\bar{\sigma}_k^l = \sigma_k \delta_k^l$ -- тензор напряжений в главных осях.
 		
 		\medskip
 		Таким образом, учитывая то, что $|\vec{n}|=1$, из полученной формулы видно, что  вдоль главных осей имеют место только растягивающие или сжимающие напряжения.
@@ -562,7 +572,7 @@
 		\parbox{\textwidth}{
 			
 			\[
-			I_1 = \operatorname{tr} \sigma = \sigma_{11}+\sigma_{22}+\sigma_{33}=\sigma_{1}+\sigma_{2}+\sigma_{3},
+			I_1 = \operatorname{tr} \sigma = \sigma_1^1+\sigma_2^2+\sigma_3^3=\sigma_{1}+\sigma_2+\sigma_3,
 			\]
 			
 			
@@ -575,20 +585,20 @@
 			I_2 = 
 			\left|
 			\begin{array}{cc}
-			\sigma_{11} & \sigma_{12} \\
-			\sigma_{21} & \sigma_{22}
+			\sigma_1^1 & \sigma_1^2 \\
+			\sigma_2^1 & \sigma_2^2
 			\end{array}
 			\right|+
 			\left|
 			\begin{array}{cc}
-			\sigma_{11} & \sigma_{13} \\
-			\sigma_{31} & \sigma_{33}
+			\sigma_1^1 & \sigma_1^3 \\
+			\sigma_3^1 & \sigma_3^3
 			\end{array}
 			\right|+
 			\left|
 			\begin{array}{cc}
-			\sigma_{22} & \sigma_{23} \\
-			\sigma_{32} & \sigma_{33}
+			\sigma_2^2 & \sigma_2^3 \\
+			\sigma_3^2 & \sigma_3^3
 			\end{array}
 			\right| = \sigma_1\sigma_2+\sigma_2\sigma_3+\sigma_1\sigma_3,
 			\]
@@ -601,9 +611,9 @@
 			I_3 = \operatorname{det} \sigma =
 			\left|
 			\begin{array}{ccc}
-				\sigma_{11} & \sigma_{12} & \sigma_{13} \\
-				\sigma_{21} & \sigma_{22} & \sigma_{23} \\
-				\sigma_{31} & \sigma_{32} & \sigma_{33} 
+				\sigma_1^1 & \sigma_1^2 & \sigma_1^3 \\
+				\sigma_2^1 & \sigma_2^2 & \sigma_2^3 \\
+				\sigma_3^1 & \sigma_3^2 & \sigma_3^3 
 			\end{array}
 			\right|=
 			\sigma_1\sigma_2\sigma_3.
@@ -628,7 +638,7 @@
 			\begin{exampleblock}{Нормальная составляющая}
 				\parbox{\textwidth}{
 					\[
-					\sigma_{nn} = n_i n_k \sigma_{ik} = n_i^2 \sigma_i.
+					\sigma_{nn} = n^i n^k \sigma_{ik} = (n^i)^2 \sigma_i.
 					\]				
 				}
 			\end{exampleblock}\pause
@@ -638,23 +648,33 @@
 					\sigma_{n\tau}^2 = \sigma_n^2-\sigma_{nn}^2  
 %					\]
 %					\[
-					=  n_i n_k \sigma_{ij} \sigma_{kl} (\delta_{jl} - n_j n_l)=
+					=   
+					 n^i n^k \sigma_{il} \sigma_{ks} (g^{ls} - n^l n^s)
+					=
 					\]
 					\[
-					= n_j n_l \sigma_j \sigma_l (\delta_{jl} - n_j n_l).
+					= n^i n^k \sigma_i \sigma_k (\delta^{ik} - n^i n^k).
 					\]
 				}
 			\end{exampleblock}
 			\begin{exampleblock}{Полное напряжение}
 			\parbox{\textwidth}{
+				\centering
 				\[
-				\vec{\sigma}_n^2 = 	(n_l \sigma_l \vec{g}_l) \cdot (n_k \sigma_k \vec{g}_k)= (n_k\sigma_k)^2.
+				\vec{\sigma}_n^2 = 	(n^l \sigma_l \vec{g}_l) \cdot (n^k \sigma_k \vec{g}_k)= \sum_{k} (n^k \sigma_k)^2,
+%				n^l n^k \sigma^l \sigma^k g_{lk}.
 				\]
 			}
 			\end{exampleblock}
 			
 		\end{column}
 	\end{columns}
+
+%	\parbox{\textwidth}{
+%		\centering
+%		Здесь $g_{lk} = \vec{g}_l \cdot \vec{g}_k$, $g^{lk} = \vec{g}^l \cdot \vec{g}^k$ -- метрические тензоры.
+%	}
+
 }
 
 \frame{
