@@ -8,58 +8,63 @@
 %\usepackage[utf8]{inputenc}
 %\usepackage[russian]{babel}
 
-\usepackage[main=russian,english]{babel}   %% загружает пакет многоязыковой вёрстки
-\usepackage{fontspec}      %% подготавливает загрузку шрифтов Open Type, True Type и др.
-\defaultfontfeatures{Ligatures={TeX},Renderer=Basic}  %% свойства шрифтов по умолчанию
-\setmainfont{Times New Roman} %% задаёт основной шрифт документа
-%\usefonttheme{professionalfonts}% SOLUTION
-\usefonttheme{serif}
 
-\usepackage{hyperref}
-\usepackage{textcomp}
-\usepackage{amssymb,amsmath}
-%\usepackage{animate}
-%\usepackage{longtable}
-\usepackage{xcolor}
+\input{../../include/preamble.inc} 
+\input{../../include/definitions.inc} 
+\input{../../include/author.inc} 
 
-%\usepackage{pgffor}
+%\usepackage[main=russian,english]{babel}   %% загружает пакет многоязыковой вёрстки
+%\usepackage{fontspec}      %% подготавливает загрузку шрифтов Open Type, True Type и др.
+%\defaultfontfeatures{Ligatures={TeX},Renderer=Basic}  %% свойства шрифтов по умолчанию
+%\setmainfont{Times New Roman} %% задаёт основной шрифт документа
+%%\usefonttheme{professionalfonts}% SOLUTION
+%\usefonttheme{serif}
+%
+%\usepackage{hyperref}
+%\usepackage{textcomp}
+%\usepackage{amssymb,amsmath}
+%%\usepackage{animate}
+%%\usepackage{longtable}
+%\usepackage{xcolor}
+%
+%%\usepackage{pgffor}
 \usepackage{enumitem}
 
 
-\newcounter{N}
-
-%% Форматирование окружения itemize
-%\usepackage{ragged2e}
-%\let\olditem\item
-%\renewcommand\item{\olditem\justifying}
-
-
-\newcommand{\argxi}{(\xi^1,\xi^2,\xi^3)}
-\newcommand{\argx}{(x^1,x^2,x^3)}
-
-\newcommand{\argxiv}{(\vec{\xi})}
-\newcommand{\argxv}{(\vec{x})}
-
-
-\newcommand{\argxbarn}{(\bar{x}^1,\bar{x}^2,\ldots, \bar{x}^n)}
-\newcommand{\argxn}{(x^1, x^2,\ldots, x^n)}
-
-\newcommand{\argtxi}{(t, \xi^1,\xi^2,\xi^3)}
-\newcommand{\argtoxi}{(t_0, \xi^1,\xi^2,\xi^3)}
-
-\newcommand{\argtxiv}{(t, \vec{\xi})}
-\newcommand{\argtoxiv}{(t_0, \vec{\xi})}
-
-
-\newcommand{\argtx}{(t, x^1,x^2,x^3)}
-\newcommand{\argtox}{(t_0, x^1,x^2,x^3)}
-
-\newcommand{\argtxv}{(t, \vec{x})}
-\newcommand{\argtoxv}{(t_0, \vec{x})}
-
-
-\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
-\newcommand{\pdk}[2]{\frac{\partial^2 #1}{\partial {#2}^2}}
+%\newcounter{N}
+%
+%%% Форматирование окружения itemize
+%%\usepackage{ragged2e}
+%%\let\olditem\item
+%%\renewcommand\item{\olditem\justifying}
+%
+%
+%\newcommand{\argxi}{(\xi^1,\xi^2,\xi^3)}
+%\newcommand{\argx}{(x^1,x^2,x^3)}
+%
+%\newcommand{\argxiv}{(\vec{\xi})}
+%\newcommand{\argxv}{(\vec{x})}
+%
+%
+%\newcommand{\argxbarn}{(\bar{x}^1,\bar{x}^2,\ldots, \bar{x}^n)}
+%\newcommand{\argxn}{(x^1, x^2,\ldots, x^n)}
+%
+%\newcommand{\argtxi}{(t, \xi^1,\xi^2,\xi^3)}
+%\newcommand{\argtoxi}{(t_0, \xi^1,\xi^2,\xi^3)}
+%
+%\newcommand{\argtxiv}{(t, \vec{\xi})}
+%\newcommand{\argtoxiv}{(t_0, \vec{\xi})}
+%
+%
+%\newcommand{\argtx}{(t, x^1,x^2,x^3)}
+%\newcommand{\argtox}{(t_0, x^1,x^2,x^3)}
+%
+%\newcommand{\argtxv}{(t, \vec{x})}
+%\newcommand{\argtoxv}{(t_0, \vec{x})}
+%
+%
+%\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+%\newcommand{\pdk}[2]{\frac{\partial^2 #1}{\partial {#2}^2}}
 
 
 \title[]{Законы сохранения в механике сплошной среды}
@@ -74,10 +79,10 @@
 
 \begin{document}
 	
-\frame{\titlepage}
+\frame[plain]{\titlepage}
 
 
-\frame{
+\frame[plain]{
 	\frametitle{Аннотация}
 	\parbox{\textwidth}{
 	Траектрория движения сплошной среды. Формула Эйлера. Законы сохранения параметров сплошной среды в интегральной и дифференциальной форме. 
@@ -118,12 +123,8 @@
 				где $\vec{\xi}$, $\vec{x}$ -- лагранжевы и эйлеровы координаты частицы.
 			}
 		\end{exampleblock}
-	
-	
-
-
-	
 }
+
 \frame{
 	\frametitle{ Определение траекторий по заданному полю движения }
 		\begin{exampleblock}{Поле скоростей}
