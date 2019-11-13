@@ -1,8 +1,20 @@
+\newcommand{\xiv}{\vec{\xi}}
+\newcommand{\xv}{\vec{x}}
+
 \newcommand{\argxi}{(\xi_1,\xi_2,\xi_3)}
 \newcommand{\argx}{(x_1,x_2,x_3)}
 
 \newcommand{\argxbarn}{(\bar{x}^1,\bar{x}^2,\ldots, \bar{x}^n)}
 \newcommand{\argxn}{(x^1, x^2,\ldots, x^n)}
+
+\newcommand{\argxiv}{(\vec{\xi})}
+\newcommand{\argxv}{(\vec{x})}
+
+\newcommand{\argtxiv}{(t, \vec{\xi})}
+\newcommand{\argtoxiv}{(t_0, \vec{\xi})}
+
+\newcommand{\argtxv}{(t, \vec{x})}
+\newcommand{\argtoxv}{(t_0, \vec{x})}
 
 \newcommand{\argtxi}{(t, \xi_1,\xi_2,\xi_3)}
 \newcommand{\argtoxi}{(t_0, \xi^1,\xi^2,\xi^3)}
@@ -11,6 +23,3 @@
 
 \newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
 \newcommand{\pdk}[2]{\frac{\partial^2 #1}{\partial {#2}^2}}
-
-%\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
-%\newcommand{\pdk}[2]{\frac{\partial^2 #1}{\partial {#2}^2}}
