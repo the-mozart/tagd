@@ -8,58 +8,42 @@
 %\usepackage[utf8]{inputenc}
 %\usepackage[russian]{babel}
 
-\usepackage[main=russian,english]{babel}   %% загружает пакет многоязыковой вёрстки
-\usepackage{fontspec}      %% подготавливает загрузку шрифтов Open Type, True Type и др.
-\defaultfontfeatures{Ligatures={TeX},Renderer=Basic}  %% свойства шрифтов по умолчанию
-\setmainfont{Times New Roman} %% задаёт основной шрифт документа
-%\usefonttheme{professionalfonts}% SOLUTION
-\usefonttheme{serif}
+\input{../../include/preamble.inc} 
+\input{../../include/definitions.inc} 
+\input{../../include/author.inc} 
 
-\usepackage{hyperref}
-\usepackage{textcomp}
-\usepackage{amssymb,amsmath}
-%\usepackage{animate}
-%\usepackage{longtable}
-\usepackage{xcolor}
-
-%\usepackage{pgffor}
 \usepackage{enumitem}
 
 
-\newcounter{N}
-
-%% Форматирование окружения itemize
-%\usepackage{ragged2e}
-%\let\olditem\item
-%\renewcommand\item{\olditem\justifying}
-
-
-\newcommand{\argxi}{(\xi^1,\xi^2,\xi^3)}
-\newcommand{\argx}{(x^1,x^2,x^3)}
-
-\newcommand{\argxiv}{(\vec{\xi})}
-\newcommand{\argxv}{(\vec{x})}
-
-
-\newcommand{\argxbarn}{(\bar{x}^1,\bar{x}^2,\ldots, \bar{x}^n)}
-\newcommand{\argxn}{(x^1, x^2,\ldots, x^n)}
-
-\newcommand{\argtxi}{(t, \xi^1,\xi^2,\xi^3)}
-\newcommand{\argtoxi}{(t_0, \xi^1,\xi^2,\xi^3)}
-
-\newcommand{\argtxiv}{(t, \vec{\xi})}
-\newcommand{\argtoxiv}{(t_0, \vec{\xi})}
-
-
-\newcommand{\argtx}{(t, x^1,x^2,x^3)}
-\newcommand{\argtox}{(t_0, x^1,x^2,x^3)}
-
-\newcommand{\argtxv}{(t, \vec{x})}
-\newcommand{\argtoxv}{(t_0, \vec{x})}
-
-
-\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
-\newcommand{\pdk}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+%
+%
+%
+%\newcommand{\argxi}{(\xi^1,\xi^2,\xi^3)}
+%\newcommand{\argx}{(x^1,x^2,x^3)}
+%
+%\newcommand{\argxiv}{(\vec{\xi})}
+%\newcommand{\argxv}{(\vec{x})}
+%
+%
+%\newcommand{\argxbarn}{(\bar{x}^1,\bar{x}^2,\ldots, \bar{x}^n)}
+%\newcommand{\argxn}{(x^1, x^2,\ldots, x^n)}
+%
+%\newcommand{\argtxi}{(t, \xi^1,\xi^2,\xi^3)}
+%\newcommand{\argtoxi}{(t_0, \xi^1,\xi^2,\xi^3)}
+%
+%\newcommand{\argtxiv}{(t, \vec{\xi})}
+%\newcommand{\argtoxiv}{(t_0, \vec{\xi})}
+%
+%
+%\newcommand{\argtx}{(t, x^1,x^2,x^3)}
+%\newcommand{\argtox}{(t_0, x^1,x^2,x^3)}
+%
+%\newcommand{\argtxv}{(t, \vec{x})}
+%\newcommand{\argtoxv}{(t_0, \vec{x})}
+%
+%
+%\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+%\newcommand{\pdk}[2]{\frac{\partial^2 #1}{\partial #2^2}}
 
 
 \title[]{Классические модели механики жидкости и газа в рамках континуального подхода}
@@ -74,10 +58,10 @@
 
 \begin{document}
 	
-\frame{\titlepage}
+\frame[plain]{\titlepage}
 
 
-\frame{
+\frame[plain]{
 	\frametitle{Аннотация}
 	\parbox{\textwidth}{
 		Жидкость, газ, твёрдое тело основные отличия. Идеальные, не идеальные и линейные и нелинейные среды. Модели идеальной несжимаемой жидкости, идеального политропного нетеплопроводного газа, вязкой несжимаемой жидкости, вязкого сжимаемого теплопроводного газа.
@@ -313,6 +297,245 @@
 
 
 \frame{
+	\frametitle{Тензор напряжений в вязкой ньютоновской жидкости}
+	
+	\begin{exampleblock}{Связь тензора напряжений и тензора скоростей деформаций}
+		\parbox{\textwidth}{
+			\[
+			\sigma_{ij} = -p\delta_{ij} + \tau_{ij},\quad
+			\tau_{ij} = \ D_{ijkm}e_{km},\quad
+			e_{km} = \frac{1}{2}\left(\pd{v_k}{x_m} + \pd{v_m}{x_k} \right).
+			\]
+		
+			В матричной форме \scriptsize
+		
+			\hspace{-0.7cm}
+			\parbox{\textwidth}{
+			\[
+			\begin{pmatrix}
+			\tau_{11} \\
+			\tau_{22}\\
+			\tau_{33} \\
+			\tau_{23} \\
+			\tau_{13} \\
+			\tau_{12} \\
+			\tau_{32} \\
+			\tau_{31} \\
+			\tau_{21} 
+			\end{pmatrix}
+			=
+			\begin{pmatrix}
+			D_{1111} & D_{1122}  & D_{1133} & D_{1123} & D_{1113} & D_{1112} & D_{1132} & D_{1131} & D_{1121}\\
+			D_{2211} & D_{2222}  & D_{2233} & D_{2223} & D_{2213} & D_{2212} & D_{2232} & D_{2231} & D_{2221}\\
+			D_{3311} & D_{3322}  & D_{3333} & D_{3323} & D_{3313} & D_{3312} & D_{3332} & D_{3331} & D_{3321}\\
+			D_{2311} & D_{2322}  & D_{2333} & D_{2323} & D_{2313} & D_{2312} & D_{2332} & D_{2331} & D_{2321}\\
+			D_{1311} & D_{1322}  & D_{1333} & D_{1323} & D_{1313} & D_{1313} & D_{1332} & D_{1331} & D_{1321}\\
+			D_{1211} & D_{1222}  & D_{1233} & D_{1223} & D_{1213} & D_{1212} & D_{1232} & D_{1231} & D_{1221}\\
+			D_{3211} & D_{3222}  & D_{3233} & D_{3223} & D_{3213} & D_{3212} & D_{3232} & D_{3231} & D_{3221}\\
+			D_{3111} & D_{3122}  & D_{3133} & D_{3123} & D_{3113} & D_{3112} & D_{3132} & D_{3131} & D_{3121}\\
+			D_{2111} & D_{2122}  & D_{2133} & D_{2123} & D_{2113} & D_{2112} & D_{2132} & D_{2131} & D_{2121}\\	
+			\end{pmatrix}
+			\begin{pmatrix}
+			e_{11} \\
+			e_{22}\\
+			e_{33} \\
+			e_{23} \\
+			e_{13} \\
+			e_{12} \\
+			e_{32} \\
+			e_{31} \\
+			e_{21} 
+			\end{pmatrix}
+			\]	
+			}
+		}
+	\end{exampleblock}
+	
+	
+	
+}
+
+\frame{
+	\frametitle{Тензор напряжений в вязкой ньютоновской жидкости} 
+	
+	\begin{exampleblock}{Изотропность свойств жидкости}
+	\parbox{\textwidth}{
+		Пусть $Q = (q_{pr})_{1 \leq p,r \leq 3} $ произвольное ортогональное преобразование координат $(Q^{-1}=Q^T)$, тогда коэффициенты тензора $D$ в новой системе координат не меняют вид, т.е.
+		\[
+		\bar{D}_{ijkm} =  q_{\alpha i} q_{\beta j} q_{\gamma k} q_{\delta m} D_{\alpha\beta\gamma\delta} = D_{ijkm}.
+		\]
+	}
+	\end{exampleblock}
+
+	\begin{exampleblock}{Симметричность тензоров $\tau_{ij}$ и $e_{ij}$}
+		\parbox{\textwidth}{
+			\[
+			\tau_{ij} = \tau_{ji},\quad
+			e_{ij} = e_{ji}
+			\]
+			\[
+			\Downarrow
+			\]
+			\[
+				D_{ijkl} = D_{jikl} = D_{jilk} = D_{ijlk}
+			\]
+		}
+	\end{exampleblock}\pause
+
+
+
+%
+%	\begin{exampleblock}{Симметрия при перестановке первой и второй пар индексов}
+%	\parbox{\textwidth}{
+%		\[
+%			D_{ijkl} = D_{klij}
+%		\]
+%	}
+%	\end{exampleblock}\pause
+%
+%	\begin{exampleblock}{Итого}
+%	\parbox{\textwidth}{
+%		\[
+%			D_{ijkl} = D_{jikl} = D_{jilk} = D_{ijlk} = 
+%			D_{klij} = D_{klji} = D_{lkji} = D_{lkij}
+%		\]
+%	}
+
+%	\end{exampleblock}
+	
+}
+
+
+\frame{
+	\frametitle{Тензор напряжений в вязкой ньютоновской жидкости }
+	
+	\begin{exampleblock}{Инвариантность относительно отражений}
+		\parbox{\textwidth}{
+			\[
+			Q_1^r = 
+			\begin{pmatrix}
+			 -1 & 0 & 0\\
+			  0 & 1 & 0\\
+			  0 & 0 & 1
+			\end{pmatrix},\quad
+			Q_2^r = 
+			\begin{pmatrix}
+			1 & 0 & 0\\
+			0 & -1 & 0\\
+			0 & 0 & 1
+			\end{pmatrix},\quad
+			Q_3^r = 
+			\begin{pmatrix}
+			1 & 0 & 0\\
+			0 & 1 & 0\\
+			0 & 0 & -1
+			\end{pmatrix}.
+			\]
+			
+		}
+	\end{exampleblock}
+
+	\begin{exampleblock}{Ограничение на коэффициенты}
+		\parbox{\textwidth}{
+		
+		\hspace{-0.7cm}
+		\parbox{\textwidth}{
+		\scriptsize
+		\[
+		\begin{pmatrix}
+		\tau_{11} \\
+		\tau_{22}\\
+		\tau_{33} \\
+		\tau_{23} \\
+		\tau_{13} \\
+		\tau_{12} \\
+		\tau_{32} \\
+		\tau_{31} \\
+		\tau_{21} 
+		\end{pmatrix}
+		=
+		\begin{pmatrix}
+		D_{1111} & D_{1122}  & D_{1133} & 0 & 0 & 0 &0 & 0& 0\\
+		D_{2211} & D_{2222}  & D_{2233} & 0 &0 & 0 & 0 & 0& 0\\
+		D_{3311} & D_{3322}  & D_{3333} & 0 & 0 & 0 & 0 &0& 0\\
+		0 & 0  & 0 & D_{2323} & 0 & 0 & 0 & 0 & 0\\
+		0 & 0  & 0 & 0 & D_{1313} & 0 & 0 & 0 & 0\\
+		0 & 0  & 0 & 0 & 0 & D_{1212} & 0 & 0 & 0\\
+		0 & 0  & 0 & 0 & 0 & 0 & D_{3232} & 0 & 0\\
+		0 & 0  & 0 & 0 & 0 & 0 & 0 & D_{3131} & 0\\
+		0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & D_{2121}\\	
+		\end{pmatrix}
+		\begin{pmatrix}
+		e_{11} \\
+		e_{22}\\
+		e_{33} \\
+		e_{23} \\
+		e_{13} \\
+		e_{12} \\
+		e_{32} \\
+		e_{31} \\
+		e_{21} 
+		\end{pmatrix}
+		\]
+		}
+				
+		}
+		
+	\end{exampleblock}
+
+}
+
+\frame{
+	\frametitle{Тензор напряжений в вязкой ньютоновской жидкости }
+	
+	\begin{exampleblock}{Инвариантность относительно изменения порядка базиса}
+		\parbox{\textwidth}{
+			\[
+			Q_1^c = 
+			\begin{pmatrix}
+			0 & 1 & 0\\
+			0 & 0 & 1\\
+			1 & 0 & 0
+			\end{pmatrix},\quad
+			Q_2^c = 
+			\begin{pmatrix}
+			0 & 1 & 0\\
+			1 & 0 & 0\\
+			0 & 0 & -1
+			\end{pmatrix},\quad
+			Q_3^c = 
+			\begin{pmatrix}
+			0 & 0 & 1\\
+			1 & 0 & 0\\
+			0 & 1 & 0
+			\end{pmatrix}.
+			\]
+			
+		}
+	\end{exampleblock}
+	
+}
+
+\frame{
+	\frametitle{Тензор напряжений в вязкой ньютоновской жидкости }
+	
+	\begin{exampleblock}{Инвариантность относительно поворота на угол $2\pi/3$}
+		\parbox{\textwidth}{
+			\[
+			Q_{120} = 
+			\begin{pmatrix}
+			-1/2 & \sqrt{3}/2 & 0\\
+			-\sqrt{3}/2 & -1/2 & 0\\
+			0 & 0 & 1
+			\end{pmatrix}
+			\]
+			
+		}
+	\end{exampleblock}
+	
+}
+
+\frame{
 	\frametitle{ Вязкая несжимаемая жидкость }
 	
 	\begin{exampleblock}{Основные допущения}
@@ -339,6 +562,8 @@
 	\end{exampleblock}
 	
 }
+
+
 
 \frame{
 	\frametitle{ Вязкая несжимаемая жидкость }
