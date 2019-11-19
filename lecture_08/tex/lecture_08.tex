@@ -130,7 +130,7 @@
 	
 	\begin{exampleblock}{Линейность среды}
 		\parbox{\textwidth}{
-			Сплошная среды называется \alert{линейной}, если имеет место линейная зависимость между напряжениями возникающими в ней и изменениями деформаций или изменениями скоростей деформаций.
+			Сплошная среда называется \alert{линейной}, если имеет место линейная зависимость между напряжениями возникающими в ней и изменениями деформаций или изменениями скоростей деформаций.
 			
 			\medskip
 			Для {\em твёрдых тел} имеет место обобщённый закон Гука:
@@ -154,146 +154,9 @@
 	
 }
 
-\frame{
-	\frametitle{ Идеальная несжимаемая жидкость }
-	
-	\begin{exampleblock}{Основные допущения}
-		\parbox{\textwidth}{
-		\begin{itemize}[partopsep=1pt,label=\textbullet]
-		\item Постоянная плотность среды
-		\[
-			\rho=const
-		\]
-			
-		\item Напряжение на площадке c произвольной нормалью одинаково и направлено вдоль неё
-		\[
-		\sigma_{ij} = -p \delta_{ij}.
-		\]
-		
-		В этом случае для любого вектора $\vec{n}$ единичной длины
-		\[
-		\vec{\sigma}_n = \vec{n} \cdot \sigma = -p\vec{n}.
-		\]
-		
-			
-		\end{itemize}	
-			
-		}
-	\end{exampleblock}
-	
-}
 
 
 
-
-\frame{
-	\frametitle{ Идеальная несжимаемая жидкость }
-	
-	\begin{exampleblock}{Уравнения Эйлера}
-		\parbox{\textwidth}{
-
-			
-			\[
-			\operatorname{div}	\vec{v} = 0,
-			\]
-			\[
-			\frac{d\vec{v}}{dt} = -\frac{1}{\rho} \nabla p + \vec{f},
-			\]
-		}
-	\end{exampleblock}
-
-
-	\begin{exampleblock}{Неизвестные функции}
-		\parbox{\textwidth}{
-		
-			Четыре искомых дифференцируемых функции, определённые в области $\Omega \subset R \times R^3$ :
-			\begin{itemize}[partopsep=1pt,label=]
-				\item
-			 $\vec{v}\argtxv = v_1\argtxv\vec{e}_1+ v_2\argtxv\vec{e}_2 + v_3\argtxv\vec{e}_3$,
-			 
-			 \item 
-			 $p = p\argtxv$.
-			 
-			\end{itemize}
-		}
-	\end{exampleblock}
-
-	\begin{exampleblock}{Заданные параметры}
-		\parbox{\textwidth}{
-			$\rho$ -- плотность жидкости; $\vec{f}=\vec{f}\argtxv$  -- вектор массовых сил.
-		}
-	\end{exampleblock}
-}
-
-
-
-\frame{
-	\frametitle{ Идеальный политропный нетеплопроводный газ }
-	
-	\begin{exampleblock}{Основные допущения}
-		\parbox{\textwidth}{
-			\begin{itemize}[partopsep=1pt,label=\textbullet]
-				\item
-					Уравнение состояния идеального газа:
-					\[
-						p = \rho R_1 T,
-					\]
-					где $p$, $\rho$, $T$ -- давление, плотность и температура газа; $R_1$ -- газовая постоянная для выбранного газа.
-					
-				\item
-					Линейная связь между удельной внутренней энергией и температурой:
-					\[
-					\varepsilon = C_V T,
-					\] 
-					где $C_V$ -- коэффициент теплоёмкости при постоянном объёме.
-												
-				\item Напряжение на площадке c произвольной нормалью одинаково и направлено вдоль неё
-				\[
-				\sigma_{ij} = -p \delta_{ij}.
-				\]
-				
-			\end{itemize}	
-			
-		}
-	\end{exampleblock}
-	
-}
-
-\frame{
-	\frametitle{ Идеальный политропный нетеплопроводный газ }
-	
-	\begin{exampleblock}{Основные уравнения}
-		\parbox{\textwidth}{
-			\[
-			\frac{d\rho}{dt} +  \rho \operatorname{div}	\vec{v} = 0,\quad
-			\frac{d\vec{v}}{dt} = -\frac{1}{\rho} \nabla p,
-			\]
-			\[
-			C_V \frac{dT}{dt} - \frac{p}{\rho^2} \frac{d\rho}{dt} =0.
-			\]
-		}
-	\end{exampleblock}
-	
-	
-	\begin{exampleblock}{Неизвестные функции}
-		\parbox{\textwidth}{
-			
-			Пять искомых дифференцируемых функции, определённых в области $\Omega \subset R \times R^3$ :	$\vec{v}\argtxv = v_1\argtxv\vec{e}_1+ v_2\argtxv\vec{e}_2 + v_3\argtxv\vec{e}_3$, $\rho = \rho\argtxv$, $T=T\argtxv$.
-				
-
-		}
-	\end{exampleblock}
-	
-	\begin{exampleblock}{Дополнительные соотношения}
-		\parbox{\textwidth}{
-			\[
-				p = \rho R_1 T, \quad
-				\varepsilon = C_V T,
-			\]			
-			где $R_1$, $C_V$ -- заданные параметры газа.
-		}
-	\end{exampleblock}
-}
 
 
 \frame{
@@ -513,7 +376,53 @@
 			
 		}
 	\end{exampleblock}
-	
+	\begin{exampleblock}{Ограничение на коэффициенты}
+		\parbox{\textwidth}{
+			
+			\hspace{-0.7cm}
+			\parbox{\textwidth}{
+				\scriptsize
+				\[
+				\begin{pmatrix}
+				\tau_{11} \\
+				\tau_{22}\\
+				\tau_{33} \\
+				\tau_{23} \\
+				\tau_{13} \\
+				\tau_{12} \\
+				\tau_{32} \\
+				\tau_{31} \\
+				\tau_{21} 
+				\end{pmatrix}
+				=
+				\begin{pmatrix}
+				D_{1111} & D_{1122}  & D_{1122} & 0 & 0 & 0 &0 & 0& 0\\
+				D_{1122} & D_{1111}  & D_{1122} & 0 &0 & 0 & 0 & 0& 0\\
+				D_{1122} & D_{1122}  & D_{1111} & 0 & 0 & 0 & 0 &0& 0\\
+				0 & 0  & 0 & D_{1212} & 0 & 0 & 0 & 0 & 0\\
+				0 & 0  & 0 & 0 & D_{1212} & 0 & 0 & 0 & 0\\
+				0 & 0  & 0 & 0 & 0 & D_{1212} & 0 & 0 & 0\\
+				0 & 0  & 0 & 0 & 0 & 0 & D_{1212} & 0 & 0\\
+				0 & 0  & 0 & 0 & 0 & 0 & 0 & D_{1212} & 0\\
+				0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & D_{1212}\\	
+				\end{pmatrix}
+				\begin{pmatrix}
+				e_{11} \\
+				e_{22}\\
+				e_{33} \\
+				e_{23} \\
+				e_{13} \\
+				e_{12} \\
+				e_{32} \\
+				e_{31} \\
+				e_{21} 
+				\end{pmatrix}
+				\]
+			}
+			
+		}
+		
+	\end{exampleblock}
 }
 
 \frame{
@@ -527,13 +436,227 @@
 			-1/2 & \sqrt{3}/2 & 0\\
 			-\sqrt{3}/2 & -1/2 & 0\\
 			0 & 0 & 1
+			\end{pmatrix}\quad
+			\Rightarrow\quad
+			D_{1212} = \frac{1}{2}\left(D_{1111}-D_{1122}\right)
+			\]
+			
+		}
+	\end{exampleblock}
+	\begin{exampleblock}{Ограничение на коэффициенты}
+	\parbox{\textwidth}{
+		
+		\hspace{-0.7cm}
+		\parbox{\textwidth}{
+			\scriptsize
+			\[
+			\begin{pmatrix}
+			\tau_{11} \\
+			\tau_{22}\\
+			\tau_{33} \\
+			\tau_{23} \\
+			\tau_{13} \\
+			\tau_{12} \\
+			\tau_{32} \\
+			\tau_{31} \\
+			\tau_{21} 
+			\end{pmatrix}
+			=
+			\begin{pmatrix}
+			\lambda + 2 \mu & \lambda  & \lambda & 0 & 0 & 0 &0 & 0& 0\\
+			\lambda & \lambda + 2 \mu  & \lambda & 0 &0 & 0 & 0 & 0& 0\\
+			\lambda & \lambda  & \lambda + 2 \mu & 0 & 0 & 0 & 0 &0& 0\\
+			0 & 0  & 0 & \mu & 0 & 0 & 0 & 0 & 0\\
+			0 & 0  & 0 & 0 & \mu & 0 & 0 & 0 & 0\\
+			0 & 0  & 0 & 0 & 0 & \mu & 0 & 0 & 0\\
+			0 & 0  & 0 & 0 & 0 & 0 & \mu & 0 & 0\\
+			0 & 0  & 0 & 0 & 0 & 0 & 0 & \mu & 0\\
+			0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \mu\\	
+			\end{pmatrix}
+			\begin{pmatrix}
+			e_{11} \\
+			e_{22}\\
+			e_{33} \\
+			e_{23} \\
+			e_{13} \\
+			e_{12} \\
+			e_{32} \\
+			e_{31} \\
+			e_{21} 
 			\end{pmatrix}
 			\]
+		}
+	
+		\centering
+		\normalsize
+		$\lambda$, $\mu$ -- \alert{коэффициенты Ламе} или \alert{коэффициенты объёмной и динамической вязкости}.
+		
+	}
+	
+	\end{exampleblock}	
+}
+
+\frame{
+	\frametitle{Тензор напряжений в вязкой ньютоновской жидкости }
+
+	\begin{exampleblock}{Тензорная запись}
+		\parbox{\textwidth}{
+			\[
+				D_{ijkm} = \lambda\delta_{ij} \delta_{km} + \mu (\delta_{ik} \delta_{jm} + \delta_{im} \delta_{jk}),
+			\]\pause
+			\[
+			\tau_{ij} =  (\lambda\delta_{ij} \delta_{km} + \mu (\delta_{ik} \delta_{jm} + \delta_{im} \delta_{jk})) e_{ij} = 
+			\lambda \delta_{ij} e_{kk} + 2 \mu e_{ij} = 
+			\lambda \delta_{ij} \operatorname{div} \vec{v} + 2 \mu e_{ij},
+			\]\pause
+			\[
+			\sigma = -(p + \lambda \operatorname{div} \vec{v}) I + 2 \mu e,
+			\]
+			где $I$ -- единичный тензор, $e$ -- тензор скоростей деформаций.
+		}
+	\end{exampleblock}
+}
+
+\frame{
+	\frametitle{ Идеальная несжимаемая жидкость }
+	
+	\begin{exampleblock}{Основные допущения}
+		\parbox{\textwidth}{
+			\begin{itemize}[partopsep=1pt,label=\textbullet]
+				\item Постоянная плотность среды
+				\[
+				\rho=const
+				\]
+				
+				\item Напряжение на площадке c произвольной нормалью одинаково и направлено вдоль неё
+				\[
+				\sigma_{ij} = -p \delta_{ij}.
+				\]
+				
+				В этом случае для любого вектора $\vec{n}$ единичной длины
+				\[
+				\vec{\sigma}_n = \vec{n} \cdot \sigma = -p\vec{n}.
+				\]
+				
+				
+			\end{itemize}	
 			
 		}
 	\end{exampleblock}
 	
 }
+
+
+
+\frame{
+	\frametitle{ Идеальная несжимаемая жидкость }
+	
+	\begin{exampleblock}{Уравнения Эйлера}
+		\parbox{\textwidth}{
+			
+			
+			\[
+			\operatorname{div}	\vec{v} = 0,
+			\]
+			\[
+			\frac{d\vec{v}}{dt} = -\frac{1}{\rho} \nabla p + \vec{f},
+			\]
+		}
+	\end{exampleblock}
+	
+	
+	\begin{exampleblock}{Неизвестные функции}
+		\parbox{\textwidth}{
+			
+			Четыре искомых дифференцируемых функции, определённые в области $\Omega \subset R \times R^3$ :
+			\begin{itemize}[partopsep=1pt,label=]
+				\item
+				$\vec{v}\argtxv = v_1\argtxv\vec{e}_1+ v_2\argtxv\vec{e}_2 + v_3\argtxv\vec{e}_3$,
+				
+				\item 
+				$p = p\argtxv$.
+				
+			\end{itemize}
+		}
+	\end{exampleblock}
+	
+	\begin{exampleblock}{Заданные параметры}
+		\parbox{\textwidth}{
+			$\rho$ -- плотность жидкости; $\vec{f}=\vec{f}\argtxv$  -- вектор массовых сил.
+		}
+	\end{exampleblock}
+}
+
+
+
+\frame{
+	\frametitle{ Идеальный политропный нетеплопроводный газ }
+	
+	\begin{exampleblock}{Основные допущения}
+		\parbox{\textwidth}{
+			\begin{itemize}[partopsep=1pt,label=\textbullet]
+				\item
+				Уравнение состояния идеального газа:
+				\[
+				p = \rho R_1 T,
+				\]
+				где $p$, $\rho$, $T$ -- давление, плотность и температура газа; $R_1$ -- газовая постоянная для выбранного газа.
+				
+				\item
+				Линейная связь между удельной внутренней энергией и температурой:
+				\[
+				\varepsilon = C_V T,
+				\] 
+				где $C_V$ -- коэффициент теплоёмкости при постоянном объёме.
+				
+				\item Напряжение на площадке c произвольной нормалью одинаково и направлено вдоль неё
+				\[
+				\sigma_{ij} = -p \delta_{ij}.
+				\]
+				
+			\end{itemize}	
+			
+		}
+	\end{exampleblock}
+	
+}
+
+\frame{
+	\frametitle{ Идеальный политропный нетеплопроводный газ }
+	
+	\begin{exampleblock}{Основные уравнения}
+		\parbox{\textwidth}{
+			\[
+			\frac{d\rho}{dt} +  \rho \operatorname{div}	\vec{v} = 0,\quad
+			\frac{d\vec{v}}{dt} = -\frac{1}{\rho} \nabla p,
+			\]
+			\[
+			C_V \frac{dT}{dt} - \frac{p}{\rho^2} \frac{d\rho}{dt} =0.
+			\]
+		}
+	\end{exampleblock}
+	
+	
+	\begin{exampleblock}{Неизвестные функции}
+		\parbox{\textwidth}{
+			
+			Пять искомых дифференцируемых функции, определённых в области $\Omega \subset R \times R^3$ :	$\vec{v}\argtxv = v_1\argtxv\vec{e}_1+ v_2\argtxv\vec{e}_2 + v_3\argtxv\vec{e}_3$, $\rho = \rho\argtxv$, $T=T\argtxv$.
+			
+			
+		}
+	\end{exampleblock}
+	
+	\begin{exampleblock}{Дополнительные соотношения}
+		\parbox{\textwidth}{
+			\[
+			p = \rho R_1 T, \quad
+			\varepsilon = C_V T,
+			\]			
+			где $R_1$, $C_V$ -- заданные параметры газа.
+		}
+	\end{exampleblock}
+}
+
 
 \frame{
 	\frametitle{ Вязкая несжимаемая жидкость }
@@ -683,6 +806,10 @@
 	\frametitle{ Литература }
 	\begin{itemize}[partopsep=1pt,label=\textbullet]
 	\item {\em Дж. Мейз}. Теория и задачи механики сплошных сред. М.: Изд-во <<Мир>>, 1974.
+	
+	\item {\em Басниев К. С., Дмитриев Н. М., Розенберг Г. Д.}. Нефтегазовая гидромеханика: Учебное пособие для вузов. -- М.-Ижевск:
+	Институт компьютерных исследований, 2005. 544 с.
+	
 	\end{itemize}
 }
 
