@@ -23,3 +23,10 @@
 
 \newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
 \newcommand{\pdk}[2]{\frac{\partial^2 #1}{\partial {#2}^2}}
+
+\newcommand{\Rho}{\mathscr{P}}
+\newcommand{\grad}{\operatorname{grad}}
+\newcommand{\rot}{\operatorname{rot}}
+\newcommand{\divo}{\operatorname{div}}
+
+

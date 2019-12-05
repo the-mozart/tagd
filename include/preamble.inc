@@ -26,8 +26,10 @@
 
 \usepackage{textcomp}
 \usepackage{amssymb,amsmath}
+\usepackage{ mathrsfs }
 \usepackage{xcolor}
 \usepackage{hyperref}
+\usepackage{enumitem}
 
 % Уменьшаем счётчик слайдов на два для того, чтобы нумерация не касалась слайда с титульной страницы аннотации
 
@@ -38,3 +40,5 @@
 \usepackage{ragged2e}
 \let\olditem\item
 \renewcommand\item{\olditem\justifying}
+
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{../img/background.png}}
