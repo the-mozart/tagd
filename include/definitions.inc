@@ -29,4 +29,4 @@
 \newcommand{\rot}{\operatorname{rot}}
 \newcommand{\divo}{\operatorname{div}}
 
-
+\newcommand{\od}[2]{\frac{d #1}{d #2}}
