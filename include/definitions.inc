@@ -30,3 +30,4 @@
 \newcommand{\divo}{\operatorname{div}}
 
 \newcommand{\od}[2]{\frac{d #1}{d #2}}
+\newcommand{\odk}[3]{\frac{d^{#3} #1}{d #2^{#3}}}
