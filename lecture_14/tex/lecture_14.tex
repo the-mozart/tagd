@@ -124,7 +124,7 @@
 			\left\{
 			\pd{}{r}\left( r v_r \right) + 
 			\pd{}{\theta} v_\theta +
-			\pd{}{\lambda}\left( r v_z \right)
+			\pd{}{z}\left( r v_z \right)
 			\right\}
 			= 0,
 			\]
@@ -332,7 +332,7 @@
 	\begin{exampleblock}{Уравнение неразрывности в цилиндрической системе координат с осевой симметрией в переменных $(r,z)$}
 		\parbox{\textwidth}{
 		\[
-			\divo \vec{v} = \pd{}{r}(r v_r) + \pd{}{z}(r v_z) = 0\quad \Rightarrow \quad
+			\divo \vec{v} =\frac{1}{r} \left( \pd{}{r}(r v_r) + \pd{}{z}(r v_z)\right) = 0\quad \Rightarrow \quad
 			\pd{}{r}(r v_r)  = -\pd{}{z}(r v_z).
 		\]	
 		}
@@ -583,7 +583,7 @@
 	\begin{exampleblock}{Условие <<ограниченности>> тела}
 		\parbox{\textwidth}{
 			\[
-			\int_A^B \mu(\zeta) = 0
+			\int_A^B \mu(\zeta) d\zeta = 0
 			\]
 			
 		}
