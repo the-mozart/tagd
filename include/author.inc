@@ -4,3 +4,10 @@
 	\bigskip
 	Кафедра аэрофизики и газовой динамики
 }
+
+\date[]{
+	\includegraphics[width=0.25\textwidth, frame]{../img/qr.pdf}
+
+	\bigskip
+	\today
+}
