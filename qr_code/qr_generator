@@ -1,0 +1,12 @@
+#!/bin/bash
+
+BASEDIR=/home/anton/work/nsu/tagd
+
+for i in $(cat url_list); do
+	
+	d=${i##*/}
+	DIR=${d::-4}
+	qrencode -t svg -o -  "$i" | inkscape -A "$BASEDIR/$DIR/img/qr.pdf" - 
+#	echo "$BASEDIR/$DIR/img/qr.pdf" 
+
+done

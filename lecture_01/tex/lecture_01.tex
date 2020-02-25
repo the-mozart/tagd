@@ -1,53 +1,19 @@
 \documentclass{beamer}
 
 \usepackage{beamerthemesplit}
-\usetheme{Singapore} %Copenhagen}
-%\usecolortheme{whale}
+\usetheme{Singapore} 
 
-\usepackage[main=russian,english]{babel}   %% загружает пакет многоязыковой вёрстки
-\usepackage{fontspec}      %% подготавливает загрузку шрифтов Open Type, True Type и др.
-\defaultfontfeatures{Ligatures={TeX},Renderer=Basic}  %% свойства шрифтов по умолчанию
-\setmainfont{Times New Roman} %% задаёт основной шрифт документа
-%\usefonttheme{professionalfonts}% SOLUTION
-\usefonttheme{serif}
-
-\usepackage{hyperref}
-\usepackage{textcomp}
-\usepackage{amssymb,amsmath}
-%\usepackage{animate}
-%\usepackage{longtable}
-\usepackage{xcolor}
-
-\newcounter{N}
-
-%% Форматирование окружения itemize
-%\usepackage{ragged2e}
-%\let\olditem\item
-%\renewcommand\item{\olditem\justifying}
-
-
-\newcommand{\argxi}{(\xi_1,\xi_2,\xi_3)}
-\newcommand{\argx}{(x_1,x_2,x_3)}
-\newcommand{\argtxi}{(t, \xi_1,\xi_2,\xi_3)}
-\newcommand{\argtx}{(t, x_1,x_2,x_3)}
-\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
-\newcommand{\pdk}[2]{\frac{\partial^2 #1}{\partial {#2}^2}}
+\input{../../include/preamble.inc} 
+\input{../../include/definitions.inc} 
+\input{../../include/author.inc} 
 
 \title[]{Введение в механику сплошных сред}
 
-\author[]{{\em Верещагин Антон Сергеевич}\\
-	канд. физ.-мат.наук, старший преподаватель\\
-	\bigskip
-	Кафедра аэрофизики и газовой динамики ФФ НГУ
-}
-
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{../img/background.png}}
-
 \begin{document}
 	
-\frame{\titlepage}
+\frame[plain]{\titlepage}
 
-\frame{
+\frame[plain]{
 	\frametitle{Аннотация}
 	\parbox{\textwidth}{
 		Предмет механики сплошных сред. Основные гипотезы механики сплошных сред. Понятие материальной точки. Лагранжево и эйлерово описание сплошной среды. Траектория, скорость, ускорение. Стационарное нестационарное течение. Линии тока поля скорости.
@@ -613,7 +579,7 @@
 
 \frame{
 	\frametitle{ Литература }
-	\begin{itemize}
+	\begin{itemize}[partopsep=1pt,label=\textbullet]
 		\item {\em Л.И. Седов.} Механика сплошной среды. Том 1. М.:Наука, 1970.
 
 		\item {\em Нигматулин Р.И.} Механика сплошной среды. Кинематика. Динамика. Термодинамика. Статистическая динамика. М.:ГЭОТАР-Медиа, 2014.

@@ -31,3 +31,8 @@
 
 \newcommand{\od}[2]{\frac{d #1}{d #2}}
 \newcommand{\odk}[3]{\frac{d^{#3} #1}{d #2^{#3}}}
+
+\renewcommand{\Re}{\operatorname{Re}}
+\newcommand{\Sh}{\operatorname{Sh}}
+\newcommand{\Eu}{\operatorname{Eu}}
+\newcommand{\Fr}{\operatorname{Fr}}
