@@ -100,14 +100,17 @@
 				\pd{\vec{v}}{t} + (\vec{v}\cdot\nabla)\vec{v} = -\frac{1}{\rho}\nabla p + \nu \Delta \vec{v} + \vec{f},
 			\]
 			\[
-			c_V\left(\pd{\vec{T}}{t} + (\vec{v}\cdot\nabla)T \right) = \frac{\kappa}{\rho} \Delta T + \frac{2\mu}{\rho} e_{ij}e_{ij},
+			c_V\left(\pd{T}{t} + (\vec{v}\cdot\nabla)T \right) = \frac{\kappa}{\rho} \Delta T + \frac{2\mu}{\rho} e_{ij}e_{ij},
 			\]
 			
 			\medskip
 			\alert{Неизвестные функции}, определённые и дифференцируемые в некоторой области пространства:  $\vec{v}\argtxv$ -- вектор скорости; $p\argtxv$ -- давление; $T\argtxv$ -- температура. 
 
 			\medskip			
-			\alert{Константы}: $\rho$ -- плотность; $\nu$ -- коэффициент кинематической вязкости; $\kappa$ -- коэффициент температуропроводности; $e_{ij}$ -- компоненты тензора скоростей деформации; $\vec{f}$ -- вектор внешних сил.
+			\alert{Константы}: $\rho$ -- плотность; $\nu$ -- коэффициент кинематической вязкости; $\kappa$ -- коэффициент температуропроводности
+			
+			\medskip
+			\alert{Обозначения}: $e_{ij}$ -- компоненты тензора скоростей деформации; $\vec{f}$ -- вектор внешних сил.
 			
 		}
 	\end{exampleblock}
@@ -717,12 +720,12 @@
 		\parbox{\textwidth}{
 			Вводя коэффициент сопротивления $\lambda$ для круглого канала диаметра $d$
 			\[
-			\Delta p = \lambda \frac{L}{2r} \frac{\rho v_{avg}^2}{2},
+			\Delta p = \lambda \frac{L}{d} \frac{\rho v_{avg}^2}{2},
 			\]
 			получим выражение для коэффициента сопротивления через число Рейнольдса
 			\[
 			\lambda = \frac{64}{\Re}, \,\, \text{где}\,\,
-			\Re = \frac{v_{avg} 2r}{\nu}.
+			\Re = \frac{v_{avg} d}{\nu}.
 			\]
 		}
 	\end{exampleblock}
