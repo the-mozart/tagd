@@ -30,6 +30,7 @@
 \newcommand{\divo}{\operatorname{div}}
 
 \newcommand{\od}[2]{\frac{d #1}{d #2}}
+\newcommand{\vard}[2]{\frac{\delta #1}{d #2}}
 \newcommand{\odk}[3]{\frac{d^{#3} #1}{d #2^{#3}}}
 
 \renewcommand{\Re}{\operatorname{Re}}
