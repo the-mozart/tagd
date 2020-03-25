@@ -377,6 +377,64 @@
 	
 }
 
+\frame{
+	\frametitle{Удельные теплоёмкости $c_p$ и $c_V$}
+	
+	\begin{exampleblock}{Удельная теплоёмкость при постоянном давлении}
+		\parbox{\textwidth}{
+			\[
+			c_p = \left( \vard{Q}{T} \right)_p = 
+			\left( \pd{H}{T} \right)_p = 
+			\left( \pd{\varepsilon}{T} \right)_p + p\left(\pd{V}{T} \right)_p = 
+			\]
+			\[
+			=
+			\left(\pd{\varepsilon}{V}\right)_T \left(\pd{V}{T}\right)_p +
+			\left(\pd{\varepsilon}{T}\right)_V + p \left(\pd{V}{T} \right)_p.
+			\]
+		}
+	\end{exampleblock}\pause
+
+	\begin{exampleblock}{Удельная теплоёмкость при постоянном объёме}
+		\parbox{\textwidth}{
+			\[
+			c_V = \left(\vard{Q}{T}\right)_V = 
+			\left(\pd{\varepsilon}{T}\right)_V = 
+			\left( \pd{H}{T} \right)_p +
+			\left( \pd{H}{p} \right)_T \left(\pd{p}{T}\right)_V -
+			\left(\pd{p}{T} \right)_V.
+			\]
+			
+		}
+	\end{exampleblock}\pause
+
+	\begin{exampleblock}{Разность теплоёмкостей}
+	\parbox{\textwidth}{
+			\[
+			c_p-c_V = 
+			\left[
+				\left(\pd{\varepsilon}{V}\right)_T  + p 
+			\right] 
+			\left(\pd{V}{T} \right)_p =
+			-\left[
+				\left( \pd{H}{p} \right)_T  - 1
+			\right]
+			\left(\pd{p}{T} \right)_V.
+			\]
+	}
+	\end{exampleblock}
+	
+
+}
+%
+%\frame{
+%	\frametitle{Разность теплоёмкостей}
+%	
+%	
+%	
+%}
+
+
 %\frame{
 %	\frametitle{$c_p$, $c_v$ и связь между ними}
 %	
