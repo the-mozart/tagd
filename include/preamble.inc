@@ -31,6 +31,7 @@
 \usepackage{hyperref}
 \usepackage{enumitem}
 \usepackage[export]{adjustbox}
+\usepackage{pgffor}
 
 % Уменьшаем счётчик слайдов на два для того, чтобы нумерация не касалась слайда с титульной страницы аннотации
 
