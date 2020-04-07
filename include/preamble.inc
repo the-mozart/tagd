@@ -35,6 +35,9 @@
 \usepackage[export]{adjustbox}
 \usepackage{pgffor}
 
+\newtheorem{dfn}{Определение}  
+\newtheorem{theorems}{Теорема}  
+
 % Уменьшаем счётчик слайдов на два для того, чтобы нумерация не касалась слайда с титульной страницы аннотации
 
 \let\otp\titlepage
