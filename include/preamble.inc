@@ -1,5 +1,7 @@
 \beamertemplatenavigationsymbolsempty % Hide navigation panel
 
+\setbeamertemplate{headline}{}
+
 \setbeamertemplate{footline}{%
 %	\hspace{0.94\paperwidth}%
 	\leavevmode%
