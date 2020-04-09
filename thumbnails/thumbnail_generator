@@ -1,5 +1,6 @@
 for i in ../lecture_*/tex/lecture_*.pdf; do
 
+#    yTF=
 #	echo $( basename -s .pdf $i );
-	pdftoppm -f 1 -l 1 "$i" | pnmtojpeg > $(basename -s .pdf "$i").jpg
+	pdftoppm -f 1 -l 1 "$i" | convert -resize x720 -  -gravity center -background black -extent 1280x720   $( basename -s .pdf "$i" ).png
 done
