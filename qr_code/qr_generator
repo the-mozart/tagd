@@ -6,7 +6,12 @@ for i in $(cat url_list); do
 	
 	d=${i##*/}
 	DIR=${d::-4}
-	qrencode -t svg -o -  "$i" | inkscape -A "$BASEDIR/$DIR/img/qr.pdf" - 
+	
+#	inkscape mySVGinputFile.svg --export-area-drawing --batch-process --export-type=pdf --export-filename=output.pdf
+
+	echo "Обработка $i"
+	qrencode -t svg -o -  "$i" | inkscape --pipe  --export-filename="$BASEDIR/$DIR/img/qr.pdf"
+#	echo $i
 #	echo "$BASEDIR/$DIR/img/qr.pdf" 
 
 done
