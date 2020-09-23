@@ -117,10 +117,10 @@
 	\parbox{\textwidth}{
 		Рассмотрим	
 		\[
-		\pd{\vec{w}}{\xi^i} = \pd{}{\xi^i} \left( u^j\vec{a}_j \right) = \pd{u^j}{\xi^i}\vec{a}_j + u^j \pd{\vec{a}_j}{\xi^i} = \left( \pd{u^k}{\xi^i} + u_j \Gamma_{ji}^{0k}\right)\vec{a}_k,
+		\pd{\vec{w}}{\xi^i} = \pd{}{\xi^i} \left( u^j\vec{a}_j \right) = \pd{u^j}{\xi^i}\vec{a}_j + u^j \pd{\vec{a}_j}{\xi^i} = \left( \pd{u^k}{\xi^i} + u^j \Gamma_{ji}^{0k}\right)\vec{a}_k,
 		\]
 		\[
-		\pd{\vec{w}}{\xi^i} = \pd{}{\xi^i} \left( w^j\vec{b}_j \right) = \pd{w^j}{\xi^i}\vec{b}_j + w^j \pd{\vec{b}_j}{\xi^i} = \left( \pd{w^k}{\xi^i} + w_j \Gamma_{ji}^{k}\right)\vec{b}_k.
+		\pd{\vec{w}}{\xi^i} = \pd{}{\xi^i} \left( w^j\vec{b}_j \right) = \pd{w^j}{\xi^i}\vec{b}_j + w^j \pd{\vec{b}_j}{\xi^i} = \left( \pd{w^k}{\xi^i} + w^j \Gamma_{ji}^{k}\right)\vec{b}_k.
 		\]
 	}
 	\begin{exampleblock}{Определение}
@@ -216,7 +216,7 @@
 		\frac{1}{2}\left( \vec{a}_i\cdot\pd{\Delta\vec{w}}{\xi^j}+\vec{a}_j\cdot\pd{\Delta\vec{w}}{\xi^i}+\pd{\Delta\vec{w}}{\xi^i}\cdot\pd{\Delta\vec{w}}{\xi^j}
 		\right),
 		\]
-		где $\vec{a}_i$ -- сопутствующий базис в момент времени $t$. Тогда 
+		где \alert{$\vec{a}_i$ -- сопутствующий базис} в момент времени $t$. Тогда 
 		\[
 		\lim_{\Delta t \to 0} \frac{\Delta\varepsilon_{ij}}{\Delta t} = \frac{1}{2}
 		\left(
@@ -232,21 +232,23 @@
 	\frametitle{ Компоненты тензора скоростей деформации в абсолютной системе координат }
 		\centering
 	
-	\includegraphics[width=4.5cm]{../img/state_0_00.pdf}~
-	\includegraphics[width=4.5cm]{../img/state_0_50.pdf}	
+	\includegraphics[width=4.5cm]{../img/state_0_00.pdf}
+%	\includegraphics[width=4.5cm]{../img/state_0_50.pdf}	
 	
 	\parbox{\textwidth}{
 %		Компоненты тензора скоростей деформации в абсолютной декартовой системе координат $\vec{c}_i$ в силу тензорной природы имеют вид 
 		\[
 		\bar{e}_{ij} = e_{kl} \pd{\xi^k}{x^i} \pd{\xi^l}{x^j},
 		\]
-		где $\bar{e}_{kl}$, $e_{kl}$ -- компоненты в абсолютной декартовой $\vec{c}_i$ и сопутствующей криволинейной системах координат тензора скоростей деформации; $\xi_i=\xi_i\argtx$ -- обратное преобразование.
+		где $\bar{e}_{kl}$, $e_{kl}$ -- компоненты в абсолютной декартовой $\vec{c}_i$ и сопутствующей криволинейной системах координат тензора скоростей деформации; $\xi_i=\xi_i\argtx$ -- обратное преобразование
+		 %\alert{(не обязательно является траекторией движения)
+		 }.
 		
 
 
-	}
-	
 }
+	
+
 
 
 \frame{
@@ -315,7 +317,7 @@
 			Рассмотрим окрестность точки $P_0$ с лагранжевыми координатами $\xi_i$ и точку из окрестности $P_0'$ с лагранжевыми координатами $\xi_i+d\xi_i$. За время $\Delta t$ точки $P_0$ и $P_0'$, образующие вектор $\vec{\rho}$, перейдут в точки $P$, $P'$, образующие вектор $\vec{\rho}'$.
 			
 			\bigskip
-			Требуется связать изменения вектора $\vec{\rho}$ с тензором скоростей деформаций.
+			Требуется связать изменения вектора $\vec{\rho}$ с тензором скоростей деформаций. Рассмотрение ведется в абсолютной декартовой системе координат.
 			
 		}
 	\end{exampleblock}
