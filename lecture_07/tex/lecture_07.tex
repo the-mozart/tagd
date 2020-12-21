@@ -7,7 +7,7 @@
 \input{../../include/definitions.inc} 
 \input{../../include/author.inc} 
 
-\title[]{Законы сохранения в механике сплошной среды}
+\title[]{Законы сохранения в механике сплошных сред}
 
 \begin{document}
 	
@@ -48,7 +48,7 @@
 
 		\begin{exampleblock}{Траектории движения}
 			\parbox{\textwidth}{
-				Траектории движения жидких частиц задаются функцией
+				Траектории движения жидких частиц задаются функцией:
 				\[
 					\vec{x} = \vec{x} \argtxi,
 				\]
@@ -61,7 +61,7 @@
 	\frametitle{ Определение траекторий по заданному полю движения }
 		\begin{exampleblock}{Поле скоростей}
 			\parbox{\textwidth}{
-				Поле скоростей частиц сплошной среды в эйлеровой систем координат задаётся функцией $\vec{v}\argtx$. В лагранжевой системе координат скорость определяется соотношением
+				Поле скоростей частиц сплошной среды в эйлеровой системе координат задается функцией $\vec{v}\argtx$. В лагранжевой системе координат скорость определяется соотношением:
 				\[
 				\vec{v}\argtxiv = \pd{\vec{x} \argtxiv}{t}.
 				\]
@@ -85,15 +85,15 @@
 \frame{
 	\frametitle{ Уравнения для нахождения матрицы Якоби }
 	
-	\begin{exampleblock}{Матричное уравнение на матрицу Якоби}
+	\begin{exampleblock}{Матричное уравнение для нахождения матрицы Якоби}
 		\parbox{\textwidth}{
-			Дифференцируя уравнения для нахождения траекторий по $\xi^j$ получим
+			Дифференцируя уравнения для нахождения траекторий по $\xi^j$, получим
 			\[
 			\pd{}{t} \pd{x^i}{\xi^j} = \pd{v^i}{x^k}\pd{x^k}{\xi^j},\quad
 			\left. \pd{x^i}{\xi^j} \right|_{t=0}=\delta^i_j.
 			\]
 			
-			Тогда матрица Якоби $y_{ij} = \displaystyle\pd{x^i}{\xi^j}$ удовлетворяет дифференциальному уравнению
+			Тогда матрица Якоби $y_{ij} = \displaystyle\pd{x^i}{\xi^j}$ удовлетворяет дифференциальному уравнению:
 			\[
 			\pd{Y}{t}=AY,\quad Y|_{t=0} = E,
 			\]
@@ -116,7 +116,7 @@
 			\begin{exampleblock}{Сопутствующий базис}
 				\parbox{\textwidth}{
 					\[
-					\vec{b}_i = \pd{\vec{r}}{\xi^i} = \pd{x^j}{\xi^i}\vec{e}_j.
+					\vec{b}_i = \pd{\vec{r}}{\xi^i} = \pd{x^j}{\xi^i}\vec{e}_j
 					\]
 				}
 				\begin{exampleblock}{Элементарный объем}
@@ -131,7 +131,7 @@
 						\right|=
 						\]
 						\[
-						= \vec{b}_1 \cdot (\vec{b}_2 \times \vec{b}_3).
+						= \vec{b}_1 \cdot (\vec{b}_2 \times \vec{b}_3)
 						\]
 						
 					}
@@ -150,7 +150,7 @@
 	\frametitle{ Дифференцирование определителя матрицы Якоби }
 	\parbox{\textwidth}{
 	
-		Обозначим $\Delta\argtxiv = \operatorname{det} Y\argtxiv$, тогда из определения определителя, как суммы произведений его элементов и правила дифференцирования произведения, имеем
+		Обозначим $\Delta\argtxiv = \operatorname{det} Y\argtxiv$, тогда из формулы определителя как суммы произведений его элементов и правила дифференцирования произведения имеем:
 		\[
 		\Delta'(t) = \pd{}{t} 
 		\left|
@@ -202,7 +202,7 @@
 		a_{12}(y_{21}, y_{22}, y_{23})+
 		a_{13}(y_{31}, y_{32}, y_{33}).
 		\]
-		Отсюда, вычитая из первой строки с производными линейную комбинацию остальных строк, получаем
+		Отсюда, вычитая из первой строки с производными линейную комбинацию остальных строк, получаем:
 		\[
 		\left|
 		\begin{array}{ccc}
@@ -256,14 +256,15 @@
 %	=	\pd{v^i}{x^i}\Delta(t) = \Delta(t) \operatorname{div} \vec{v} 
 	\]
 	
-	\begin{exampleblock}{Правило дифференцирования определителя матрицы Якоби или формула Эйлера}
+	\begin{exampleblock}{Правило дифференцирования определителя матрицы Якоби, или формула Эйлера}
+		\medskip
 		\parbox{\textwidth}{
 			\[
 			\pd{}{t}\left| \pd{x^i}{\xi^j} \right| = \left| \pd{x^i}{\xi^j} \right|
 			\left(
 			\pd{v^1}{x^1}+\pd{v^2}{x^2}+\pd{v^3}{x^3}
 			\right)=
-			 \left| \pd{x^i}{\xi^j} \right|\operatorname{div} \vec{v}.
+			 \left| \pd{x^i}{\xi^j} \right|\operatorname{div} \vec{v}
 			\]
 		}
 	\end{exampleblock}
@@ -289,7 +290,7 @@
 		\]
 		\[
 		=
-		\int\limits_{\omega_t} \left( \pd{F\argtxv }{t} + \pd{F\argtxv}{x^i} v^i\argtxv + F\argtxv \operatorname{div}_{x}\vec{v}\argtxv \right)  d\vec{x}.
+		\int\limits_{\omega_t} \left( \pd{F\argtxv }{t} + \pd{F\argtxv}{x^i} v^i\argtxv + F\argtxv \operatorname{div}_{x}\vec{v}\argtxv \right)  d\vec{x}
 		\]
 		}
 	\end{exampleblock}
@@ -313,7 +314,7 @@
 			\frac{d}{dt}\int\limits_{\omega_t} F\argtxv  d\vec{x}=
 			\int\limits_{\omega_t} \left( \frac{dF\argtxv }{dt}  + F\argtxv \operatorname{div}_{x}\vec{v}\argtxv \right)  d\vec{x},
 			\]
-			где $d/dt$ -- оператор полного дифференцирования в правой части равенства задаётся формулой
+			где $d/dt$ -- оператор полного дифференцирования в правой части равенства задается формулой:
 			\[
 				\frac{d}{dt}=\pd{}{t} + (\vec{v}\cdot\nabla).
 			\]
@@ -324,7 +325,7 @@
 
 	\begin{exampleblock}{Упрощения}
 		\parbox{\textwidth}{
-			Легко показать, что для $F=F\argtxv$, $\vec{v}=\vec{v}\argtxv$
+			Легко показать, что для $F=F\argtxv$, $\vec{v}=\vec{v}\argtxv$:
 			\[
 			\frac{dF}{dt}  + F \operatorname{div}\vec{v} = \pd{F}{t} + \operatorname{div} (F\vec{v}).
 			\]
@@ -359,7 +360,7 @@
 		\begin{exampleblock}{Дифференциальная форма}
 		\parbox{\textwidth}{
 			\begin{tabular}{p{0.5\textwidth}|p{0.5\textwidth}}
-				\em	Консервативная & \em	 Неконсервативаня \\
+				\em	Консервативная & \em	 Неконсервативаная \\
 				\hline
 				&   \\
 				$
@@ -382,14 +383,14 @@
 		\[
 		\frac{d}{dt}\int\limits_{\omega_t}\rho \vec{v} \, d\vec{x} = \int\limits_{s_t}	\vec{\sigma}_n dS + \int\limits_{\omega_t}\rho \vec{f} \, d\vec{x},
 		\]
-		где $\rho\argtxv$, $\vec{v}\argtxv$ -- плотность и скорость материальной точки сплошной среды; $\vec{\sigma}_n\argtxv$ -- напряжение, возникающее на поверхности объема $\omega_t$, обозначенной $s_t$, на площадке с внешней единичной нормалью $\vec{n}$; $\vec{f}\argtxv$ -- массовая сила, действующая на сплошную среду.
+		где $\rho\argtxv$, $\vec{v}\argtxv$ -- плотность и скорость материальной точки сплошной среды; $\vec{\sigma}_n\argtxv$ -- напряжение, возникающее на обозначенной $s_t$ поверхности объема $\omega_t$, на площадке с внешней единичной нормалью $\vec{n}$; $\vec{f}\argtxv$ -- массовая сила, действующая на сплошную среду.
 		}
 	\end{exampleblock}
 
 	\begin{exampleblock}{Дифференциальная форма}
 		\parbox{\textwidth}{
 			\begin{tabular}{p{0.5\textwidth}|p{0.5\textwidth}}
-			\em	Консервативная & \em	 Неконсервативаня \\
+			\em	Консервативная & \em	 Неконсервативаная \\
 			\hline
 				&   \\
 			$
@@ -416,7 +417,7 @@
 				\int\limits_{\omega_t}\rho \vec{h}  \, d\vec{x} +
 				\int\limits_{\omega_t} \vec{M}_n dS,
 			\]
-			где $\rho\argtxv$, $\vec{v}\argtxv$ -- плотность и скорость материальной точки сплошной среды; $\vec{\sigma}_n\argtxv$ -- напряжение, возникающее на поверхности объема $\omega_t$, обозначенной $s_t$, на площадке с внешней единичной нормалью $\vec{n}$; $\vec{f}\argtxv$ -- массовая сила, действующая на сплошную среду; $\vec{k}$ -- плотность собственного момента количества движения; $\vec{h}$, $\vec{M}_n$ -- плотность массовых и поверхностных пар.
+			где $\rho\argtxv$, $\vec{v}\argtxv$ -- плотность и скорость материальной точки сплошной среды; $\vec{\sigma}_n\argtxv$ -- напряжение, возникающее на обозначенной $s_t$ поверхности объема $\omega_t$,  на площадке с внешней единичной нормалью $\vec{n}$; $\vec{f}\argtxv$ -- массовая сила, действующая на сплошную среду; $\vec{k}$ -- плотность собственного момента количества движения; $\vec{h}$, $\vec{M}_n$ -- плотность массовых и поверхностных пар.
 		}
 	\end{exampleblock}
 
@@ -443,7 +444,7 @@
 		\frac{d}{dt} \left(\rho\vec{v}\times\vec{x}\right) + 	
 		(\rho\vec{v}\operatorname{div} \vec{v}) \times\vec{x}  - 
 		\operatorname{div} \left(\sigma\times \vec{x}\right) =
-		\rho\vec{f}\times \vec{x}.
+		\rho\vec{f}\times \vec{x}
 		\]
 		}
 	\end{exampleblock}
@@ -455,21 +456,21 @@
 				\frac{d}{dt} \left(\rho\vec{v}\times\vec{x}\right)	= 
 				\frac{d}{dt} (\rho\vec{v}) \times \vec{x} + 
 				\rho\vec{v} \times\frac{d\vec{x}}{dt} =
-				\frac{d (\rho\vec{v})}{dt} \times \vec{x}.
+				\frac{d (\rho\vec{v})}{dt} \times \vec{x}
 			\]
 			\[
 				\operatorname{div} \left(\sigma\times \vec{x}\right) = 
 				\pd{}{x_i} (\vec{\sigma}_i \times \vec{x}) = 
 				\pd{\vec{\sigma}_i}{x_i}\times \vec{x}+\vec{\sigma}_i \times \pd{\vec{x}}{x_i}=
 				\operatorname{div} \sigma \times\vec{x}+
-				\vec{\sigma}_i \times \vec{e}_i.
+				\vec{\sigma}_i \times \vec{e}_i
 			\]
 		}
 	\end{exampleblock}
 
 	\begin{exampleblock}{Упрощение закона сохранения момента импульса}
 		\parbox{\textwidth}{
-			Умножая векторно закон сохранения импульса на $\vec{x}$ и вычитая из дифференциальной формы с учётом проделанных операций, имеем
+			Умножая векторно закон сохранения импульса на $\vec{x}$ и вычитая из дифференциальной формы с учетом проделанных операций, имеем:
 			\[
 			\vec{\sigma}_1  \times \vec{e}_1 + \vec{\sigma}_2  \times \vec{e}_2 + \vec{\sigma}_3 \times \vec{e}_3 = \vec{0}.
 			\]
@@ -498,7 +499,7 @@
 		\begin{column}{0.75\textwidth}\
 			\parbox{\textwidth}{
 			
-			Упростим равенство		
+			Упростим равенство:
 			\[
 			\vec{\sigma}_1  \times \vec{e}_1 + \vec{\sigma}_2 \times  \vec{e}_2 + \vec{\sigma}_3 \times \vec{e}_3 = \vec{0}.
 			\]
@@ -537,7 +538,7 @@
 
 	\begin{exampleblock}{Симметричность тензора напряжений}
 		\parbox{\textwidth}{
-			При отсутствии собственного момента количества движения среды и массовых и поверхностных пар имеет место симметричность тензора напряжений
+			При отсутствии собственного момента количества движения среды и массовых и поверхностных пар имеет место симметричность тензора напряжений:
 			\[
 			\sigma_{ij} = \sigma_{ji}.
 			\]
@@ -554,7 +555,7 @@
 			\[
 			\frac{d}{dt}\int\limits_{\omega_t}\rho \left(\varepsilon + \frac{\vec{v}^2}{2}\right) \, d\vec{x} = \int\limits_{s_t} (\vec{\sigma}_n\cdot\vec{v})\,dS - \int\limits_{s_t} (\vec{q}\cdot\vec{n}) \, dS + \int\limits_{\omega_t}\rho \vec{f} \cdot \vec{v} \, d\vec{x},
 			\]
-			где $\varepsilon\argtxv$ -- внутренняя энергия единицы массы частицы сплошной среды; $\vec{q}\argtxv$ -- закон перетока тепла в сплошной среде. \alert{Пренебрегаем работой массовых и поверхностных пар сил и массовым притоком тепла}.
+			где $\varepsilon\argtxv$ -- внутренняя энергия единицы массы частицы сплошной среды; $\vec{q}\argtxv$ -- закон перетока тепла в сплошной среде. \alert{Пре\-неб\-регаем работой массовых и поверхностных пар сил и массовым притоком тепла}.
 		}
 	\end{exampleblock}
 	
@@ -575,8 +576,8 @@
 \frame{
 	\frametitle{ Закон динамики кинетической энергии }
 	\parbox{\textwidth}{
-		Умножив закон сохранения массы в недивиргентной форме на $\displaystyle\frac{\vec{v}^2}{2}$, а уравнение закона сохранения импульса
-		скалярно на вектор $\vec{v}$, получим 
+		Умножив закон сохранения массы в недивергентной форме на $\displaystyle\frac{\vec{v}^2}{2}$, а уравнение закона сохранения импульса --
+		скалярно на вектор $\vec{v}$, получим:
 		\[
 		\frac{\vec{v}^2}{2}\frac{d\rho}{dt} = -\frac{\rho\vec{v}^2}{2} \operatorname{div}\vec{v} 
 		\quad 
@@ -590,15 +591,14 @@
 		\rho\vec{v}\cdot\frac{d\vec{v}}{dt} + \frac{\vec{v}^2}{2}\frac{d\rho}{dt}=
 		\operatorname{div} \sigma\cdot\vec{v}+ 
 		\rho\vec{f}\cdot \vec{v}-
-		\frac{\rho\vec{v}^2}{2} \operatorname{div}\vec{v}.
+		\frac{\rho\vec{v}^2}{2} \operatorname{div}\vec{v},
 		\]
-		
-		Или
+		или
 		\[
 		\frac{d}{dt} \left(\frac{\rho \vec{v}^2}{2}\right) +
 		\frac{\rho\vec{v}^2}{2} \operatorname{div}\vec{v} -
 		\operatorname{div} \sigma\cdot\vec{v} = 
-		\rho\vec{f}\cdot \vec{v}
+		\rho\vec{f}\cdot \vec{v}.
 		\]
 	}
 	
@@ -609,7 +609,7 @@
 	\frametitle{ Работа поверхностных сил }
 	
 	\parbox{\textwidth}{
-	Рассмотрим слагаемое, связанное с работой поверхностных сил 
+	Рассмотрим слагаемое, связанное с работой поверхностных сил:
 	\[
 	\operatorname{div} (\sigma \cdot \vec{v}) =  
 	\operatorname{div}{\sigma} \cdot \vec{v} + 
@@ -619,12 +619,12 @@
 	\[
 	\pd{v_j}{x_k} = \frac{1}{2}\left(\pd{v_j}{x_k}+\pd{v_k}{x_j}\right)+ \frac{1}{2}\left(\pd{v_j}{x_k}-\pd{v_k}{x_j}\right) = e_{jk} + \omega_{jk},
 	\]
-	получим
+	получим:
 	\[
-		\operatorname{div} (\sigma \cdot \vec{v}) =  \operatorname{div}{\sigma} \cdot \vec{v} +  	\sigma_{ij} e_{ij}.
+		\operatorname{div} (\sigma \cdot \vec{v}) =  \operatorname{div}{\sigma} \cdot \vec{v} +  	\sigma_{ij} e_{ij},
 	\]
 	где $e_{ij}$, $\omega_{ij}$ -- компоненты тензоров скоростей деформаций и вихря.
-	Слагаемое $\sigma_{ij}\omega_{ij}$ равно $0$, т.к. это свёртка симметричного и антисимметричного тензоров. 
+	Слагаемое $\sigma_{ij}\omega_{ij}$ равно $0$, т.к. это свертка симметричного и антисимметричного тензоров. 
 
 	}
 	
@@ -636,7 +636,7 @@
 	\frametitle{ Неконсервативная форма закона сохранения энергии }
 	
 	\parbox{\textwidth}{
-	Вычитая	из уравнения закона сохранения уравнения соотношение динамики кинетической энергии, полученное соотношение из предыдущего слайда и закон сохранения массы, умноженный на $\varepsilon$, получим
+	Вычитая	из уравнения закона сохранения уравнение соотношения динамики кинетической энергии, полученное соотношение из предыдущего слайда и закон сохранения массы, умноженный на $\varepsilon$, получим:
 	\[
 	\rho\frac{d\varepsilon}{dt} = \sigma_{ij}e_{ij} - \operatorname{div} \vec{q}.
 	\]
@@ -649,11 +649,11 @@
 	\frametitle{ Литература }
 	
 	\parbox{\textwidth}{
-		\begin{itemize}[partopsep=1pt,label=\textbullet]
+		\begin{enumerate}[partopsep=1pt,label=\arabic{enumi}.]
 		\item {\em Годунов~С.~К.} Обыкновенные дифференциальные уравнения с постоянными коэффициентами: Учебное пособие. Новосибирск: Изд-во Новосиб. ун-та, 1994. -- Т.1.: Краевые задачи.
 		\item {\em Овсянников~Л.~В.} Лекции по основам газовой динамики.  Москва-Ижевск:Институт компьютерных исследований, 2003.	
 		\item {\em Эглит~М.~Э.} Лекции по основам механики сплошных сред.  Изд. 2-е, испр. М.: Книжный дом <<ЛИБРОКОМ>>, 2010. --- 208~с.
-		\end{itemize}
+		\end{enumerate}
 	}
 }
 

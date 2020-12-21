@@ -21,7 +21,7 @@
 \frame[plain]{
 	\frametitle{Аннотация}
 	\parbox{\textwidth}{
-		Криволинейные системы координат. Скаляр. Вектор. Ковариантность и контравариантность. Тензор. Тензорная алгебра. Произведение тензоров. Сокращение индексов. Теоремы о тензорах. Фундаментальный квадратичная форма и тензор. Метрика. Скалярное произведение векторов.
+		Криволинейные системы координат. Скаляр. Вектор. Ковариантность и контравариантность. Тензор. Тензорная алгебра. Произведение тензоров. Сокращение индексов. Теоремы о тензорах. Фундаментальная квадратичная форма и тензор. Метрика. Скалярное произведение векторов.
 	}
 }
 
@@ -37,7 +37,7 @@
 	Пусть задана связь между криволинейными системами координат:
 	\begin{equation}
 	\label{eq:coord_tranformation}
-	x^\alpha = x^\alpha \argxbarn \quad (\alpha = 1,2,\ldots,n)
+	x^\alpha = x^\alpha \argxbarn, \quad (\alpha = 1,2,\ldots,n)
 	\end{equation}
 	и
 	\[
@@ -50,9 +50,9 @@
 	\end{vmatrix}
 	\neq 0,
 	\]
-	тогда существует обратное преобразование координат
+	тогда существует обратное преобразование координат:
 	\[
-	\bar{x}^\alpha = \bar{x}^\alpha \argxn \quad (\alpha = 1,2,\ldots,n).
+	\bar{x}^\alpha = \bar{x}^\alpha \argxn, \quad (\alpha = 1,2,\ldots,n).
 	\]
 
 	}		
@@ -67,11 +67,11 @@
 	\begin{exampleblock}{Определение}
 		\parbox{\textwidth}{
 			
-			Если для каждой системы координат $\argxn$ определена функция $f\argxn$, такая что при преобразования системы координат   (\ref{eq:coord_tranformation}) выполняется условие
+			Если для каждой системы координат $\argxn$ определена функция $f\argxn$ такая, что при преобразовании системы координат   (\ref{eq:coord_tranformation}) выполняется условие:
 			\[
 			f\argxn = f\argxbarn,
 			\]
-			то говорят, что функция точек $f\argxn$ есть \alert{инвариант} или \alert{скаляр}.
+			то говорят, что функция точек $f\argxn$ есть \alert{инвариант}, или \alert{скаляр}.
 			
 		}
 		
@@ -87,7 +87,7 @@
 	\begin{exampleblock}{Определение}
 		\parbox{\textwidth}{
 			
-		Если для каждой системы координат $\argxn$ определена совокупность $n$ функций $A^1$, $A^2$,\ldots, $A^n$, такая что для системы координат $\argxbarn$  мы имеем свою совокупность функций $\bar{A}^1$, $\bar{A}^2$,\ldots, $\bar{A}^n$, и если при преобразовании координат (\ref{eq:coord_tranformation}) эти функции преобразуются по следующим формулам
+		Если для каждой системы координат $\argxn$ определена совокупность $n$ функций $A^1$, $A^2$,\ldots, $A^n$ такая, что для системы координат $\argxbarn$  мы имеем свою совокупность функций $\bar{A}^1$, $\bar{A}^2$,\ldots, $\bar{A}^n$, и если при преобразовании координат (\ref{eq:coord_tranformation}) эти функции преобразуются по следующим формулам:
 		\[
 		\bar{A}^i=\sum\limits_{\alpha=1}^n\pd{\bar{x}^i}{x^\alpha}A^\alpha \quad
 		(i=1,\ldots,n),
@@ -105,6 +105,7 @@
 	\frametitle{ Пример контравариантного вектора}
 
 	\begin{exampleblock}{Соглашение}
+		\medskip
 		\parbox{\textwidth}{
 		Условимся проводить суммирование по повторяющимся индексам в одночлене от $1$ до $n$, если не сделано отдельных оговорок заранее.
 		}
@@ -130,7 +131,7 @@
 	
 	\begin{exampleblock}{Градиент функции}
 		
-		Рассмотрим градиент функции $\nabla \varphi\argxn$
+		Рассмотрим градиент функции $\nabla \varphi\argxn$:
 		\[
 			\pd{\varphi}{\bar{x}^1},\quad
 			\pd{\varphi}{\bar{x}^2},\quad
@@ -138,7 +139,7 @@
 			\pd{\varphi}{\bar{x}^n}.
 		\]
 			\pause
-		По правилам дифференцирования
+		По правилам дифференцирования:
 		\[
 		\pd{\varphi}{\bar{x}^i} = 
 		\pd{\varphi}{x^1}\pd{x^1}{\bar{x}^i}+
@@ -154,12 +155,12 @@
 	\pause
 
 	\parbox{\textwidth}{
-	Положим 
+	Положим, что
 	\[
 	\pd{\varphi}{x^\alpha}	= A_\alpha,\quad
 	\pd{\varphi}{\bar{x}^\alpha} = \bar{A}_\alpha,
 	\]	
-	то получим
+	тогда получим
 	\alert{
 	\[
 	\bar{A}_i = A_\alpha \pd{x^\alpha}{\bar{x}^i}.
@@ -179,12 +180,13 @@
 		\[
 		\bar{A}_i = A_\alpha \pd{x^\alpha}{\bar{x}^i},
 		\]
-		то величины $A_\alpha$ определяют \alert{ковариантный вектор}, составляющими или компонентами которого они являются.
+		то величины $A_\alpha$ определяют \alert{ковариантный вектор}, составляющими, или компонентами, которого они являются.
 	}
 	
 		
 	\end{exampleblock}
 	\begin{exampleblock}{Соглашение}
+		\smallskip
 		\parbox{\textwidth}{
 			
 			Будем различать ковариантные векторы от контравариантных, тем, что у контравариантных векторов индексы будем ставить сверху (например, $dx^i$), а у ковариантных -- снизу (например, $A_j$).
@@ -202,7 +204,7 @@
 			\[
 				\bar{A}^{ik} = A^{\alpha\beta}\pd{\bar{x}^i}{x^\alpha}\pd{\bar{x}^k}{x^\beta},
 			\]
-			то эти функции определяют \alert{контравариантный тензор второго ранга}, составляющим которого они являются.
+			то эти функции определяют \alert{контравариантный тензор второго ранга}, составляющими которого они являются.
 			
 
 		}
@@ -242,7 +244,7 @@
 			\[
 			\bar{A}_{i\cdot}^{\cdot k} = A_{\alpha\cdot}^{\cdot\beta}\pd{x^\alpha}{\bar{x}^i}\pd{\bar{x}^k}{x^\beta},
 			\]
-			то эти функции определяют \alert{смешанный тензор второго ранга}, составляющим которого они являются.
+			то эти функции определяют \alert{смешанный тензор второго ранга}, составляющими которого они являются.
 			
 		\end{exampleblock}
 		
@@ -260,7 +262,7 @@
  			\end{array}
  			\right.
  		\]
- 		является смешанным тензором 2-ого ранга.
+ 		является смешанным тензором 2-го ранга.
  	\end{exampleblock}
  
  	
@@ -294,7 +296,7 @@
  	\begin{exampleblock}{Пример}
  		
  		\parbox{\textwidth}{
- 			По аналогии можно ввести тензоры более высоких рангов, это такой набор величин, для которых при переходе из одной системы координат в другую (\ref{eq:coord_tranformation}) выполняются аналогичные соотношения, например,
+ 			По аналогии можно ввести тензоры более высоких рангов, это такой набор величин, для которых при переходе из одной системы координат в другую (\ref{eq:coord_tranformation}) выполняются аналогичные соотношения, например:
  			\[
  				\bar{A}_{ik}^l = A_{\alpha\beta}^{\gamma} \pd{x^\alpha}{\bar{x}^i} \pd{x^\beta}{\bar{x}^k} \pd{\bar{x}^l}{x^\gamma}.
  			\]
@@ -311,7 +313,7 @@
  	
  	\begin{exampleblock}{Умножение тензора на число}
  		\parbox{\textwidth}{
- 		При \alert{умножении} всех компонент тензора $A_{\alpha\beta}^{\gamma}$ \alert{на число} $\lambda$ получается новый тензор с компонентами $\lambda A_{\alpha\beta}^{\gamma}$ (док-во очевидно).
+ 		При \alert{умножении} всех компонентов тензора $A_{\alpha\beta}^{\gamma}$ \alert{на число} $\lambda$ получается новый тензор с компонентами $\lambda A_{\alpha\beta}^{\gamma}$ (док-во очевидно).
 		} 		
  	\end{exampleblock}
  	
@@ -361,7 +363,7 @@
 	
 	\begin{exampleblock}{}
 		\parbox{\textwidth}{
-			По аналогии с ортогональными тензорами второго ранга можно показать, что любой тензор можно представить в виде суммы симметричного и антисимметричного по двум выбранным (одновременно ковариантным или контравариантным) индексам, причём единственным образом. 			
+			По аналогии с ортогональными тензорами второго ранга можно показать, что любой тензор можно представить в виде суммы симметричного и антисимметричного по двум выбранным (одновременно ковариантным или контравариантным) индексам, причем единственным образом. 			
 		}
 		
 	\end{exampleblock}
@@ -373,20 +375,20 @@
  	\begin{exampleblock}{Определение}
  		\parbox{\textwidth}{
  			
- 		Назовём произведением тензора $A_{\alpha}^\beta$ и тензора $B_{\gamma\delta}^\varepsilon$ тензор $C_{\alpha\gamma\delta}^{\beta\varepsilon}$, образуемый по формулам
+ 		Назовем произведением тензора $A_{\alpha}^\beta$ и тензора $B_{\gamma\delta}^\varepsilon$ тензор $C_{\alpha\gamma\delta}^{\beta\varepsilon}$, образуемый по формуле
     	$C_{\alpha\gamma\delta}^{\beta\varepsilon}=A_{\alpha}^\beta B_{\gamma\delta}^\varepsilon$.
  		}		
  	\end{exampleblock}
  	\pause
   	\begin{exampleblock}{Корректность определения}
  	\parbox{\textwidth}{
- 		Для тензоров $A_{\alpha}^\beta$ и $B_{\gamma\delta}^\varepsilon$  справедливы соотношения
+ 		Для тензоров $A_{\alpha}^\beta$ и $B_{\gamma\delta}^\varepsilon$  справедливы соотношения:
  		\[
  			\bar{A}_i^k = A_{\alpha}^\beta \pd{x^\alpha}{\bar{x}^i} \pd{\bar{x}^k}{x^\beta},\quad
  			\bar{B}_{lm}^n = B_{\gamma\delta}^\varepsilon \pd{x^\gamma}{\bar{x}^l} 
  			\pd{x^\delta}{\bar{x}^m} \pd{\bar{x}^n}{x^\varepsilon},
  		\]
- 		тогда компоненты $C_{\alpha\gamma\delta}^{\beta\varepsilon}$ в новой системе координат
+ 		следовательно компоненты $C_{\alpha\gamma\delta}^{\beta\varepsilon}$ в новой системе координат:
  		\[
  		\bar{C}_{ilm}^{kn} = \bar{A}_i^k \bar{B}_{lm}^n = C_{\alpha\gamma\delta}^{\beta\varepsilon} \pd{x^\alpha}{\bar{x}^i} \pd{\bar{x}^k}{x^\beta} \pd{x^\gamma}{\bar{x}^l} 
  		\pd{x^\delta}{\bar{x}^m} \pd{\bar{x}^n}{x^\varepsilon}.
@@ -404,7 +406,7 @@
  		
 
  	
- 	Докажем, что тензор $B_\alpha = A_{\alpha\beta}^{\beta}$, полученный из смешанного тензора $A_{\alpha\beta}^{\gamma}$ путём суммирования по повторяющемуся индексу $\beta$ от $1$ до $n$, является тензором первого ранга.
+ 	Докажем, что тензор $B_\alpha = A_{\alpha\beta}^{\beta}$, полученный из смешанного тензора $A_{\alpha\beta}^{\gamma}$ путем суммирования по повторяющемуся индексу $\beta$ от $1$ до $n$, является тензором первого ранга.
  	
  	
  	\medskip
@@ -422,7 +424,7 @@
  	
 	\begin{exampleblock}{Вывод}
 		\parbox{\textwidth}{
-			Для каждого смешанного тензора можно можно получить новый тензор путём \alert{сокращения} одного ковариантного и контравариантного \alert{индекса}. 
+			Для каждого смешанного тензора можно получить новый тензор путем \alert{сокращения} одного ковариантного и контравариантного \alert{индекса}. 
 		}
 	\end{exampleblock} 	
  	}
@@ -446,11 +448,11 @@
  	
  	\begin{exampleblock}{Теорема}
  		\parbox{\textwidth}{
- 			Если для каждой системы координат $\argxn$ имеем совокупность $n^3$ величин $A_{\alpha\beta}^\gamma$ и если при любом выборе трёх векторов $u^\alpha$, $v^\beta$ и $w_\gamma$ выражение 
+ 			Если для каждой системы координат $\argxn$ имеем совокупность $n^3$ величин $A_{\alpha\beta}^\gamma$ и если при любом выборе трех векторов $u^\alpha$, $v^\beta$ и $w_\gamma$ выражение 
  			\[
  				f = A_{\alpha\beta}^\gamma u^\alpha v^\beta w_\gamma
  			\]
- 			является инвариантом, то величины $A_{\alpha\beta}^\gamma$ являются составляющими тензора два раза ковариантного, раз ковариантного.
+ 			является инвариантом, то величины $A_{\alpha\beta}^\gamma$ являются составляющими тензора два раза ковариантного раз контравариантного.
  		}
  	\end{exampleblock}
  	
@@ -460,7 +462,7 @@
 	\frametitle{Теорема о тензорной природе объекта }
 	\begin{exampleblock}{Доказательство}
 		\parbox{\textwidth}{
-			В силу произвольности $u^\alpha$, $v^\beta$ и $w_\gamma$ возьмём их так, что для наперёд заданных $i$, $j$, $k$ в новой системе координат  
+			В силу произвольности $u^\alpha$, $v^\beta$ и $w_\gamma$ возьмем их так, что для заранее заданных $i$, $j$, $k$ в новой системе координат: 
 			\[
 			\bar{u}^\alpha = \delta^\alpha_i,\quad
 			\bar{v}^\beta = \delta^\beta_k,\quad
@@ -474,7 +476,7 @@
 				f = A_{\alpha\beta}^\gamma u^\alpha v^\beta w_\gamma =  A_{\alpha\beta}^\gamma \pd{x^\alpha}{\bar{x}^i} \pd{x^\beta}{\bar{x}^k} \pd{\bar{x}^j}{x^\gamma}.
 			\]
 			\pause
-			По условию теоремы $f$ -- скаляр, значит $\bar{A}_{\alpha\beta}^\gamma = A_{\alpha\beta}^\gamma \displaystyle\pd{x^\alpha}{\bar{x}^i} \pd{x^\beta}{\bar{x}^k} \pd{\bar{x}^j}{x^\gamma}$.
+			По условию теоремы $f$ -- скаляр, значит, $\bar{A}_{\alpha\beta}^\gamma = A_{\alpha\beta}^\gamma \displaystyle\pd{x^\alpha}{\bar{x}^i} \pd{x^\beta}{\bar{x}^k} \pd{\bar{x}^j}{x^\gamma}$.
 			
 			
 		}
@@ -505,7 +507,7 @@
  	\frametitle{ Теорема о тензорной природе объекта 2 }
 	 \begin{exampleblock}{Доказательство}
 	 	\parbox{\textwidth}{
-			Положим $u^\alpha=v^\alpha + w^\alpha$ произвольное разложение вектора $u^\alpha$ в сумму двух векторов, тогда
+			Положим, $u^\alpha=v^\alpha + w^\alpha$ -- произвольное разложение вектора $u^\alpha$ в сумму двух векторов, тогда
 			\[
 			f = A_{\alpha\beta}(v^\alpha+w^\alpha)(v^\beta+w^\beta)= A_{\alpha\beta} v^\alpha v^\beta + A_{\alpha\beta} w^\alpha w^\beta + 
 			\]
@@ -517,7 +519,7 @@
 			A_{\alpha\beta} v^\alpha v^\beta,\quad
 			A_{\alpha\beta} w^\alpha w^\beta
 			\]
-			инварианты по условию теоремы, а
+			являются инвариантами по условию теоремы, а
 			\[
 				A_{\alpha\beta} v^\alpha w^\beta = A_{\beta\alpha} v^\alpha w^\beta.
 			\]
@@ -533,6 +535,7 @@
 	\frametitle{ Признак тензорной природы для симметричного объекта }
 	
 	\begin{exampleblock}{Следствие}
+		\smallskip
 		\parbox{\textwidth}{
 			Если величины $A_{\alpha\beta}$ обладают свойством симметричности, т.е. $A_{\alpha\beta}=A_{\beta\alpha}$, то из инвариантности 
 			\[
@@ -567,7 +570,7 @@
 	\begin{exampleblock}{Инвариантность}
 		\parbox{\textwidth}{
 						\centering
-			$ds^2$ -- инвариант по определению
+			$ds^2$ -- инвариант по определению.
 		}
 	\end{exampleblock}\pause
 
@@ -600,7 +603,7 @@
 	\begin{exampleblock}{Тензорная природа (следствие)}
 		\parbox{\textwidth}{
 			\centering
-			$g_{ij}$ -- ковариантный тензор по тензорному признаку для симметричного объекта
+			$g_{ij}$ -- ковариантный тензор по тензорному признаку для симметричного объекта.
 		}
 	\end{exampleblock}
 	
@@ -616,11 +619,11 @@
 				A_i = g_{ik} A^k.
 			\]
 			\pause
-			Эти равенства можно рассматривать как систему из $n$ линейных уравнений относительно $A^k$, и так как $g \neq 0$, то существуют такие числа $g^{ik}$, что
+			Эти равенства можно рассматривать как систему из $n$ линейных уравнений относительно $A^k$, и т. к. $g \neq 0$, то существуют такие числа $g^{ik}$, что
 			\[
 				A^i = g^{ik} A_k. 
 			\] \pause 
-			Т.к. $A^i$, $A_k$ произвольные векторы, то по признаку тензорного объекта $g^{ik}$ является контравариантным тензором и называется \alert{контравариантным фундаментальным тензором}.
+			Так как $A^i$, $A_k$ произвольные векторы, то по признаку тензорного объек\-та $g^{ik}$ является контравариантным тензором и называется \alert{конт\-равариантным фундаментальным тензором}.
 			
 		}
 	\end{exampleblock}
@@ -653,7 +656,7 @@
 					\right.
 				\]
 				\item
-				Сокращение смешанного фундаментального тензора по его индексам даёт размерность рассматриваемого многообразия, т.к. 
+				Сокращение смешанного фундаментального тензора по его индексам дает размерность рассматриваемого многообразия, т.к. 
 				\[
 					g_i^i = \delta_i^i = n.
 				\]
@@ -666,7 +669,7 @@
 	
 }
 \frame{
-	\frametitle{ Переход между контравариантыми и ковариантным величинами}
+	\frametitle{ Переход между контравариантными и ковариантными величинами}
 	
 	\begin{exampleblock}{Для векторов}
 		\parbox{\textwidth}{
@@ -701,7 +704,7 @@
 	
 	\parbox{\textwidth}{
 		
-	Пусть подпространство $E_n$ вложено в евклидово пространство $E_m$ ($m \geq n$) и преобразование координат задаётся 
+	Пусть подпространство $E_n$ вложено в евклидово пространство $E_m$ ($m \geq n$) и преобразование координат задается 
 	\[\left\{
 	\begin{array}{ccc}	
 		y_1 & = & y_1\argxn,\\
@@ -726,7 +729,7 @@
 	\frametitle{ Длина вектора }
 	
 	\parbox{\textwidth}{
-	Рассмотрим котравариантный вектор $A^i$. Подберём бесконечно малый вектор $dx^i$, такой, что
+	Рассмотрим контравариантный вектор $A^i$. Подберем бесконечно малый вектор $dx^i$ такой, что
 	\[
 		dx^i = \lambda A^i, \quad
 		A^i = \frac{1}{\lambda} dx^i.
@@ -762,7 +765,7 @@
 	\begin{exampleblock}{Свойства}
 		\parbox{\textwidth}{
 			\[
-				l(A^i) = \sqrt{g_{ik}A^iA^k} = \sqrt{A_iA^i} = \sqrt{g^{ij} A_i A_j}.
+				l(A^i) = \sqrt{g_{ik}A^iA^k} = \sqrt{A_iA^i} = \sqrt{g^{ij} A_i A_j}
 			\]
 			
 		}
@@ -778,12 +781,12 @@
 	\[
 		dy_\alpha =\pd{y_\alpha}{x^i} dx^i \quad (\alpha=1,\ldots, m),
 	\]
-	тогда вектор $A^i=dx^i/\lambda$ в пространстве $R^m$ будет иметь компоненты 
+	то вектор $A^i=dx^i/\lambda$ в пространстве $R^m$ будет иметь компоненты 
 	\[
 		a_\alpha = \pd{y_\alpha}{x^i} A^i \quad (\alpha=1,\ldots, m).
 	\]
 	
-	Рассмотрим ещё один вектор с компонентами $B^i$, имеющий в $R^m$ компоненты
+	Рассмотрим еще один вектор с компонентами $B^i$, имеющий в $R^m$ компоненты
 	\[
 	b_\alpha = \pd{y_\alpha}{x^k}B^k \quad (\alpha=1,\ldots, m).
 	\]
@@ -800,7 +803,7 @@
 			\vec{a}\cdot\vec{b} = \sum\limits_{\alpha=1}^m a_\alpha b_\alpha = 
 			\sum\limits_{\alpha=1}^m \pd{y_\alpha}{x^i} A^i \pd{y_\alpha}{x^k} B^k=
 			\sum\limits_{\alpha=1}^m \pd{y_\alpha}{x^i} \pd{y_\alpha}{x^k}  A^i B^k=
-			g_{ik}A^i B^k.
+			g_{ik}A^i B^k
 		\]	
 		}
 	\end{exampleblock}\pause
@@ -809,13 +812,13 @@
 		\parbox{\textwidth}{
 			
 		\[
-			\vec{a}\cdot\vec{b} = g_{ik}A^i B^k = A_k B^k = A^i B_i = g^{ij} A_i B_j
+			\vec{a}\cdot\vec{b} = g_{ik}A^i B^k = A_k B^k = A^i B_i = g^{ij} A_i B_j.
 		\]	\pause
 		\[
-			cos\theta = \frac{	\vec{a}\cdot\vec{b} } {ab}= \frac{g_{ik}A^i B^k}{\sqrt{g_{ik} A^i A^k}\sqrt{g_{ik} B^i B^k}}
+			cos\theta = \frac{	\vec{a}\cdot\vec{b} } {ab}= \frac{g_{ik}A^i B^k}{\sqrt{g_{ik} A^i A^k}\sqrt{g_{ik} B^i B^k}};
 		\] \pause
 		\[
-		\vec{a} \perp \vec{b} \Leftrightarrow \vec{a}\cdot\vec{b} = 0 \Leftrightarrow g_{ik}A^i B^k = 0
+		\vec{a} \perp \vec{b} \Leftrightarrow \vec{a}\cdot\vec{b} = 0 \Leftrightarrow g_{ik}A^i B^k = 0.
 		\]
 		}
 	\end{exampleblock}
@@ -836,7 +839,7 @@
 			=	
 			\frac{1}{\sqrt{g}}\left\{
 			g_{i1}(A_2 B_3-A_3 B_2) + g_{i2}(A_3 B_1 -A_1 B_3) + g_{i3}(A_1 B_2 -A_2B_1)
-			\right\},
+			\right\}.
 			\]
 		}
 	\end{exampleblock}
@@ -868,7 +871,7 @@
 \frame{
 	\frametitle{ Литература }
 	\begin{itemize}[partopsep=1pt,label=\textbullet]
-		\item Кочин~Н.~Е. Векторное исчисление и начала тензорного исчисления. Изд. 9-е. М.: Наука, 1965.		
+		\item {\em Кочин~Н.~Е.} Векторное исчисление и начала тензорного исчисления. Изд. 9-е. М.: Наука, 1965.		
 	\end{itemize}
 	
 }

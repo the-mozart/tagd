@@ -40,3 +40,13 @@
 \newcommand{\Sh}{\operatorname{Sh}}
 \newcommand{\Eu}{\operatorname{Eu}}
 \newcommand{\Fr}{\operatorname{Fr}}
+
+\newlist{literature}{enumerate}{1}
+\setlist[literature]{partopsep=1pt,label=\arabic{literaturei}.}
+
+\newlist{enum}{enumerate}{1}
+\setlist[enum]{partopsep=1pt,label=\arabic{enumi})}
+
+\newtheorem{dfn}{Определение}  
+\newtheorem{theorems}{Теорема}  
+\renewenvironment{proof}{{\color{blue}\large Доказательство}}{\hfill $\Box$} 
