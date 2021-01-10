@@ -49,4 +49,4 @@
 
 \newtheorem{dfn}{Определение}  
 \newtheorem{theorems}{Теорема}  
-\renewenvironment{proof}{{\color{blue}\large Доказательство}}{\hfill $\Box$} 
+\renewenvironment{proof}{{\color{blue}\large Доказательство}}{} 
