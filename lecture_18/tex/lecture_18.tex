@@ -215,7 +215,7 @@
 	
 	\begin{exampleblock}{Определение}
 		\parbox{\textwidth}{
-			Пусть определяющими переменными являются \alert{$\rho$} и \alert{$T$}, тогда
+			Пусть определяющими переменными являются \alert{$V$} и \alert{$T$}, тогда
 			\[
 			d(\varepsilon - T S) = -S dT - p dV.
 			\]
@@ -261,13 +261,13 @@
 			\[
 			d(\varepsilon -T S + p V) = -S dT + V dp.
 			\]
-			Если $G = \varepsilon + -T S + p V$, тогда
+			Если $G = \varepsilon -T S + p V$, тогда
 			\[
 			S = -\pd{G}{T},\quad
 			V = \pd{G}{p}.
 			\]
 			
-			$H = \varepsilon -T S + pV $ называется \alert{потенциалом Гиббса}.
+			$G = \varepsilon -T S + pV $ называется \alert{потенциалом Гиббса}.
 		}
 	\end{exampleblock}
 }
@@ -316,7 +316,7 @@
 			\left(\pd{\varepsilon}{T}\right)_V = 
 			\left( \pd{H}{T} \right)_p +
 			\left( \pd{H}{p} \right)_T \left(\pd{p}{T}\right)_V -
-			\left(\pd{p}{T} \right)_V
+			V \left(\pd{p}{T} \right)_V
 			\]
 			
 		}
@@ -331,7 +331,7 @@
 			\right] 
 			\left(\pd{V}{T} \right)_p =
 			-\left[
-				\left( \pd{H}{p} \right)_T  - 1
+				\left( \pd{H}{p} \right)_T  - V
 			\right]
 			\left(\pd{p}{T} \right)_V
 			\]
