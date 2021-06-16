@@ -691,10 +691,17 @@
 
 				\item тензор напряжений имеет вид:
 				\[
-				\sigma_{ij} = -p \delta_{ij} + 2 \mu  e_{ij} + \lambda \delta_{ij} \operatorname{div} \vec{v},\quad
+				\sigma_{ij} = \left(
+								-p + \left(\lambda+\frac{2}{3} \mu 
+							\right) \operatorname{div}\vec{v}\right) \delta_{ij} + 
+								2  \mu \left(
+								e_{ij} -\frac{1}{3}\delta_{ij}\operatorname{div}	\vec{v}
+								\right),
+				\]
+				\[
 				e_{ij} = \frac{1}{2}\left( \pd{v_i}{x_j}+\pd{v_j}{x_i} \right),
 				\]
-				где $\lambda$, $\mu$  -- коэффициенты объемной и динамической вязкостей; $e_{ij}$ -- тензор скоростей деформаций;
+				где $\lambda$, $\mu$  -- коэффициенты Ляме; $e_{ij}$ -- тензор скоростей деформаций;
 				
 				\item закон Фурье теплопроводности газа: 
 				\[
@@ -748,7 +755,7 @@
 	
 	\begin{exampleblock}{Параметры среды}
 		\parbox{\textwidth}{
-			$\lambda$, $\mu$ -- объемная и динамическая вязкость;  $\kappa$ -- коэффициент теплопроводности; $\vec{f}$ -- вектор массовых сил. 
+			$\lambda$, $\mu$ -- коэффициенты Ляме;  $\kappa$ -- коэффициент теплопроводности; $\vec{f}$ -- вектор массовых сил. 
 			
 		}
 	\end{exampleblock}
