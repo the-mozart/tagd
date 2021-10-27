@@ -264,12 +264,41 @@
 			\left(
 			\pd{v^1}{x^1}+\pd{v^2}{x^2}+\pd{v^3}{x^3}
 			\right)=
-			 \left| \pd{x^i}{\xi^j} \right|\operatorname{div} \vec{v}
+			 \left| \pd{x^i}{\xi^j} \right|\operatorname{div}_x \vec{v}
 			\]
 		}
 	\end{exampleblock}
 	
 }
+
+
+\frame{
+	\frametitle{Полная производная}
+	
+	\begin{exampleblock}{Определение}
+		\parbox{\textwidth}{
+			\[
+				\frac{d}{dt}=\pd{}{t} + (\vec{v}\cdot\nabla).
+			\]
+		}
+	\end{exampleblock}
+	
+	\begin{exampleblock}{Свойства}
+		\parbox{\textwidth}{
+		\medskip
+		Пусть $f=f\argtxv$, $g=g\argtxv$, $\xv = \xv\argtxi$ тогда
+			\[
+				\frac{d}{dt}(f + g) = \frac{df}{dt} + \frac{df}{dt},\quad
+				\frac{d}{dt}(f \cdot g) = \frac{df}{dt}\cdot g + f \cdot\frac{dg}{dt},
+			\]
+			\[
+			\pd{f\argtxiv}{t} =  \frac{df\argtxv}{dt}.
+			\]
+		}
+	\end{exampleblock}
+	
+}
+
 
 \frame{
 	\frametitle{ Закон дифференцирования интеграла, зависящего от времени }
@@ -286,7 +315,7 @@
 		\]
 		\[
 		=
-		\int\limits_{\omega_0} \left( \pd{F\argtxiv }{t} + F\argtxiv \operatorname{div}_{\xi}\vec{v}\argtxiv \right)\Delta\argtxiv  d\vec{\xi} =
+		\int\limits_{\omega_0} \left( \pd{F\argtxiv }{t} + F\argtxiv \operatorname{div}_{x}\vec{v}\argtxiv \right)\Delta\argtxiv  d\vec{\xi} =
 		\]
 		\[
 		=
@@ -296,6 +325,9 @@
 	\end{exampleblock}
 	
 }
+
+
+
 
 \frame{
 	\frametitle{Закон дифференцирования интеграла, зависящего от времени }
