@@ -404,14 +404,86 @@
 	
 	\begin{exampleblock}{Постановка задачи}
 		\parbox{\textwidth}{
-			В системе координат цилиндра найти потенциал % $w(z)$
-			\[
-			w(z) = \varphi(z) + i \psi(z)
-			\]
-			такой, что его мнимая часть на окружности $|z| = a$ удовлетворяет условию
-			\[
-			\psi(x+iy) = U y - V x + \mathrm{const}.
-			\]
+			\only<1>{
+				В системе координат цилиндра найти потенциал % $w(z)$
+				\[
+				w(z) = \varphi(z) + i \psi(z)
+				\]
+				такой, что его мнимая часть на окружности $|z| = a$ удовлетворяет условию
+				\[
+				\psi(x+iy) = U y - V x + \mathrm{const}.
+				\]
+			}
+		
+			\only<2>{
+				Решение ищется в виде ряда:
+				\[
+				\od{w}{z} = v^*(z) = c_0 + \frac{c}{z} + \frac{c_1}{z^2} + \frac{c_2}{z^3} + \ldots,
+				\]
+				т.к. $v^*(z)$ -- однозначна, определена вне $|z|>a$, ограничена и на бесконечности стремится к $0$.
+				
+				Сразу следует, что 
+				\[
+				c_0 = 0
+				\]
+				и
+				\[
+				w(z) = c \ln(z) + \sum_{n=1}^{\infty}\frac{c_n}{z^n}.
+				\]
+			}
+			\only<3>{
+				Для обеспечения выполнения граничных условий необходимо
+				\[
+				\left. \pd{\varphi}{r} \right|_{r=a} = U \cos \theta + V \sin \theta.
+				\]
+				
+				При $c = A + iB$, $c_n = A_n + i B_n$, $z=r e^{i\theta}$
+				\[
+					w(z) = \varphi+i \psi = (A + iB) (\ln r + i \theta) +
+					(A_1 + i B_1) \frac{1}{r} (\cos \theta - i \sin \theta) +
+				\]
+				\[
+					+\sum_{n=2}^\infty (A_n + i B_n) \frac{1}{r^n} (\cos n\theta - i \sin n\theta).
+				\]
+			}
+		
+			\only<4>{
+				Таким образом,
+				\[
+					\varphi(r) =  Re(w(z)) = A \ln r - B\theta + (A_1 \cos\theta + B_1 \sin\theta)\frac{1}{r} +
+				\]
+				\[
+				+ \sum_{n=2}^\infty \frac{1}{r^n} (A_n \cos n\theta + B_n \sin n\theta).
+				\]
+				\[
+				\pd{\varphi}{r} = \frac{A}{r} - (A_1 \cos\theta + B_1 \sin\theta)\frac{1}{r^2} -
+				\sum_{n=2}^\infty \frac{n}{r^{n+1}} (A_n \cos n\theta + B_n \sin n\theta).
+				\]
+			
+			}
+			\only<5>{
+				Полагая $r=a$,
+				\[
+				\left.\pd{\varphi}{r}\right|_{r=a} = \frac{A}{a} - (A_1 \cos\theta + B_1 \sin\theta)\frac{1}{a^2} -
+				\sum_{n=2}^\infty \frac{n}{a^{n+1}} (A_n \cos n\theta + B_n \sin n\theta) = 
+				\]
+				\[
+					 = U \cos\theta + V \sin\theta.
+				\]
+				
+				Следовательно,
+				\[
+				A = 0,\quad
+				A_1 = -U a^2,\quad
+				B_1 = -V a^2,\quad
+				A_n = B_n = 0.
+				\]
+				Коэффициент  $B$ остался не определён. Положим $B = -\displaystyle\frac{\Gamma}{2 \pi}$, тогда
+				\[
+				w(z) = \frac{\Gamma}{2 \pi i} \ln z - \frac{U a^2 + i V a^2}{z}.
+				\]
+			}
+		
 			
 		}
 	\end{exampleblock}
@@ -419,6 +491,8 @@
 
 
 }
+
+
 
 \frame{
 	\frametitle{ Задача обтекания кругового цилиндра }
