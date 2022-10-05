@@ -704,6 +704,84 @@
 }
 
 \frame{
+	\frametitle{Обтекание покоящейся сферы идеальной жидкостью}
+	
+	\begin{exampleblock}{Выражение для давления}
+	\parbox{\textwidth}{
+		\[
+		\frac{p(\theta)-p_\infty}{\rho} = \frac{V^2}{2}\left( 1- \frac{9}{4} \sin^2 \theta \right),\quad
+		\sigma = -pI,
+		\]
+		где $p(\theta)$ -- давление жидкости на поверхности сферы; $p_\infty$ -- давление жидкости на бесконечности; $V$ -- скорость жидкости на бесконечности; $\rho$ -- плотность жидкости; $\theta$ -- полярный угол в сферической системе координат.
+		
+	}
+	\end{exampleblock}
+
+	\pause
+	\begin{exampleblock}{Парадокс Даламбера}
+	\parbox{\textwidth}{
+		\medskip
+		\[
+		\vec{F} = -\int\limits_{S} n^i\sigma_i^j\vec{e}_j \, dS = 
+		-\int\limits_{S} \left[\rho\frac{V^2}{2}\left( 1- \frac{9}{4} \sin^2 \theta \right) + p_\infty\right]  \vec{n}\, dS = 0.
+		\]
+		
+	}
+	\end{exampleblock}
+}
+
+
+\frame{
+	\frametitle{Медленное обтекание покоящейся сферы вязкой жидкостью}
+	
+	\only<1>{
+
+	\begin{exampleblock}{Компоненты тензора напряжений на поверхности сферы}
+		\parbox{\textwidth}{
+			\[
+			\sigma = -pI + 2\mu e,
+			\]
+			где $p$ -- давление; $\mu$ -- вязкость жидкости; $e$ -- тензор скоростей деформаций.
+			
+			\smallskip
+			В сферической системе координат ($r$, $\theta$, $\varphi$):
+			\[
+			\sigma_{rr}|_{r=a} = \left( -p + 2 \mu \pd{v_r}{r}\right)_{r=a} = \frac{3}{2}\mu\frac{U}{a}\cos\theta,\quad
+			\sigma_{\varphi r}|_{r=a} = \sigma_{r \varphi}|_{r=a} = 0,
+			\]	
+			\[
+			\sigma_{\theta r}|_{r=a} = \sigma_{r\theta}|_{r=a} = \mu\left(\frac{1}{r}\pd{v_r}{\theta}+\pd{v_\theta}{r} -\frac{v_\theta}{r} \right)_{r=a}=-\frac{3\mu U}{2a}\sin\theta,
+			\]	
+%			\[
+%			
+%			\]	
+			где $v_r$, $v_\theta$ -- радиальная и полярная составляющие скорости; $a$ -- радиус сферы; $U$ -- скорость жидкости на бесконечности; $\theta$ -- полярный угол.
+			
+		}
+	\end{exampleblock}
+	}
+
+	\only<2>{
+	\begin{exampleblock}{Формула Стокса}
+	\parbox{\textwidth}{
+		\medskip
+		\[
+		W = \vec{F} \cdot \vec{e}_z = -\int\limits_{S} (n^i\sigma_i^j\vec{e}_j) \cdot \vec{e}_z \, dS = \int\limits_S (\sigma_{rr}\cos\theta - \sigma_{r\theta}\sin\theta) dS = 
+		\]
+		\[
+		=
+		\int\limits_0^\pi (\sigma_{rr}\cos\theta - \sigma_{r\theta}\sin\theta) 2 \pi a^2 \sin\theta d\theta = 
+		3\pi\mu U a \int\limits_0^\pi \sin\theta d\theta =
+		6\pi\mu U a,
+		\]
+		где $i,j \in \{r, \theta, \varphi\}$; $\vec{e}_z$ -- единичный вектор, направленный по направлению течения.
+	}
+	\end{exampleblock}
+	}
+}
+
+
+\frame{
 	\frametitle{ Литература }
 	\parbox{\textwidth}{
 	\begin{itemize}[label=]
