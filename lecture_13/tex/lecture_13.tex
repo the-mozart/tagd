@@ -386,6 +386,43 @@
 
 
 \frame{
+	\frametitle{Метод конформных отображений}
+	
+	\begin{exampleblock}{Основная идея}
+		\parbox{\textwidth}{
+			Использование \textit{метода конформных отображений} и \textit{теоремы Римана о конформном отображении односвязных областей.}
+		}
+	\end{exampleblock}
+
+
+	\begin{exampleblock}{ Дано }
+		\begin{enumerate}
+			\item  комформное отображение $z=f(\zeta)$;
+			\item  потенциал течения на вспомогательной плоскости $\psi(\zeta)$.
+		\end{enumerate}
+	\end{exampleblock}
+
+	\begin{exampleblock}{Решение}
+		\parbox{\textwidth}{
+				\[
+			\left\{
+			\begin{array}{l}
+				\chi = \chi(f(\zeta)) = \psi(\zeta),\\
+				z = f(\zeta).
+			\end{array}
+			\right.
+			\]
+						\[
+			v^* = \od{\chi}{z} = \od{\psi}{\zeta}  \od{\zeta}{z},
+			\]
+			где $\chi(z)$ --- потенциал течения в физической плоскости.
+		}
+	\end{exampleblock}
+	 
+}
+
+
+\frame{
 	\frametitle{Задача обтекания кругового цилиндра}
 	
 	\includegraphics[width=0.5\linewidth]{../img/flow_cylinder.pdf}
