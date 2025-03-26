@@ -204,7 +204,7 @@
 			\[
 			u_x = U_x + \omega_y z - \omega_z y,\quad
 			u_y = U_y + \omega_z x - \omega_x z,\quad
-			u_z = U_z + \omega_x y - \omega_y z
+			u_z = U_z + \omega_x y - \omega_y x
 			\]
 		}
 	\end{exampleblock}
@@ -227,7 +227,7 @@
 			\]
 			\[
 			+
-			(U_z + \omega_x y - \omega_y z)\gamma.
+			(U_z + \omega_x y - \omega_y x)\gamma.
 			\]
 		}
 	\end{exampleblock}
@@ -378,7 +378,7 @@
 		\parbox{\textwidth}{
 		Изменение импульса объема $\tau$ равно работе сил давления на границах $S$, $\Sigma$ и потери импульса через границу $\Sigma$ в результате конвекции:
 		\[
-		\od{}{t} \int\limits_\tau \rho\vec{v} dV = -\int\limits_{S \cup \Sigma} p\vec{n} dS + \int\limits_\Sigma \rho \vec{v} v_n dS.
+		\od{}{t} \int\limits_\tau \rho\vec{v} dV = -\int\limits_{S \cup \Sigma} p\vec{n} dS - \int\limits_\Sigma \rho \vec{v} v_n dS.
 		\]
 			
 		}
@@ -399,13 +399,13 @@
 			\]
 			Тогда
 			\[
-			\vec{R} = \od{}{t} \int\limits_\tau \rho\vec{v} dV + \int\limits_{\Sigma} p\vec{n} dS - \int\limits_\Sigma \rho \vec{v} v_n dS =
+			\vec{R} = \od{}{t} \int\limits_\tau \rho\vec{v} dV + \int\limits_{\Sigma} p\vec{n} dS + \int\limits_\Sigma \rho \vec{v} v_n dS =
 			\]
 			\[
 			=
 			\rho \od{}{t}\int\limits_\tau \nabla\varphi dV +  
 			\int\limits_{\Sigma} \left(
-			p\vec{n} - \rho\vec{v}v_n
+			p\vec{n} + \rho\vec{v}v_n
 			\right) dS = 
 			\]
 			
@@ -428,7 +428,7 @@
 	=
 	\od{}{t}\int\limits_\Sigma\rho\varphi\vec{n} dS + \od{}{t}\int\limits_S\rho\varphi\vec{n} dS+
 	\int\limits_{\Sigma}\left(
-	(p_0 - \rho\pd{\varphi}{t} - \frac{\rho v^2}{2})\cdot\vec{n} - \rho\vec{v}v_n
+	(p_0 - \rho\pd{\varphi}{t} - \frac{\rho v^2}{2})\cdot\vec{n} + \rho\vec{v}v_n
 	\right)dS=
 	\]\pause
 		Так как	поверхность $\Sigma$  не зависит от времени $t$, то
@@ -440,7 +440,7 @@
 	=
 	\od{}{t}\int_S\rho\varphi\vec{n} dS + 
 	\int_{\Sigma}\left(
-	(p_0 - \frac{\rho v^2}{2})\cdot\vec{n} - \rho\vec{v}v_n
+	(p_0 - \frac{\rho v^2}{2})\cdot\vec{n} + \rho\vec{v}v_n
 	\right)dS=
 	\]
 	}
@@ -459,7 +459,7 @@
 	=
 	\od{}{t}\int_S\rho\varphi\vec{n} dS - \rho
 	\int_{\Sigma}\left(
-	\frac{ v^2}{2}\vec{n} + \vec{v}v_n
+	\frac{ v^2}{2}\vec{n} - \vec{v}v_n
 	\right)dS.
 	\]\pause
 	
@@ -798,8 +798,6 @@
 			где $m$ -- масса шара, $\vec{F}$ -- вектор приложенных сил.
 		}
 	\end{block}
-	
-	
 }
 
 
