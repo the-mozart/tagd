@@ -165,6 +165,38 @@
 }
 
 \frame{
+	\frametitle{Система координат}
+	
+	
+		\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\centering
+			\includegraphics[width=\linewidth]{../img/coordinate_system.pdf}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\begin{exampleblock}{Скорость движения точки тела в исходной системе координат}
+				\parbox{\textwidth}{
+					\[
+					\vec{u} = \vec{U}+\vec{\omega}\times \vec{r}
+					\]	
+				}
+			\end{exampleblock}
+			
+			
+		\end{column}
+	\end{columns}
+
+
+	\begin{block}{Пояснения}
+		\medskip
+		\parbox{\textwidth}{
+			Жёстко свяжем  новую систему координат с телом, совместив при этом начало координат с его центром масс (или любой другой точкой).	Это соответствует переносу и повороту исходной системы координат. Уравнение Лапласа на потенциал  инвариантно относительно такого преобразования, а граничные условия упрощаются.			
+		}
+	\end{block}
+}
+
+
+\frame{
 	\frametitle{Условие на поверхности тела}
 	
 	\begin{exampleblock}{Скорость точек тела}
@@ -731,6 +763,44 @@
 	\end{exampleblock}
 	
 }
+
+\frame{
+	\frametitle{Пример движения шара}
+	
+	\begin{block}{Потенциал}
+		\parbox{\textwidth}{
+			Потенциал обтекания шара, движущегося вдоль оси $Oz$ с единичной скоростью
+			\[
+			\varphi_3 = -\frac{R^3 \cos\theta}{2r^2}
+			\]
+		}
+	\end{block}
+	\begin{block}{Коэффициенты присоединённых масса}
+	\parbox{\textwidth}{
+		\[
+		\lambda_{11} = \lambda_{22} = \lambda_{33} = \frac{2}{3}\rho\pi R^3,\quad
+		\lambda_{44} = \lambda_{55} = \lambda_{66} = 0.
+		\]
+		\[
+		\lambda_{ij} = 0 \quad (i \neq j).
+		\]
+	}
+	\end{block}
+	
+	\begin{block}{Уравнения движения}
+		\parbox{\textwidth}{
+			\[
+			\left(
+			m + \frac{2}{3}	\rho \pi R^3
+			\right)
+			\od{\vec{U}}{t} = \vec{F}.
+			\]
+		}
+	\end{block}
+	
+	
+}
+
 
 \frame{
 	\frametitle{ Литература }
